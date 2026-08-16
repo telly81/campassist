@@ -1,0 +1,55 @@
+{
+  "id": "truma-combi-6",
+  "title": "Truma Combi 6",
+  "component": "Heizung",
+  "icon": "flame",
+  "emoji": "🔥",
+  "accent": "orange",
+  "vehicle": "WM-007",
+  "description": "Raumheizung Schritt für Schritt einschalten.",
+  "actions": [
+    {
+      "label": "Raumheizung einschalten",
+      "description": "5 bebilderte Schritte",
+      "emoji": "🔥"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Gasversorgung sicher prüfen",
+      "text": "Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist. Verwenden Sie die Anlage nur, wenn kein Gasgeruch wahrnehmbar ist.",
+      "image": "assets/heating/01-gasversorgung.jpg",
+      "tip": "Bei Gasgeruch: Personen aus dem Fahrzeug bringen, Gaszufuhr schließen, keine elektrischen Schalter betätigen und fachkundige Hilfe rufen."
+    },
+    {
+      "title": "12-V-Bordnetz einschalten",
+      "text": "Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein. Steuerung und Gebläse der Heizung benötigen Bordspannung.",
+      "image": "assets/heating/02-bordnetz.jpg",
+      "tip": "Bei schwacher Batterie kann die Heizung nicht starten oder während des Betriebs abschalten."
+    },
+    {
+      "title": "Bedienteil aktivieren",
+      "text": "Drücken Sie den Dreh-/Drückknopf am Heizungsbedienteil. Wählen Sie anschließend den Einstellbereich für die Raumtemperatur.",
+      "image": "assets/heating/03-bedienteil.jpg",
+      "tip": "Menüführung und Symbole können je nach eingebautem Bedienteil und Softwarestand abweichen."
+    },
+    {
+      "title": "Raumtemperatur wählen",
+      "text": "Drehen Sie den Knopf auf die gewünschte Raumtemperatur und drücken Sie den Knopf, um die Auswahl zu speichern.",
+      "image": "assets/heating/04-temperatur.jpg",
+      "tip": "Sollwerte immer bewusst bestätigen."
+    },
+    {
+      "title": "Start und Warmluft prüfen",
+      "text": "Warten Sie nach der Bestätigung einige Minuten. Prüfen Sie anschließend vorsichtig, ob an den Warmluftauslässen ein Luftstrom austritt.",
+      "image": "assets/heating/05-warmluft.jpg",
+      "tip": "Warmluftauslässe nicht verdecken."
+    }
+  ],
+  "successTitle": "Raumheizung gestartet.",
+  "successText": "Prüfen Sie nach einigen Minuten den Warmluftstrom.",
+  "warnings": [
+    "Bei Gasgeruch Anlage nicht verwenden.",
+    "Fahrzeug- und Herstelleranleitung haben Vorrang."
+  ]
+}

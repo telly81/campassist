@@ -1,0 +1,61 @@
+{
+  "id": "landstrom",
+  "title": "Landstrom anschließen",
+  "component": "Strom",
+  "icon": "bolt",
+  "emoji": "⚡",
+  "accent": "amber",
+  "vehicle": "WM-007",
+  "description": "Landstrom sicher anschließen und prüfen.",
+  "actions": [
+    {
+      "label": "Landstrom anschließen",
+      "description": "6 Schritte",
+      "emoji": "⚡"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Kabel prüfen",
+      "text": "Prüfen Sie das Landstromkabel auf sichtbare Schäden.",
+      "image": "assets/landstrom/01.jpg",
+      "tip": "Beschädigtes Kabel nicht verwenden."
+    },
+    {
+      "title": "Stromsäule prüfen",
+      "text": "Prüfen Sie, ob die Stromsäule freigegeben und geeignet ist.",
+      "image": "assets/landstrom/02.jpg",
+      "tip": "Nur geeignete CEE-Anschlüsse verwenden."
+    },
+    {
+      "title": "Fahrzeug anschließen",
+      "text": "Stecken Sie das Kabel zuerst am Fahrzeug ein.",
+      "image": "assets/landstrom/03.jpg",
+      "tip": "Stecker vollständig einstecken."
+    },
+    {
+      "title": "Stromsäule anschließen",
+      "text": "Stecken Sie das Kabel anschließend an der Stromsäule ein.",
+      "image": "assets/landstrom/04.jpg",
+      "tip": "Kabel sicher verlegen, Stolperstellen vermeiden."
+    },
+    {
+      "title": "Sicherung aktivieren",
+      "text": "Aktivieren Sie die Sicherung an der Stromsäule, falls erforderlich.",
+      "image": "assets/landstrom/05.jpg",
+      "tip": "Bei Auslösung nicht mehrfach ohne Ursachenprüfung einschalten."
+    },
+    {
+      "title": "Innenanzeige prüfen",
+      "text": "Prüfen Sie im Fahrzeug, ob 230-V-Versorgung angezeigt wird.",
+      "image": "assets/landstrom/06.jpg",
+      "tip": "Bei fehlender Anzeige Vermieter kontaktieren."
+    }
+  ],
+  "successTitle": "Landstrom verbunden.",
+  "successText": "Die 230-V-Versorgung ist bereit.",
+  "warnings": [
+    "Kabel nie beschädigt verwenden.",
+    "Bei Regen Steckverbindungen trocken halten."
+  ]
+}

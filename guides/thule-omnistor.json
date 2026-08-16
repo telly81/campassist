@@ -1,0 +1,70 @@
+{
+  "id": "thule-omnistor",
+  "title": "Thule Omnistor 5200",
+  "component": "Markise",
+  "icon": "sun",
+  "emoji": "☀️",
+  "accent": "yellow",
+  "vehicle": "WM-007",
+  "description": "Markise sicher ausfahren, abstützen und wieder einfahren.",
+  "actions": [
+    {
+      "label": "Markise ausfahren",
+      "description": "7 bebilderte Schritte",
+      "emoji": "☀️"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Markise entriegeln",
+      "text": "Öffnen Sie die Verriegelung der Markise und geben Sie die Frontleiste frei.",
+      "image": "assets/awning/01.jpg",
+      "tip": "Niemals mit Gewalt öffnen."
+    },
+    {
+      "title": "Kurbel einsetzen",
+      "text": "Stecken Sie die Kurbel vollständig in die dafür vorgesehene Aufnahme.",
+      "image": "assets/awning/02.jpg",
+      "tip": "Kurbel vollständig einstecken, bevor Sie drehen."
+    },
+    {
+      "title": "Markise langsam ausfahren",
+      "text": "Kurbeln Sie die Markise langsam etwa einen Meter aus.",
+      "image": "assets/awning/03.jpg",
+      "tip": "Nicht ruckartig kurbeln."
+    },
+    {
+      "title": "Linken Stützfuß ausklappen",
+      "text": "Entriegeln Sie den linken Stützfuß und klappen Sie ihn nach unten.",
+      "image": "assets/awning/04.jpg",
+      "tip": "Fuß sicher und fest aufstellen."
+    },
+    {
+      "title": "Rechten Stützfuß ausklappen",
+      "text": "Entriegeln Sie den rechten Stützfuß und klappen Sie ihn nach unten.",
+      "image": "assets/awning/05.jpg",
+      "tip": "Beide Stützen gleichmäßig ausrichten."
+    },
+    {
+      "title": "Höhe einstellen",
+      "text": "Stellen Sie die gewünschte Höhe ein und verriegeln Sie die Stützfüße.",
+      "image": "assets/awning/06.jpg",
+      "tip": "Bei Regen eine Seite etwas tiefer stellen, damit Wasser ablaufen kann."
+    },
+    {
+      "title": "Markise vollständig ausfahren",
+      "text": "Kurbeln Sie die Markise bis zur gewünschten Länge aus und prüfen Sie den sicheren Stand.",
+      "image": "assets/awning/07.jpg",
+      "tip": "Bei Wind oder starken Böen sofort einfahren."
+    }
+  ],
+  "successTitle": "Markise einsatzbereit.",
+  "successText": "Die Thule Omnistor wurde ausgefahren und abgestützt.",
+  "warnings": [
+    "Bei Wind oder starken Böen sofort einfahren.",
+    "Markise niemals unbeaufsichtigt ausgefahren lassen.",
+    "Nicht als Schutz bei Starkregen oder Schnee geeignet.",
+    "Vor Fahrtantritt Markise vollständig einfahren und verriegeln."
+  ],
+  "disclaimer": "Gilt für viele Thule Omnistor Modelle wie 4900, 5200, 6300. Hersteller- und Fahrzeuganleitung haben Vorrang."
+}

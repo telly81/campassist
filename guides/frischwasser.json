@@ -1,0 +1,72 @@
+{
+  "id": "frischwasser",
+  "title": "Frischwasser auffüllen",
+  "component": "Wasser",
+  "icon": "water",
+  "emoji": "💧",
+  "accent": "cyan",
+  "vehicle": "WM-007",
+  "description": "Frischwassersystem Schritt für Schritt auffüllen.",
+  "actions": [
+    {
+      "label": "Frischwasser auffüllen",
+      "description": "8 bebilderte Schritte",
+      "emoji": "💧"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Serviceklappe öffnen",
+      "text": "Öffnen Sie die Serviceklappe an der Außenseite des Fahrzeugs.",
+      "image": "assets/freshwater/01-serviceklappe.jpg",
+      "tip": "Einbauposition ist fahrzeugspezifisch."
+    },
+    {
+      "title": "Ablasshähne prüfen",
+      "text": "Prüfen Sie beide Ablasshähne im unteren Bereich. Beide Hebel müssen für den normalen Betrieb geschlossen sein.",
+      "image": "assets/freshwater/02-ablasshaehne.jpg",
+      "tip": "Ist der Frischwasser-Ablasshahn geöffnet, läuft eingefülltes Wasser wieder ab."
+    },
+    {
+      "title": "Frostwächter prüfen",
+      "text": "Prüfen Sie den Frostwächter und bringen Sie ihn in Betriebsstellung.",
+      "image": "assets/freshwater/03-frostwaechter.jpg",
+      "tip": "Nicht mit Gewalt schließen."
+    },
+    {
+      "title": "Frischwasserdeckel öffnen",
+      "text": "Drehen Sie den blauen Frischwasserdeckel auf und legen Sie ihn sauber ab.",
+      "image": "assets/freshwater/04-deckel-oeffnen.jpg",
+      "tip": "Den Einfüllstutzen nicht verunreinigen."
+    },
+    {
+      "title": "Frischwasser langsam einfüllen",
+      "text": "Füllen Sie sauberes Frischwasser langsam und kontrolliert ein.",
+      "image": "assets/freshwater/05-wasser-einfuellen.jpg",
+      "tip": "Tank nicht unbeaufsichtigt befüllen."
+    },
+    {
+      "title": "Füllstand kontrollieren",
+      "text": "Beobachten Sie während des Befüllens die Frischwasseranzeige am Fahrzeugpanel.",
+      "image": "assets/freshwater/06-fuellstand-pruefen.jpg",
+      "tip": "Anzeige kann zeitverzögert reagieren."
+    },
+    {
+      "title": "Pumpe einschalten und entlüften",
+      "text": "Schließen Sie den Deckel, schalten Sie die Wasserpumpe ein und öffnen Sie die Wasserhähne nacheinander.",
+      "image": "assets/freshwater/07-pumpe-entlueften.jpg",
+      "tip": "Pumpe nicht längere Zeit trocken laufen lassen."
+    },
+    {
+      "title": "System abschließend prüfen",
+      "text": "Kontrollieren Sie Tank, Deckel, Ablasshähne, Frostwächter und sichtbare Leckagen.",
+      "image": "assets/freshwater/08-system-bereit.jpg",
+      "tip": "Bei Leckage Pumpe ausschalten und Vermieter kontaktieren."
+    }
+  ],
+  "successTitle": "Frischwassersystem betriebsbereit.",
+  "successText": "Tank gefüllt, Ablasshähne geschlossen und Leitungen entlüftet.",
+  "warnings": [
+    "Nur sauberes Wasser verwenden."
+  ]
+}

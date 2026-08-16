@@ -1,0 +1,287 @@
+<!doctype html><html lang="de" class="scroll-smooth"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="CampAssist ist die digitale Fahrzeughilfe für Wohnmobil- und Caravanvermieter."><title>CampAssist | Digitale Fahrzeughilfe</title><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{brand:'#07111f',aqua:'#14b8a6'},boxShadow:{glow:'0 24px 80px rgba(37,99,235,.24)'}}}}</script><style>.gradient{background:linear-gradient(100deg,#2563eb,#14b8a6);-webkit-background-clip:text;color:transparent}.hotspot{animation:pulse 1.7s infinite}.scan-line{animation:scan 1.8s ease-in-out infinite}.screen-in{animation:enter .35s ease-out}@keyframes pulse{0%{box-shadow:0 0 0 0 #14b8a6aa}100%{box-shadow:0 0 0 18px #14b8a600}}@keyframes scan{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(145px);opacity:1}}@keyframes enter{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}</style></head><body class="bg-slate-50 text-slate-950 antialiased"><svg style="display:none" aria-hidden="true"><symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-6-6-11 0 4-2 6-4 8-2 2-3 4-2 6 1 3 3 4 5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c-2 0-3-1-3-3 0-1 1-3 3-5 0 2 3 3 3 5 0 2-1 3-3 3Z" fill="currentColor" opacity=".2"/></symbol><symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4 7l16 10M4 17 20 7M8 4l4 3 4-3M8 20l4-3 4 3M3 11l4 1-1 4M21 13l-4-1 1-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-toilet" viewBox="0 0 24 24"><path d="M7 3h8v7H7zM8 10h10c0 5-2 8-6 8v3H8v-3c-2-1-3-4-3-8h3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 7h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol><symbol id="i-water" viewBox="0 0 24 24"><path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 17c1 1 3 1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM15 14h2v2h-2zM19 14h2v4h-2zM14 19h4v2h-4zM20 20h1v1h-1z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4M11 19h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><path d="M7 3 4 5c0 8 7 15 15 15l2-3-5-3-2 2c-3-1-5-3-6-6l2-2-3-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol></svg>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl"><div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8"><a href="#start" class="flex items-center gap-3"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-blue-600 to-teal-500 font-black text-white">CA</span><span><b class="block">CampAssist</b><small class="text-slate-500">by Niesing Labs</small></span></a><nav class="hidden items-center gap-6 text-sm font-bold text-slate-600 lg:flex"><a href="#problem">Problem</a><a href="#funktion">Funktionsweise</a><a href="#wow-demo">Live-Demo</a><a href="#vorteile">Vorteile</a><a href="#faq">FAQ</a><a href="#roadmap">Roadmap</a><a href="#checklisten">Checklisten</a><a href="#kontakt">Kontakt</a></nav><a href="#kontakt" class="rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white">Pilot anfragen</a></div></header>
+<main><section id="start" class="relative overflow-hidden bg-white pb-24 pt-40"><div class="absolute -left-20 top-20 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl"></div><div class="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8"><div class="relative"><div class="flex flex-wrap gap-3"><span class="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700">Digitale Fahrzeughilfe für Vermieter</span><span class="rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-bold text-amber-800">🚀 Early Access Entwurf · CampAssist v1.0</span></div><h1 class="mt-7 text-5xl font-black leading-[1.04] tracking-[-.05em] sm:text-7xl">Jede Fahrzeugtechnik in <span class="gradient">30 Sekunden</span> erklärt.</h1><p class="mt-7 text-xl leading-8 text-slate-600">Mieter scannen einen QR-Code direkt am Gerät und erhalten sofort eine verständliche, fahrzeugspezifische Hilfe.</p><div class="mt-9 flex flex-col gap-3 sm:flex-row"><a href="#wow-demo" class="rounded-xl bg-blue-600 px-7 py-4 text-center font-bold text-white shadow-glow">Live-Demo starten</a><a href="#kontakt" class="rounded-xl border border-slate-200 bg-white px-7 py-4 text-center font-bold">Pilotprogramm anfragen</a></div></div><div class="rounded-3xl bg-brand p-8 text-white shadow-2xl"><p class="text-sm font-black uppercase tracking-widest text-teal-400">In 3 Schritten</p><div class="mt-6 grid gap-4"><div class="flex items-center gap-4 rounded-2xl bg-white/5 p-5"><span class="grid h-12 w-12 place-items-center rounded-xl bg-white/10 text-teal-300"><svg class="h-6 w-6"><use href="#i-qr"></use></svg></span><div><b>QR-Code scannen</b><p class="text-sm text-slate-400">Direkt an der Fahrzeugkomponente.</p></div></div><div class="flex items-center gap-4 rounded-2xl bg-white/5 p-5"><span class="grid h-12 w-12 place-items-center rounded-xl bg-white/10 text-teal-300"><svg class="h-6 w-6"><use href="#i-phone"></use></svg></span><div><b>Aufgabe auswählen</b><p class="text-sm text-slate-400">Bedienen, prüfen oder melden.</p></div></div><div class="flex items-center gap-4 rounded-2xl bg-white/5 p-5"><span class="grid h-12 w-12 place-items-center rounded-xl bg-white/10 text-teal-300"><svg class="h-6 w-6"><use href="#i-check"></use></svg></span><div><b>Problem lösen</b><p class="text-sm text-slate-400">Kurze, konkrete Schritte.</p></div></div></div></div></div></section>
+<section id="problem" class="bg-brand py-24 text-white"><div class="mx-auto max-w-7xl px-5"><div class="text-center"><p class="text-sm font-black uppercase tracking-widest text-teal-400">Problem</p><h2 class="mt-4 text-4xl font-black sm:text-5xl">Kommt Ihnen das bekannt vor?</h2></div><div class="mt-12 grid gap-5 md:grid-cols-2"><blockquote class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-7 text-xl font-bold"><span class="text-teal-300"><svg class="h-8 w-8"><use href="#i-flame"></use></svg></span>„Wie schalte ich die Heizung ein?“</blockquote><blockquote class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-7 text-xl font-bold"><span class="text-teal-300"><svg class="h-8 w-8"><use href="#i-snow"></use></svg></span>„Warum wird der Kühlschrank nicht kalt?“</blockquote><blockquote class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-7 text-xl font-bold"><span class="text-teal-300"><svg class="h-8 w-8"><use href="#i-toilet"></use></svg></span>„Wie entleere ich die Toilette?“</blockquote><blockquote class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-7 text-xl font-bold"><span class="text-teal-300"><svg class="h-8 w-8"><use href="#i-bolt"></use></svg></span>„Wo befindet sich der Hauptschalter?“</blockquote></div></div></section>
+<section id="funktion" class="bg-white py-24"><div class="mx-auto max-w-7xl px-5"><div class="text-center"><p class="text-sm font-black uppercase tracking-widest text-blue-600">Funktionsweise</p><h2 class="mt-4 text-4xl font-black sm:text-5xl">QR-Code → Fahrzeug → Smartphone → Lösung</h2></div><div class="mt-14 grid gap-5 md:grid-cols-4"><article class="rounded-3xl border border-slate-200 bg-slate-50 p-7 text-center"><span class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600"><svg class="h-8 w-8"><use href="#i-qr"></use></svg></span><h3 class="mt-5 font-black">QR-Code</h3><p class="mt-2 text-sm text-slate-600">Eindeutig je Fahrzeug und Komponente.</p></article><article class="rounded-3xl border border-slate-200 bg-slate-50 p-7 text-center"><span class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600"><svg class="h-8 w-8"><use href="#i-sun"></use></svg></span><h3 class="mt-5 font-black">Fahrzeug erkannt</h3><p class="mt-2 text-sm text-slate-600">Gerät und Vermieter werden geladen.</p></article><article class="rounded-3xl border border-slate-200 bg-slate-50 p-7 text-center"><span class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600"><svg class="h-8 w-8"><use href="#i-phone"></use></svg></span><h3 class="mt-5 font-black">Hilfe geöffnet</h3><p class="mt-2 text-sm text-slate-600">Mobile Ansicht ohne App.</p></article><article class="rounded-3xl border border-slate-200 bg-slate-50 p-7 text-center"><span class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600"><svg class="h-8 w-8"><use href="#i-check"></use></svg></span><h3 class="mt-5 font-black">Problem gelöst</h3><p class="mt-2 text-sm text-slate-600">Selbsthilfe oder klare Meldung.</p></article></div></div></section>
+<section id="wow-demo" class="bg-slate-100 py-24"><div class="mx-auto max-w-7xl px-5"><div class="mx-auto max-w-3xl text-center"><p class="text-sm font-black uppercase tracking-widest text-blue-600">Live-Demo</p><h2 class="mt-4 text-4xl font-black sm:text-5xl">Wohnmobil auswählen. QR-Code scannen. Hilfe erleben.</h2><p class="mt-5 text-lg text-slate-600">Klicken Sie links auf eine Komponente. Die passende Ansicht öffnet sich rechts im Smartphone.</p></div><div class="mt-14 grid gap-10 lg:grid-cols-[1.15fr_.85fr]">
+<div class="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-xl sm:p-8"><div class="flex items-center justify-between"><div><p class="text-xs font-black uppercase tracking-widest text-blue-600">Demo-Fahrzeug</p><h3 class="mt-1 text-2xl font-black">Weinsberg CaraSuite 650 MF</h3></div><span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold">WM-007</span></div><div class="relative mt-7 min-h-[390px] overflow-hidden rounded-3xl bg-gradient-to-b from-sky-100 to-white"><div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-emerald-100 to-transparent"></div><div class="absolute bottom-16 left-1/2 h-52 w-[82%] -translate-x-1/2 rounded-[3rem_5rem_1rem_1rem] border-4 border-slate-300 bg-white shadow-xl"><div class="absolute left-10 top-8 h-24 w-32 rounded-xl border-4 border-slate-300 bg-sky-100"></div><div class="absolute right-10 top-8 h-20 w-24 rounded-xl border-4 border-slate-300 bg-sky-100"></div><div class="absolute left-[47%] top-5 h-40 w-24 rounded-t-xl border-4 border-slate-300 bg-slate-100"></div><div class="absolute -bottom-9 left-16 h-20 w-20 rounded-full border-[14px] border-slate-700 bg-slate-300"></div><div class="absolute -bottom-9 right-20 h-20 w-20 rounded-full border-[14px] border-slate-700 bg-slate-300"></div></div>
+<button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" data-guide="truma-combi-6" class="component hotspot absolute left-[23%] top-[43%] grid h-14 w-14 place-items-center rounded-2xl border-4 border-white bg-orange-500 text-white shadow-xl" title="Heizung: Truma Combi 6"><svg class="h-7 w-7"><use href="#i-flame"></use></svg></button><button data-name="Kühlschrank" data-model="Dometic RMD 10.5T" data-icon="snow" data-guide="dometic-kuehlschrank" class="component hotspot absolute left-[43%] top-[51%] grid h-14 w-14 place-items-center rounded-2xl border-4 border-white bg-blue-600 text-white shadow-xl" title="Kühlschrank: Dometic RMD 10.5T"><svg class="h-7 w-7"><use href="#i-snow"></use></svg></button><button data-name="Toilette" data-model="Thetford C223-CS" data-icon="toilet" data-guide="thetford-c223-cs" class="component hotspot absolute right-[20%] top-[47%] grid h-14 w-14 place-items-center rounded-2xl border-4 border-white bg-teal-600 text-white shadow-xl" title="Toilette: Thetford C223-CS"><svg class="h-7 w-7"><use href="#i-toilet"></use></svg></button><button data-name="Strom" data-model="Landstrom & Bordbatterie" data-icon="bolt" data-guide="landstrom" class="component hotspot absolute bottom-[8%] left-[49%] grid h-14 w-14 place-items-center rounded-2xl border-4 border-white bg-amber-500 text-white shadow-xl" title="Strom: Landstrom & Bordbatterie"><svg class="h-7 w-7"><use href="#i-bolt"></use></svg></button>
+<button
+    data-name="Markise"
+    data-model="Thule Omnistor 5200"
+    data-icon="sun"
+    class="component hotspot absolute left-[58%] top-[18%] grid h-14 w-14 place-items-center rounded-2xl border-4 border-white bg-yellow-500 text-white shadow-xl"
+    title="Markise: Thule Omnistor">
+
+    <svg class="h-7 w-7">
+    <use href="#i-sun"></use>
+</svg>
+
+
+</button><button data-name="Wasser" data-model="Frisch- & Grauwasser" data-icon="water" data-guide="frischwasser" class="component hotspot absolute right-[32%] top-[24%] grid h-14 w-14 place-items-center rounded-2xl border-4 border-white bg-cyan-500 text-white shadow-xl" title="Wasser: Frisch- & Grauwasser"><svg class="h-7 w-7"><use href="#i-water"></use></svg></button><button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" data-guide="thule-omnistor" class="component hotspot absolute left-[58%] top-[18%] grid h-14 w-14 place-items-center rounded-2xl border-4 border-white bg-yellow-500 text-white shadow-xl" title="Markise: Thule Omnistor 5200"><svg class="h-7 w-7"><use href="#i-sun"></use></svg></button></div><div 
+
+class="mt-6 grid gap-3 sm:grid-cols-3"><div class="rounded-2xl bg-slate-50 p-4"><span class="text-xs text-slate-500">Ausgewählt</span><b id="selectedName" class="mt-1 block">Heizung</b></div><div class="rounded-2xl bg-slate-50 p-4 sm:col-span-2"><span class="text-xs text-slate-500">Gerätemodell</span><b id="selectedModel" class="mt-1 block">Truma Combi 6</b></div></div><button id="scanButton" class="mt-5 w-full rounded-xl bg-gradient-to-r from-blue-600 to-teal-500 p-4 font-black text-white">QR-Code dieser Komponente scannen</button></div>
+<div class="relative mx-auto w-full max-w-md"><div class="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-blue-500/20 to-teal-400/20 blur-3xl"></div><div class="relative rounded-[2.8rem] border-[10px] border-brand bg-brand p-2 shadow-2xl"><div class="mx-auto my-2 h-1.5 w-20 rounded-full bg-slate-600"></div><div id="phoneScreen" class="min-h-[615px] rounded-[2rem] bg-white p-6"><div class="flex min-h-[550px] flex-col items-center justify-center text-center"><span class="grid h-24 w-24 place-items-center rounded-3xl bg-blue-50 text-blue-600"><svg class="h-12 w-12"><use href="#i-phone"></use></svg></span><h3 class="mt-7 text-2xl font-black">Bereit für die Live-Demo?</h3><p class="mt-3 text-slate-500">Wählen Sie links eine Komponente und starten Sie den Scan.</p></div></div></div></div></div>
+<div id="dashboard" class="mt-12 hidden rounded-[2rem] bg-brand p-8 text-white shadow-2xl"><div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-center"><div><p class="text-xs font-black uppercase tracking-widest text-teal-400">CampAssist Dashboard</p><h3 class="mt-2 text-3xl font-black">Ein Supportanruf wurde vermieden.</h3></div><span class="grid h-16 w-16 place-items-center rounded-2xl bg-green-400/15 text-green-300"><svg class="h-9 w-9"><use href="#i-check"></use></svg></span></div><div class="mt-8 grid gap-4 sm:grid-cols-4"><div class="rounded-2xl bg-white/5 p-5"><span class="text-sm text-slate-400">Scans heute</span><b class="mt-2 block text-3xl">185</b></div><div class="rounded-2xl bg-white/5 p-5"><span class="text-sm text-slate-400">Selbst gelöst</span><b class="mt-2 block text-3xl">163</b></div><div class="rounded-2xl bg-white/5 p-5"><span class="text-sm text-slate-400">Meldungen</span><b class="mt-2 block text-3xl">4</b></div><div class="rounded-2xl bg-white/5 p-5"><span class="text-sm text-slate-400">Selbsthilfequote</span><b class="mt-2 block text-3xl">88 %</b></div></div></div></div></section>
+<section id="vorteile" class="bg-white py-24"><div class="mx-auto max-w-7xl px-5"><div class="text-center"><p class="text-sm font-black uppercase tracking-widest text-blue-600">Vorteile</p><h2 class="mt-4 text-4xl font-black">Weniger erklären. Besser unterstützen.</h2></div><div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"><article class="rounded-3xl border border-slate-200 p-7"><span class="text-blue-600"><svg class="h-8 w-8"><use href="#i-call"></use></svg></span><h3 class="mt-5 text-xl font-black">Weniger Rückfragen</h3><p class="mt-3 text-slate-600">Typische Bedienfragen direkt beantworten.</p></article><article class="rounded-3xl border border-slate-200 p-7"><span class="text-blue-600"><svg class="h-8 w-8"><use href="#i-check"></use></svg></span><h3 class="mt-5 text-xl font-black">Schnellere Übergaben</h3><p class="mt-3 text-slate-600">Wichtige Funktionen bleiben verfügbar.</p></article><article class="rounded-3xl border border-slate-200 p-7"><span class="text-blue-600"><svg class="h-8 w-8"><use href="#i-phone"></use></svg></span><h3 class="mt-5 text-xl font-black">Ohne App</h3><p class="mt-3 text-slate-600">Direkt im Smartphone-Browser.</p></article><article class="rounded-3xl border border-slate-200 p-7"><span class="text-blue-600"><svg class="h-8 w-8"><use href="#i-qr"></use></svg></span><h3 class="mt-5 text-xl font-black">Eigene QR-Codes</h3><p class="mt-3 text-slate-600">Eindeutig pro Fahrzeug und Gerät.</p></article><article class="rounded-3xl border border-slate-200 p-7"><span class="text-blue-600"><svg class="h-8 w-8"><use href="#i-sun"></use></svg></span><h3 class="mt-5 text-xl font-black">Eigenes Branding</h3><p class="mt-3 text-slate-600">Logo, Farben und Kontakt des Vermieters.</p></article><article class="rounded-3xl border border-slate-200 p-7"><span class="text-blue-600"><svg class="h-8 w-8"><use href="#i-water"></use></svg></span><h3 class="mt-5 text-xl font-black">Zentrale Pflege</h3><p class="mt-3 text-slate-600">Gerätewissen kontrolliert wiederverwenden.</p></article></div></div></section>
+
+<section id="roadmap" class="bg-slate-50 py-24">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="text-sm font-black uppercase tracking-widest text-blue-600">Roadmap</p>
+      <h2 class="mt-4 text-4xl font-black sm:text-5xl">CampAssist wächst Schritt für Schritt.</h2>
+      <p class="mt-5 text-lg leading-8 text-slate-600">Diese Landingpage zeigt den aktuellen Early-Access-Entwurf. Die wichtigsten Anleitungen sind bereits integriert, weitere Assistenten, Checklisten und Vermieter-Funktionen folgen.</p>
+    </div>
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      <article class="rounded-3xl border border-green-200 bg-white p-8 shadow-sm"><span class="rounded-full bg-green-50 px-4 py-2 text-sm font-black text-green-700">✅ Bereits verfügbar</span><h3 class="mt-6 text-2xl font-black">Basis-Assistenten</h3><ul class="mt-6 space-y-3 text-slate-700"><li>✅ Thetford C223-CS Toilettenhilfe</li><li>✅ Dometic Vorbereitung</li><li>✅ Dometic Entleerung</li><li>✅ Truma Combi 6 Heizung</li><li>✅ Landstrom anschließen</li><li>✅ Frischwasser auffüllen</li><li>✅ Thule Omnistor Markisenhilfe</li><li>✅ QR-Code Live-Demo im Smartphone-Look</li></ul></article>
+      <article class="rounded-3xl border border-amber-200 bg-white p-8 shadow-sm"><span class="rounded-full bg-amber-50 px-4 py-2 text-sm font-black text-amber-700">🚧 In Entwicklung</span><h3 class="mt-6 text-2xl font-black">Nächste Workflows</h3><ul class="mt-6 space-y-3 text-slate-700"><li>🚧 Grauwasser entleeren</li><li>🚧 Dometic Kühlschrank bedienen</li><li>🚧 Fenster und Dachhauben</li><li>🚧 Bordbatterie und Batteriestatus</li><li>🚧 Störung melden per WhatsApp</li><li>🚧 Interaktive Checklisten</li></ul></article>
+      <article class="rounded-3xl border border-blue-200 bg-white p-8 shadow-sm"><span class="rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-blue-700">🔮 Geplant</span><h3 class="mt-6 text-2xl font-black">Premium-Funktionen</h3><ul class="mt-6 space-y-3 text-slate-700"><li>🔮 Vermieterportal mit Fahrzeugverwaltung</li><li>🔮 Eigene Logos und Branding</li><li>🔮 QR-Code-Verwaltung je Fahrzeug</li><li>🔮 Mehrsprachige Anleitungen</li><li>🔮 Nutzungsstatistiken und häufige Probleme</li><li>🔮 KI-Assistent für Fahrzeugfragen</li><li>🔮 Offline-fähige Hilfeseiten</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section id="checklisten" class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-black uppercase tracking-widest text-teal-600">Checklisten</p><h2 class="mt-4 text-4xl font-black sm:text-5xl">Digitale Checklisten für weniger Übergabestress.</h2><p class="mt-5 text-lg leading-8 text-slate-600">Neben Schritt-für-Schritt-Anleitungen soll CampAssist künftig typische Übergabe-, Abfahrt- und Rückgabeprozesse als einfache mobile Checklisten abbilden.</p></div>
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-8"><h3 class="text-2xl font-black">🚐 Vor der Abfahrt</h3><ul class="mt-6 space-y-3 text-slate-700"><li>☐ Dachhauben geschlossen</li><li>☐ Fenster geschlossen</li><li>☐ Kühlschrank verriegelt</li><li>☐ Landstrom getrennt</li><li>☐ Toilettenkassette eingesetzt</li><li>☐ Frischwasser geprüft</li><li>☐ Markise eingefahren</li><li>☐ Stützen und Keile geprüft</li></ul></article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-8"><h3 class="text-2xl font-black">🏕️ Stellplatz verlassen</h3><ul class="mt-6 space-y-3 text-slate-700"><li>☐ Stromkabel getrennt</li><li>☐ Wasserschlauch entfernt</li><li>☐ Grauwasserstand geprüft</li><li>☐ Keile eingesammelt</li><li>☐ Markise vollständig eingefahren</li><li>☐ Dachhauben geschlossen</li><li>☐ Außenklappen verriegelt</li><li>☐ Türen abgeschlossen</li></ul></article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-8"><h3 class="text-2xl font-black">🔄 Fahrzeugrückgabe</h3><ul class="mt-6 space-y-3 text-slate-700"><li>☐ Grauwasser entleert</li><li>☐ Toilette entleert und gespült</li><li>☐ Innenraum gereinigt</li><li>☐ Müll entsorgt</li><li>☐ Schäden dokumentiert</li><li>☐ Tank- und Batteriestand geprüft</li><li>☐ Schlüssel vollständig</li><li>☐ Fahrzeug abgeschlossen</li></ul></article>
+    </div>
+  </div>
+</section>
+<section id="faq" class="bg-slate-50 py-24"><div class="mx-auto max-w-4xl px-5"><h2 class="text-center text-4xl font-black">Häufige Fragen</h2><div class="mt-10 space-y-4"><details class="rounded-2xl border bg-white p-6"><summary class="cursor-pointer font-black">Müssen Mieter eine App installieren?</summary><p class="mt-4 text-slate-600">Nein. CampAssist öffnet sich direkt im Browser.</p></details><details class="rounded-2xl border bg-white p-6"><summary class="cursor-pointer font-black">Bekommt jedes Fahrzeug eigene QR-Codes?</summary><p class="mt-4 text-slate-600">Ja. Jeder Code gehört zu einer Fahrzeugkomponente.</p></details></div></div></section>
+<section id="pilot" class="bg-white py-24"><div class="mx-auto max-w-7xl px-5"><div class="rounded-[2rem] bg-brand p-10 text-white lg:flex lg:items-center lg:justify-between"><div><p class="text-sm font-black uppercase tracking-widest text-teal-400">Pilotprogramm</p><h2 class="mt-3 text-4xl font-black">Testen Sie CampAssist mit einem Fahrzeug.</h2></div><a href="#kontakt" class="mt-7 inline-flex rounded-xl bg-white px-7 py-4 font-black text-brand lg:mt-0">Pilot anfragen</a></div></div></section></main>
+
+<section id="kontakt" class="bg-slate-900 py-24 text-white">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-black uppercase tracking-widest text-teal-400">Kontakt</p><h2 class="mt-4 text-4xl font-black sm:text-5xl">Demo anfragen oder Pilotkunde werden.</h2><p class="mt-5 text-lg leading-8 text-slate-300">Sie vermieten Wohnmobile oder Camper? Schreiben Sie direkt per WhatsApp. Die Nachricht wird automatisch aus dem Formular vorbereitet.</p></div>
+    <div class="mt-14 grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
+      <aside class="rounded-[2rem] border border-white/10 bg-white/5 p-8"><h3 class="text-2xl font-black">Oliver Niesing</h3><p class="mt-2 text-slate-400">CampAssist · Niesing Labs</p><div class="mt-8 space-y-5 text-slate-200"><p><b>📍 Adresse</b><br>Overbergstraße 86<br>59302 Oelde</p><p><b>📱 Telefon / WhatsApp</b><br><a class="text-teal-300 font-bold" href="tel:+491637221381">+49 163 7221381</a></p><p><b>📧 E-Mail</b><br><a class="text-teal-300 font-bold" href="mailto:info@campassist.de">info@campassist.de</a></p></div><div class="mt-8 rounded-2xl border border-teal-400/20 bg-teal-400/10 p-5 text-sm text-teal-50"><b>💡 Gesucht: Pilotkunden</b><br>Für die Early-Access-Phase suche ich Vermieter, die CampAssist mit echten Fahrzeugen testen und Feedback geben möchten.</div></aside>
+      <form id="whatsappContactForm" class="rounded-[2rem] border border-white/10 bg-white p-8 text-slate-950 shadow-2xl"><div class="grid gap-5 md:grid-cols-2"><label class="block"><span class="text-sm font-bold text-slate-700">Name *</span><input id="waName" required class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Max Mustermann"></label><label class="block"><span class="text-sm font-bold text-slate-700">Unternehmen</span><input id="waCompany" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Wohnmobilvermietung Müller"></label></div><div class="mt-5 grid gap-5 md:grid-cols-2"><label class="block"><span class="text-sm font-bold text-slate-700">Anzahl Fahrzeuge</span><select id="waFleet" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"><option>Bitte auswählen</option><option>1-5 Fahrzeuge</option><option>6-20 Fahrzeuge</option><option>21-50 Fahrzeuge</option><option>50+ Fahrzeuge</option></select></label><label class="block"><span class="text-sm font-bold text-slate-700">Anliegen</span><select id="waRequest" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"><option>Demo anfragen</option><option>Early Access testen</option><option>Pilotkunde werden</option><option>Partnerschaft besprechen</option><option>Allgemeine Anfrage</option></select></label></div><label class="mt-5 block"><span class="text-sm font-bold text-slate-700">Nachricht *</span><textarea id="waMessage" required rows="5" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Ich interessiere mich für CampAssist und möchte mehr erfahren..."></textarea></label><label class="mt-5 flex items-start gap-3 text-sm text-slate-600"><input required type="checkbox" class="mt-1 h-4 w-4 rounded border-slate-300"><span>Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden, dass WhatsApp zur Kontaktaufnahme geöffnet wird.</span></label><button type="submit" class="mt-7 w-full rounded-xl bg-gradient-to-r from-green-500 to-teal-500 px-6 py-4 text-lg font-black text-white shadow-lg transition hover:scale-[1.01]">💬 Anfrage per WhatsApp senden</button><p class="mt-4 text-center text-xs text-slate-500">Es werden keine Formulardaten auf dieser Seite gespeichert. Beim Absenden öffnet sich WhatsApp mit einer vorbereiteten Nachricht.</p></form>
+    </div>
+  </div>
+</section>
+<div class="bg-green-50 border-y border-green-200 py-4 text-center text-sm"><span class="font-black text-green-700">✅ CampAssist v1.0 Early Access</span><span class="text-slate-600"> · QR-Anleitungen verfügbar · Roadmap und Checklisten in Entwicklung</span></div><footer class="border-t bg-white py-10"><div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-5 text-sm text-slate-500 sm:flex-row"><div><b class="block text-brand">CampAssist</b><span>by Niesing Labs</span></div><p>Digitale Produkte. Echter Mehrwert.</p><div class="flex gap-5"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
+<script>let current={name:'Heizung',model:'Truma Combi 6',icon:'flame'};const comps=document.querySelectorAll('.component'),nameEl=document.getElementById('selectedName'),modelEl=document.getElementById('selectedModel'),screen=document.getElementById('phoneScreen');comps.forEach(b=>b.onclick=()=>{current={name:b.dataset.name,model:b.dataset.model,icon:b.dataset.icon};nameEl.textContent=current.name;modelEl.textContent=current.model;comps.forEach(x=>x.classList.remove('ring-4','ring-blue-300'));b.classList.add('ring-4','ring-blue-300')});function svgIcon(id,cls='h-6 w-6'){return `<svg class="${cls}"><use href="#i-${id}"></use></svg>`}function head(){return `<div class="text-center"><p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Muster Caravan GmbH</p><span class="mx-auto mt-5 grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600">${svgIcon(current.icon,'h-9 w-9')}</span><h3 class="mt-4 text-2xl font-black">${current.model}</h3><p class="text-sm text-slate-500">${current.name} · WM-007</p></div>`}document.getElementById('scanButton').onclick=()=>{screen.innerHTML=`<div class="screen-in">${head()}<div class="relative mx-auto mt-8 h-48 w-48 rounded-3xl bg-slate-50 p-6"><div class="grid h-full grid-cols-7 gap-1">${Array.from({length:49},(_,i)=>`<span class="rounded-sm ${i%3?'bg-brand':'bg-slate-200'}"></span>`).join('')}</div><div class="scan-line absolute left-5 right-5 top-5 h-1 bg-teal-400 shadow-[0_0_18px_#14b8a6]"></div></div><div id="recognition" class="mt-7 space-y-2 text-sm text-slate-400"></div></div>`;const lines=['QR-Code erkannt','Fahrzeug WM-007 erkannt',current.model+' erkannt','Branding geladen','Hilfe geöffnet'];lines.forEach((x,i)=>setTimeout(()=>{document.getElementById('recognition').innerHTML+=`<p class="font-bold text-teal-600">✓ ${x}</p>`;if(i===4)setTimeout(home,350)},380*(i+1)))};const heatingSteps=[
+ {title:'Gasversorgung sicher prüfen',text:'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist. Verwenden Sie die Anlage nur, wenn kein Gasgeruch wahrnehmbar ist.',image:'assets/heating/01-gasversorgung.jpg',tip:'Bei Gasgeruch: Personen aus dem Fahrzeug bringen, Gaszufuhr schließen, keine elektrischen Schalter betätigen und fachkundige Hilfe rufen.'},
+ {title:'12-V-Bordnetz einschalten',text:'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein. Steuerung und Gebläse der Heizung benötigen Bordspannung.',image:'assets/heating/02-bordnetz.jpg',tip:'Bei schwacher Batterie kann die Heizung nicht starten oder während des Betriebs abschalten.'},
+ {title:'Bedienteil aktivieren',text:'Drücken Sie den Dreh-/Drückknopf am Heizungsbedienteil. Wählen Sie anschließend den Einstellbereich für die Raumtemperatur.',image:'assets/heating/03-bedienteil.jpg',tip:'Menüführung und Symbole können je nach eingebautem Bedienteil und Softwarestand abweichen.'},
+ {title:'Raumtemperatur wählen',text:'Drehen Sie den Knopf auf die gewünschte Raumtemperatur und drücken Sie den Knopf, um die Auswahl zu speichern.',image:'assets/heating/04-temperatur.jpg',tip:'Die Truma-Dokumentation beschreibt den Dreh-/Drückknopf zum Auswählen, Ändern und Speichern von Sollwerten.'},
+ {title:'Start und Warmluft prüfen',text:'Warten Sie nach der Bestätigung einige Minuten. Prüfen Sie anschließend vorsichtig, ob an den Warmluftauslässen ein Luftstrom austritt.',image:'assets/heating/05-warmluft.jpg',tip:'Verdecken Sie keine Warmluftauslässe. Bei Störung oder unbekanntem Fehlercode nicht eigenständig am Gerät reparieren.'}
+];
+let heatingStep=0;
+const freshwaterSteps=[
+ {title:'Serviceklappe öffnen',text:'Öffnen Sie die Serviceklappe an der Außenseite des Fahrzeugs. Im Fach befinden sich der Frischwassertank, der blaue Einfülldeckel, die beiden Ablasshähne und der Frostwächter.',image:'assets/freshwater/01-serviceklappe.jpg',tip:'Die Einbauposition ist fahrzeugspezifisch. Verwenden Sie für WM-007 ausschließlich dieses gekennzeichnete Servicefach.'},
+ {title:'Ablasshähne prüfen',text:'Prüfen Sie beide Ablasshähne im unteren Bereich. Links befindet sich der Ablasshahn des Frischwassertanks, rechts der Ablasshahn des Abwassertanks. Beide Hebel müssen für den normalen Betrieb geschlossen sein.',image:'assets/freshwater/02-ablasshaehne.jpg',tip:'Ist der linke Frischwasser-Ablasshahn geöffnet, läuft eingefülltes Wasser unmittelbar wieder ab. Die Hebelstellung ist an diesem Fahrzeug zu prüfen.'},
+ {title:'Frostwächter in Betriebsstellung bringen',text:'Prüfen Sie den Frostwächter. Der obere Drehschalter muss in der Betriebsstellung eingerastet sein. Anschließend den Druckknopf in die geschlossene Stellung drücken, bis der Druckknopf einrastet.',image:'assets/freshwater/03-frostwaechter.jpg',tip:'Das FrostControl kann bei niedriger Umgebungstemperatur automatisch öffnen. Lässt sich der Druckknopf nicht einrasten, Fahrzeug- und Herstelleranleitung beachten und nicht mit Gewalt drücken.'},
+ {title:'Blauen Frischwasserdeckel öffnen',text:'Drehen Sie den blauen Frischwasserdeckel auf und nehmen Sie den Deckel ab. Legen Sie den Deckel sauber ab.',image:'assets/freshwater/04-deckel-oeffnen.jpg',tip:'Nur sauberes Wasser und saubere Füllmittel verwenden. Den Einfüllstutzen nicht verunreinigen.'},
+ {title:'Frischwasser langsam einfüllen',text:'Füllen Sie sauberes Frischwasser langsam und kontrolliert über den Einfüllstutzen ein. Bleiben Sie während des gesamten Füllvorgangs am Fahrzeug.',image:'assets/freshwater/05-wasser-einfuellen.jpg',tip:'Tank nicht unbeaufsichtigt befüllen und nicht überlaufen lassen. Die zulässige Tankmenge richtet sich nach dem konkreten Fahrzeug.'},
+ {title:'Füllstand kontrollieren',text:'Beobachten Sie während des Befüllens die Frischwasseranzeige am Fahrzeugpanel. Die Wasserpumpe bleibt während des Füllens ausgeschaltet.',image:'assets/freshwater/06-fuellstand-pruefen.jpg',tip:'Die Anzeige kann zeitverzögert reagieren. Befüllung rechtzeitig stoppen und den Tank nicht allein nach der Anzeige überfüllen.'},
+ {title:'Deckel schließen, Pumpe einschalten und entlüften',text:'Schließen Sie den blauen Frischwasserdeckel sicher. Schalten Sie anschließend die Wasserpumpe ein. Öffnen Sie die Wasserhähne nacheinander auf Kalt- und Warmwasser, bis Wasser gleichmäßig und ohne Luftblasen austritt.',image:'assets/freshwater/07-pumpe-entlueften.jpg',tip:'Wasserpumpe erst nach dem Befüllen einschalten. Die Pumpe nicht längere Zeit trocken laufen lassen.'},
+ {title:'Frischwassersystem abschließend prüfen',text:'Kontrollieren Sie: Tank gefüllt, blauer Deckel geschlossen, linker Frischwasser-Ablasshahn geschlossen, rechter Abwasser-Ablasshahn geschlossen, Frostwächter in Betriebsstellung und Leitungen entlüftet.',image:'assets/freshwater/08-system-bereit.jpg',tip:'Prüfen Sie das Servicefach und den Fahrzeugboden auf sichtbaren Wasseraustritt. Bei Leckage Pumpe ausschalten und Vermieter kontaktieren.'}
+];
+let freshwaterStep=0;
+const awningSteps = [
+
+{
+ title:'Markise entriegeln',
+ text:'Verriegelung der Markise öffnen und Frontleiste freigeben.',
+ image:'assets/awning/01.jpg',
+ tip:'Niemals mit Gewalt öffnen.'
+},
+
+{
+ title:'Kurbel einsetzen',
+ text:'Kurbel in die Aufnahme einsetzen.',
+ image:'assets/awning/02.jpg',
+ tip:'Kurbel vollständig einstecken.'
+},
+
+{
+ title:'Markise ausfahren',
+ text:'Markise langsam etwa einen Meter ausfahren.',
+ image:'assets/awning/03.jpg',
+ tip:'Nicht ruckartig kurbeln.'
+},
+
+{
+ title:'Linken Stützfuß ausklappen',
+ text:'Linken Stützfuß entriegeln und aufstellen.',
+ image:'assets/awning/04.jpg',
+ tip:'Fuß sicher aufstellen.'
+},
+
+{
+ title:'Rechten Stützfuß ausklappen',
+ text:'Rechten Stützfuß ebenfalls aufstellen.',
+ image:'assets/awning/05.jpg',
+ tip:'Stützen gleichmäßig ausrichten.'
+},
+
+{
+ title:'Höhe einstellen',
+ text:'Gewünschte Höhe einstellen.',
+ image:'assets/awning/06.jpg',
+ tip:'Bei Regen eine Seite tiefer stellen.'
+},
+
+{
+ title:'Markise vollständig ausfahren',
+ text:'Markise bis zur gewünschten Länge ausfahren.',
+ image:'assets/awning/07.jpg',
+ tip:'Bei Wind sofort einfahren.'
+}
+
+];
+
+let awningStep = 0;
+const toiletSteps=[
+ {title:'Serviceklappe öffnen',text:'Den Toilettenschieber vollständig schließen. Anschließend die Serviceklappe außen am Fahrzeug öffnen.',image:'assets/toilet/01-serviceklappe.jpg',tip:'Die Kassette niemals mit geöffnetem Schieber herausziehen.'},
+ {title:'Kassette entriegeln',text:'Die orange Verriegelung anheben und die Kassette am Griff vorsichtig aus dem Fach ziehen.',image:'assets/toilet/02-entriegelung.jpg',tip:'Wenn die Kassette blockiert, nicht mit Gewalt ziehen. Zuerst prüfen, ob der Schieber vollständig geschlossen ist.'},
+ {title:'Zur Entsorgungsstation bringen',text:'Den ausziehbaren Griff vollständig ausklappen und die Kassette zu einer zugelassenen Entsorgungsstation rollen oder tragen.',image:'assets/toilet/03-kassette-herausziehen.jpg',tip:'Nur an einer dafür vorgesehenen Entsorgungsstelle entleeren.'},
+ {title:'Kassette kontrolliert entleeren',text:'Kassette aufrecht stellen, Ausguss nach oben drehen und Verschlusskappe abnehmen. Zum Entleeren den Ausguss nach unten halten und gleichzeitig die Entlüftungstaste drücken.',image:'assets/toilet/04-entleeren-und-spuelen.jpg',tip:'Langsam kippen. Die Entlüftungstaste vermindert Spritzen und ungleichmäßiges Ausgießen.'},
+ {title:'Spülen und wieder einsetzen',text:'Etwa 5 Liter Wasser einfüllen, Kappe schließen, Kassette vorsichtig schwenken und erneut entleeren. Griff einklappen, Kassette einschieben und Serviceklappe schließen.',image:'assets/toilet/05-kassette-einsetzen.jpg',tip:'Bei weiterer Nutzung die Kassette anschließend nach Herstellerangabe wieder vorbereiten.'}
+];
+let toiletStep=0;
+function home(){
+
+    if(current.name==='Toilette'){
+        toiletMenu();
+        return;
+    }
+
+    if(current.name==='Heizung'){
+        heatingMenu();
+        return;
+    }
+
+    if(current.name==='Wasser'){
+        freshwaterMenu();
+        return;
+    }
+
+    if(current.name==='Markise'){
+        awningMenu();
+        return;
+    }
+
+    screen.innerHTML = `...`;
+}
+
+
+function toiletMenu(){
+ screen.innerHTML=`<div class="screen-in">${head()}<div class="mt-5 rounded-xl border-l-4 border-teal-500 bg-teal-50 p-4 text-sm"><b>Direkte Hilfe:</b><br>Wählen Sie die Aufgabe, die Sie jetzt durchführen möchten.</div><div class="mt-5 grid gap-3"><button onclick="startToiletHelp()" class="flex items-center gap-4 rounded-2xl bg-blue-50 p-4 text-left text-blue-900"><span class="grid h-11 w-11 place-items-center rounded-xl bg-white text-blue-600">${svgIcon('toilet','h-7 w-7')}</span><span><b class="block">Kassette entleeren</b><small>5 bebilderte Schritte</small></span><span class="ml-auto text-2xl">›</span></button><button class="rounded-2xl border border-slate-200 p-4 text-left"><b>Kassette einsetzen</b><small class="block text-slate-500">Kurzhilfe folgt</small></button><button class="rounded-2xl border border-slate-200 p-4 text-left"><b>Toilette benutzen und spülen</b><small class="block text-slate-500">Kurzhilfe folgt</small></button><button class="rounded-2xl border border-slate-200 p-4 text-left"><b>Fehler beheben</b><small class="block text-slate-500">Kurzhilfe folgt</small></button></div><p class="mt-5 text-center text-[11px] leading-4 text-slate-400">Demo-Anleitung für Thetford C223-CS. Vor Verwendung immer Fahrzeug- und Herstellerhinweise beachten.</p></div>`
+}
+function awningMenu(){
+
+screen.innerHTML = `
+<div class="screen-in">
+
+${head()}
+
+<div class="mt-5 rounded-xl border-l-4 border-yellow-500 bg-yellow-50 p-4 text-sm">
+
+<b>Direkte Hilfe:</b><br>
+Thule Omnistor Markise bedienen.
+
+</div>
+
+<div class="mt-5 grid gap-3">
+
+<button onclick="startAwningHelp()">
+class="flex items-center gap-4 rounded-2xl bg-yellow-50 p-4 text-left">
+
+<span class="grid h-11 w-11 place-items-center rounded-xl bg-white">
+☀️
+</span>
+
+<span>
+<b class="block">Markise ausfahren</b>
+<small>7 bebilderte Schritte</small>
+</span>
+
+<span class="ml-auto text-2xl">›</span>
+
+</button>
+
+</div>
+
+</div>`;
+}
+function freshwaterMenu(){
+ screen.innerHTML=`<div class="screen-in">${head()}<div class="mt-5 rounded-xl border-l-4 border-cyan-500 bg-cyan-50 p-4 text-sm"><b>Direkte Hilfe:</b><br>Füllen Sie das Frischwassersystem dieses Fahrzeugs Schritt für Schritt auf.</div><div class="mt-5 grid gap-3"><button onclick="startFreshwaterHelp()" class="flex items-center gap-4 rounded-2xl bg-cyan-50 p-4 text-left text-cyan-950"><span class="grid h-11 w-11 place-items-center rounded-xl bg-white text-cyan-600">${svgIcon('water','h-7 w-7')}</span><span><b class="block">Frischwasser auffüllen</b><small>8 bebilderte Schritte</small></span><span class="ml-auto text-2xl">›</span></button></div><p class="mt-5 text-center text-[11px] leading-4 text-slate-400">Fahrzeugspezifische Demo für WM-007. Abweichende Einbaupositionen und Ventilstellungen sind bei anderen Fahrzeugen möglich.</p></div>`
+}
+window.freshwaterMenu=freshwaterMenu;
+window.startFreshwaterHelp=()=>{freshwaterStep=0;renderFreshwaterStep()};
+function renderFreshwaterStep(){
+ const st=freshwaterSteps[freshwaterStep],pct=((freshwaterStep+1)/freshwaterSteps.length)*100;
+ screen.innerHTML=`<div class="screen-in"><div class="flex items-center justify-between"><button onclick="freshwaterMenu()" class="font-bold text-blue-600">← Übersicht</button><span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-black">${freshwaterStep+1} / ${freshwaterSteps.length}</span></div><div class="mt-4 h-2 overflow-hidden rounded-full bg-slate-100"><div class="h-full rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 transition-all duration-500" style="width:${pct}%"></div></div><div class="mt-5 overflow-hidden rounded-2xl bg-slate-100"><img src="${st.image}" alt="Illustration: ${st.title}" class="h-52 w-full object-cover" loading="eager"></div><p class="mt-5 text-xs font-black uppercase tracking-widest text-cyan-700">Schritt ${freshwaterStep+1}</p><h3 class="mt-2 text-2xl font-black">${st.title}</h3><p class="mt-3 leading-6 text-slate-600">${st.text}</p><div class="mt-4 rounded-xl border-l-4 border-amber-400 bg-amber-50 p-4 text-sm text-amber-950"><b>Wichtig:</b> ${st.tip}</div><div class="mt-5 grid grid-cols-2 gap-3"><button onclick="prevFreshwaterStep()" class="rounded-xl border border-slate-200 p-3 font-black ${freshwaterStep===0?'pointer-events-none opacity-40':''}">Zurück</button><button onclick="nextFreshwaterStep()" class="rounded-xl bg-brand p-3 font-black text-white">${freshwaterStep===freshwaterSteps.length-1?'Abschließen':'Weiter'}</button></div><p class="mt-4 text-center text-[10px] text-slate-400">Fahrzeug- und Herstelleranleitung haben Vorrang.</p></div>`
+}
+window.prevFreshwaterStep=()=>{if(freshwaterStep>0){freshwaterStep--;renderFreshwaterStep()}};
+window.nextFreshwaterStep=()=>{if(freshwaterStep<freshwaterSteps.length-1){freshwaterStep++;renderFreshwaterStep()}else{freshwaterFinished()}};
+function freshwaterFinished(){
+ screen.innerHTML=`<div class="screen-in flex min-h-[550px] flex-col items-center justify-center text-center"><span class="grid h-24 w-24 place-items-center rounded-full bg-green-100 text-green-600">${svgIcon('check','h-14 w-14')}</span><h3 class="mt-7 text-3xl font-black">Frischwassersystem betriebsbereit.</h3><p class="mt-3 max-w-sm text-slate-500">Tank gefüllt, Ablasshähne geschlossen, Frostwächter kontrolliert und Leitungen entlüftet.</p><button onclick="freshwaterMenu()" class="mt-7 rounded-xl bg-brand px-6 py-3 font-black text-white">Weitere Wasserhilfe</button></div>`;
+ const d=document.getElementById('dashboard');d.classList.remove('hidden');setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'center'}),700)
+}
+function heatingMenu(){
+ screen.innerHTML=`<div class="screen-in">${head()}<div class="mt-5 rounded-xl border-l-4 border-orange-500 bg-orange-50 p-4 text-sm"><b>Direkte Hilfe:</b><br>Wählen Sie die benötigte Heizungsfunktion.</div><div class="mt-5 grid gap-3"><button onclick="startHeatingHelp()" class="flex items-center gap-4 rounded-2xl bg-orange-50 p-4 text-left text-orange-950"><span class="grid h-11 w-11 place-items-center rounded-xl bg-white text-orange-600">${svgIcon('flame','h-7 w-7')}</span><span><b class="block">Raumheizung einschalten</b><small>5 bebilderte Schritte</small></span><span class="ml-auto text-2xl">›</span></button><button class="rounded-2xl border border-slate-200 p-4 text-left"><b>Warmwasser aktivieren</b><small class="block text-slate-500">Kurzhilfe folgt</small></button><button class="rounded-2xl border border-slate-200 p-4 text-left"><b>Heizung wird nicht warm</b><small class="block text-slate-500">Diagnose folgt</small></button><button class="rounded-2xl border border-slate-200 p-4 text-left"><b>Fehlercode verstehen</b><small class="block text-slate-500">Diagnose folgt</small></button></div><p class="mt-5 text-center text-[11px] leading-4 text-slate-400">Demo-Anleitung für eine Truma-Combi-Heizung mit CP-plus-ähnlichem Bedienteil. Die konkrete Fahrzeug- und Herstelleranleitung hat Vorrang.</p></div>`
+}
+window.heatingMenu=heatingMenu;
+window.startHeatingHelp=()=>{heatingStep=0;renderHeatingStep()};
+function renderHeatingStep(){
+ const st=heatingSteps[heatingStep],pct=((heatingStep+1)/heatingSteps.length)*100;
+ screen.innerHTML=`<div class="screen-in"><div class="flex items-center justify-between"><button onclick="heatingMenu()" class="font-bold text-blue-600">← Übersicht</button><span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-black">${heatingStep+1} / ${heatingSteps.length}</span></div><div class="mt-4 h-2 overflow-hidden rounded-full bg-slate-100"><div class="h-full rounded-full bg-gradient-to-r from-orange-500 to-teal-500 transition-all duration-500" style="width:${pct}%"></div></div><div class="mt-5 overflow-hidden rounded-2xl bg-slate-100"><img src="${st.image}" alt="Illustration: ${st.title}" class="h-52 w-full object-cover" loading="eager"></div><p class="mt-5 text-xs font-black uppercase tracking-widest text-orange-600">Schritt ${heatingStep+1}</p><h3 class="mt-2 text-2xl font-black">${st.title}</h3><p class="mt-3 leading-6 text-slate-600">${st.text}</p><div class="mt-4 rounded-xl border-l-4 border-amber-400 bg-amber-50 p-4 text-sm text-amber-950"><b>Wichtig:</b> ${st.tip}</div><div class="mt-5 grid grid-cols-2 gap-3"><button onclick="prevHeatingStep()" class="rounded-xl border border-slate-200 p-3 font-black ${heatingStep===0?'pointer-events-none opacity-40':''}">Zurück</button><button onclick="nextHeatingStep()" class="rounded-xl bg-brand p-3 font-black text-white">${heatingStep===heatingSteps.length-1?'Abschließen':'Weiter'}</button></div><p class="mt-4 text-center text-[10px] text-slate-400">Illustrationen dienen der Orientierung und können vom eingebauten System abweichen.</p></div>`
+}
+window.prevHeatingStep=()=>{if(heatingStep>0){heatingStep--;renderHeatingStep()}};
+window.nextHeatingStep=()=>{if(heatingStep<heatingSteps.length-1){heatingStep++;renderHeatingStep()}else{heatingFinished()}};
+function heatingFinished(){
+ screen.innerHTML=`<div class="screen-in flex min-h-[550px] flex-col items-center justify-center text-center"><span class="grid h-24 w-24 place-items-center rounded-full bg-green-100 text-green-600">${svgIcon('check','h-14 w-14')}</span><h3 class="mt-7 text-3xl font-black">Raumheizung gestartet.</h3><p class="mt-3 max-w-sm text-slate-500">Prüfen Sie nach einigen Minuten den Warmluftstrom. Bei Störung die Fahrzeuganleitung beachten oder den Vermieter kontaktieren.</p><button onclick="heatingMenu()" class="mt-7 rounded-xl bg-brand px-6 py-3 font-black text-white">Weitere Heizungsfunktionen</button></div>`;
+ const d=document.getElementById('dashboard');d.classList.remove('hidden');setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'center'}),700)
+}
+
+window.startToiletHelp=()=>{toiletStep=0;renderToiletStep()};
+function renderToiletStep(){
+ const st=toiletSteps[toiletStep],pct=((toiletStep+1)/toiletSteps.length)*100;
+ screen.innerHTML=`<div class="screen-in"><div class="flex items-center justify-between"><button onclick="toiletMenu()" class="font-bold text-blue-600">← Übersicht</button><span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-black">${toiletStep+1} / ${toiletSteps.length}</span></div><div class="mt-4 h-2 overflow-hidden rounded-full bg-slate-100"><div class="h-full rounded-full bg-gradient-to-r from-blue-600 to-teal-500 transition-all duration-500" style="width:${pct}%"></div></div><div class="mt-5 overflow-hidden rounded-2xl bg-slate-100"><img src="${st.image}" alt="Illustration: ${st.title}" class="h-52 w-full object-cover" loading="eager"></div><p class="mt-5 text-xs font-black uppercase tracking-widest text-blue-600">Schritt ${toiletStep+1}</p><h3 class="mt-2 text-2xl font-black">${st.title}</h3><p class="mt-3 leading-6 text-slate-600">${st.text}</p><div class="mt-4 rounded-xl border-l-4 border-amber-400 bg-amber-50 p-4 text-sm text-amber-950"><b>Wichtig:</b> ${st.tip}</div><div class="mt-5 grid grid-cols-2 gap-3"><button onclick="prevToiletStep()" class="rounded-xl border border-slate-200 p-3 font-black ${toiletStep===0?'pointer-events-none opacity-40':''}">Zurück</button><button onclick="nextToiletStep()" class="rounded-xl bg-brand p-3 font-black text-white">${toiletStep===toiletSteps.length-1?'Abschließen':'Weiter'}</button></div><p class="mt-4 text-center text-[10px] text-slate-400">Illustrationen dienen der Orientierung und können vom realen Fahrzeug abweichen.</p></div>`
+}
+window.toiletMenu=toiletMenu;
+window.prevToiletStep=()=>{if(toiletStep>0){toiletStep--;renderToiletStep()}};
+window.nextToiletStep=()=>{if(toiletStep<toiletSteps.length-1){toiletStep++;renderToiletStep()}else{toiletFinished()}};
+function toiletFinished(){
+ screen.innerHTML=`<div class="screen-in flex min-h-[550px] flex-col items-center justify-center text-center"><span class="grid h-24 w-24 place-items-center rounded-full bg-green-100 text-green-600">${svgIcon('check','h-14 w-14')}</span><h3 class="mt-7 text-3xl font-black">Kassette wieder einsatzbereit.</h3><p class="mt-3 max-w-sm text-slate-500">Die Entleerung wurde Schritt für Schritt abgeschlossen.</p><button onclick="toiletMenu()" class="mt-7 rounded-xl bg-brand px-6 py-3 font-black text-white">Weitere Toilettenhilfe</button></div>`;
+ const d=document.getElementById('dashboard');d.classList.remove('hidden');setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'center'}),700)
+}
+window.guide=()=>{screen.innerHTML=`<div class="screen-in"><button onclick="home()" class="font-bold text-blue-600">← Zurück</button>${head()}<h4 class="mt-6 text-xl font-black">Kurzanleitung</h4><div class="mt-4 space-y-3">${['Versorgung prüfen','Gerät aktivieren','Einstellung wählen','Funktion kontrollieren'].map((x,i)=>`<button onclick="this.classList.toggle('bg-green-50')" class="flex w-full items-center gap-3 rounded-xl border p-3 text-left"><span class="grid h-8 w-8 place-items-center rounded-full bg-blue-600 font-black text-white">${i+1}</span><b>${x}</b></button>`).join('')}</div><button onclick="solved()" class="mt-5 w-full rounded-xl bg-green-600 p-4 font-black text-white">Hat funktioniert</button></div>`};
+window.solved=()=>{screen.innerHTML=`<div class="screen-in flex min-h-[550px] flex-col items-center justify-center text-center"><span class="grid h-24 w-24 place-items-center rounded-full bg-green-100 text-green-600">${svgIcon('check','h-14 w-14')}</span><h3 class="mt-7 text-3xl font-black">Problem gelöst.</h3><p class="mt-3 text-slate-500">Kein Supportanruf erforderlich.</p></div>`;const d=document.getElementById('dashboard');d.classList.remove('hidden');setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'center'}),500)};
+</script>
+<script>
+(function(){
+  const form = document.getElementById('whatsappContactForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('waName').value.trim();
+    const company = document.getElementById('waCompany').value.trim() || 'Nicht angegeben';
+    const fleet = document.getElementById('waFleet').value;
+    const request = document.getElementById('waRequest').value;
+    const message = document.getElementById('waMessage').value.trim();
+    const text = `🚐 Neue CampAssist Anfrage
+
+📌 Anliegen: ${request}
+
+👤 Name: ${name}
+
+🏢 Unternehmen: ${company}
+
+🚐 Fahrzeuge: ${fleet}
+
+📝 Nachricht:
+${message}
+
+Gesendet über die CampAssist Landingpage.`;
+    window.open('https://wa.me/491637221381?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+})();
+</script>
+<script src="assets/js/guide-loader.js"></script></body></html>

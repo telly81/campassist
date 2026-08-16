@@ -1,0 +1,55 @@
+{
+  "id": "dometic-kuehlschrank",
+  "title": "Dometic Kühlschrank",
+  "component": "Kühlschrank",
+  "icon": "snow",
+  "emoji": "❄️",
+  "accent": "blue",
+  "vehicle": "WM-007",
+  "description": "Kühlschrankmodus auswählen und Grundfunktion prüfen.",
+  "actions": [
+    {
+      "label": "Kühlschrank starten",
+      "description": "5 Schritte",
+      "emoji": "❄️"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Betriebsart prüfen",
+      "text": "Prüfen Sie, ob Landstrom, Fahrtbetrieb oder Gasbetrieb genutzt werden soll.",
+      "image": "assets/fridge/01.jpg",
+      "tip": "Betriebsart hängt vom Standort und Aufenthaltsmodus ab."
+    },
+    {
+      "title": "Kühlschrank einschalten",
+      "text": "Schalten Sie den Kühlschrank am Bedienpanel ein.",
+      "image": "assets/fridge/02.jpg",
+      "tip": "Symbole können je nach Modell abweichen."
+    },
+    {
+      "title": "Automatik oder Energiequelle wählen",
+      "text": "Wählen Sie Automatik oder die passende Energiequelle.",
+      "image": "assets/fridge/03.jpg",
+      "tip": "Gasbetrieb nur verwenden, wenn Gasversorgung freigegeben ist."
+    },
+    {
+      "title": "Tür richtig schließen",
+      "text": "Prüfen Sie, ob die Kühlschranktür vollständig geschlossen und verriegelt ist.",
+      "image": "assets/fridge/04.jpg",
+      "tip": "Eine offene Tür verhindert zuverlässiges Kühlen."
+    },
+    {
+      "title": "Kühlung abwarten",
+      "text": "Warten Sie mehrere Stunden, bis die Zieltemperatur erreicht ist.",
+      "image": "assets/fridge/05.jpg",
+      "tip": "Wohnmobilkühlschränke kühlen langsamer als Haushaltsgeräte."
+    }
+  ],
+  "successTitle": "Kühlschrank gestartet.",
+  "successText": "Die gewählte Betriebsart ist aktiv.",
+  "warnings": [
+    "Bei Gasgeruch Gasbetrieb nicht verwenden.",
+    "Während der Fahrt Herstellerhinweise beachten."
+  ]
+}

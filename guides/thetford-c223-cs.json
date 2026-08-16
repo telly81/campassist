@@ -1,0 +1,54 @@
+{
+  "id": "thetford-c223-cs",
+  "title": "Thetford C223-CS",
+  "component": "Toilette",
+  "icon": "toilet",
+  "emoji": "🚽",
+  "accent": "teal",
+  "vehicle": "WM-007",
+  "description": "Toilettenkassette sicher entleeren.",
+  "actions": [
+    {
+      "label": "Kassette entleeren",
+      "description": "5 bebilderte Schritte",
+      "emoji": "🚽"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Serviceklappe öffnen",
+      "text": "Den Toilettenschieber vollständig schließen. Anschließend die Serviceklappe außen am Fahrzeug öffnen.",
+      "image": "assets/toilet/01-serviceklappe.jpg",
+      "tip": "Die Kassette niemals mit geöffnetem Schieber herausziehen."
+    },
+    {
+      "title": "Kassette entriegeln",
+      "text": "Die orange Verriegelung anheben und die Kassette am Griff vorsichtig aus dem Fach ziehen.",
+      "image": "assets/toilet/02-entriegelung.jpg",
+      "tip": "Wenn die Kassette blockiert, nicht mit Gewalt ziehen."
+    },
+    {
+      "title": "Zur Entsorgungsstation bringen",
+      "text": "Den ausziehbaren Griff vollständig ausklappen und die Kassette zu einer zugelassenen Entsorgungsstation bringen.",
+      "image": "assets/toilet/03-kassette-herausziehen.jpg",
+      "tip": "Nur an einer vorgesehenen Entsorgungsstelle entleeren."
+    },
+    {
+      "title": "Kassette kontrolliert entleeren",
+      "text": "Kassette aufrecht stellen, Ausguss nach oben drehen und Verschlusskappe abnehmen. Zum Entleeren den Ausguss nach unten halten und die Entlüftungstaste drücken.",
+      "image": "assets/toilet/04-entleeren-und-spuelen.jpg",
+      "tip": "Langsam kippen, um Spritzer zu vermeiden."
+    },
+    {
+      "title": "Spülen und wieder einsetzen",
+      "text": "Etwa 5 Liter Wasser einfüllen, Kappe schließen, Kassette vorsichtig schwenken und erneut entleeren. Danach Kassette einschieben und Serviceklappe schließen.",
+      "image": "assets/toilet/05-kassette-einsetzen.jpg",
+      "tip": "Bei weiterer Nutzung nach Herstellerangabe vorbereiten."
+    }
+  ],
+  "successTitle": "Kassette wieder einsatzbereit.",
+  "successText": "Die Entleerung wurde Schritt für Schritt abgeschlossen.",
+  "warnings": [
+    "Kassette niemals mit geöffnetem Schieber herausziehen."
+  ]
+}
