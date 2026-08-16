@@ -1,0 +1,49 @@
+{
+  "title": "Thetford C223-CS",
+  "component": "Toilette",
+  "vehicle": "WM-007",
+  "vehicleHint": "Beispiel-Fahrzeug",
+  "icon": "toilet",
+  "accent": "teal",
+  "emoji": "🚽",
+  "status": "beispiel",
+  "description": "Kassettentoilette entleeren – Schritt für Schritt.",
+  "actions": [
+    { "label": "Kassette entleeren", "description": "5 bebilderte Schritte", "emoji": "🚽", "mode": "steps" }
+  ],
+  "steps": [
+    {
+      "title": "Serviceklappe öffnen",
+      "text": "Den Toilettenschieber vollständig schließen. Anschließend die Serviceklappe außen am Fahrzeug öffnen.",
+      "image": "assets/toilet/01-serviceklappe.jpg",
+      "tip": "Die Kassette niemals mit geöffnetem Schieber herausziehen."
+    },
+    {
+      "title": "Kassette entriegeln",
+      "text": "Die orange Verriegelung anheben und die Kassette am Griff vorsichtig aus dem Fach ziehen.",
+      "image": "assets/toilet/02-entriegelung.jpg",
+      "tip": "Wenn die Kassette blockiert, nicht mit Gewalt ziehen. Zuerst prüfen, ob der Schieber vollständig geschlossen ist."
+    },
+    {
+      "title": "Zur Entsorgungsstation bringen",
+      "text": "Den ausziehbaren Griff vollständig ausklappen und die Kassette zu einer zugelassenen Entsorgungsstation rollen oder tragen.",
+      "image": "assets/toilet/03-kassette-herausziehen.jpg",
+      "tip": "Nur an einer dafür vorgesehenen Entsorgungsstelle entleeren."
+    },
+    {
+      "title": "Kassette kontrolliert entleeren",
+      "text": "Kassette aufrecht stellen, Ausguss nach oben drehen und Verschlusskappe abnehmen. Zum Entleeren den Ausguss nach unten halten und gleichzeitig die Entlüftungstaste drücken.",
+      "image": "assets/toilet/04-entleeren-und-spuelen.jpg",
+      "tip": "Langsam kippen. Die Entlüftungstaste vermindert Spritzen und ungleichmäßiges Ausgießen."
+    },
+    {
+      "title": "Spülen und wieder einsetzen",
+      "text": "Etwa 5 Liter Wasser einfüllen, Kappe schließen, Kassette vorsichtig schwenken und erneut entleeren. Griff einklappen, Kassette einschieben und Serviceklappe schließen.",
+      "image": "assets/toilet/05-kassette-einsetzen.jpg",
+      "tip": "Bei weiterer Nutzung die Kassette anschließend nach Herstellerangabe wieder vorbereiten."
+    }
+  ],
+  "successTitle": "Kassette wieder einsatzbereit.",
+  "successText": "Die Entleerung wurde Schritt für Schritt abgeschlossen.",
+  "disclaimer": "Beispielinhalt zur Veranschaulichung. Fahrzeug- und Herstelleranleitung haben immer Vorrang."
+}
