@@ -344,24 +344,20 @@ Gesendet über die CampAssist Landingpage.`;
 </script>
 <script src="assets/js/guide-loader.js"></script>
 <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-const mobileMenuButton =
-    document.getElementById('mobileMenuButton');
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
 
-const mobileMenu =
-    document.getElementById('mobileMenu');
+    const mobileMenu =
+        document.getElementById("mobileMenu");
 
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
+    if (!mobileMenuButton || !mobileMenu) return;
 
-document.querySelectorAll('#mobileMenu a')
-    .forEach(link => {
-
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-
+    mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
     });
 
-</script></body></html>
+});
+</script>
+</body></html>
