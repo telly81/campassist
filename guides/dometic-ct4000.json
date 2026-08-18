@@ -24,31 +24,31 @@
     {
       "title": "Außenklappe öffnen & Kassette entriegeln",
       "text": "Öffne die äußere Serviceklappe mit dem Schlüssel. Ziehe die grüne Entriegelungslasche an der Unterseite der Kassette hoch und ziehe die Kassette am Tragegriff vorsichtig heraus.",
-      "image": "assets/toilet/awning/toilet02-kassette-entriegeln.png",
+      "image": "assets/awning/toilet/toilet02-kassette-entriegeln.png",
       "tip": "Sollte die Kassette blockieren, nicht mit Gewalt ziehen. Prüfe zuerst, ob der Schieber im Bad ganz geschlossen ist."
     },
     {
       "title": "Transport zur Entsorgungsstation",
       "text": "Bringe die Kassette aufrecht zum ausgewiesenen Entsorgungsbereich für Chemie-WCs. Nutze bei Bedarf den ausziehbaren Trolley-Griff und die Rollen.",
-      "image": "assets/toilet/awning/03-transport.png",
+      "image": "assets/awning/toilet/03-transport.png",
       "tip": "Bitte ausschließlich an dafür vorgesehenen Entsorgungsstationen entleeren."
     },
     {
       "title": "Kassette entleeren",
       "text": "Drehe das Ausgussrohr nach außen und schraube den Verschlussdeckel ab. Neige die Kassette über den Entsorgungsschacht und halte den grünen Entlüftungsknopf mit dem Daumen gedrückt.",
-      "image": "assets/toilet/awning/04-entleeren-knopf.png",
+      "image": "assets/awning/toilet/04-entleeren-knopf.png",
       "tip": "Der Entlüftungsknopf sorgt für einen gleichmäßigen Ablauf ohne Gluckern und Spritzen."
     },
     {
       "title": "Spülen & Säubern",
       "text": "Fülle über das Ausgussrohr etwas Frischwasser nach, schraube den Deckel auf, schüttele die Kassette leicht durch und entleere sie erneut. Wiederhole den Vorgang, bis das Ablaufwasser klar ist.",
-      "image": "assets/toilet/awning/05-spuelen.png",
+      "image": "assets/awning/toilet/05-spuelen.png",
       "tip": "Reinige das Ausgussrohr und die Kappe gründlich von außen, bevor du sie verschließt."
     },
     {
       "title": "Sanitärzusatz & Einsetzen",
       "text": "Gib den vom Hersteller empfohlenen Sanitärzusatz (Flüssigkeit oder Tab/Sachet) zusammen mit ca. 2 Litern Wasser in die Kassette. Schiebe die Kassette zurück in das Servicefach, bis sie hörbar einrastet, und verriegele die Serviceklappe.",
-      "image": "assets/toilet/awning/06-zusatz-einsetzen.png",
+      "image": "assets/awning/toilet/06-zusatz-einsetzen.png",
       "tip": "Pflege die Kassetten- und Schieberdichtung regelmäßig mit Silikonspray, um Undichtigkeiten und Gerüche zu vermeiden."
     }
   ],
