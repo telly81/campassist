@@ -67,24 +67,48 @@
       </div>
     </section>
 
-    <!-- 3. Live-Test Startbereich -->
-    <section id="m-demo" class="scroll-mt-16 rounded-2xl border border-slate-200 bg-white p-5 shadow-md text-center">
-      <span class="text-xs font-black uppercase tracking-widest text-blue-600">Interaktive Demo</span>
-      <h2 class="text-xl font-black text-slate-900 mt-1">Anleitung wählen</h2>
-      <p class="text-xs text-slate-500 mt-1">Tippen Sie auf ein Gerät, um den Schritt-für-Schritt Fokusmodus zu starten:</p>
+    <!-- 3. Hervorgehobener Live-Test Bereich mit Vorschau -->
+    <section id="m-demo" class="scroll-mt-16 rounded-3xl border-2 border-blue-500 bg-gradient-to-b from-blue-50 via-white to-slate-50 p-5 shadow-xl">
+      <div class="text-center">
+        <span class="inline-block rounded-full bg-blue-600 px-3 py-1 text-xs font-black text-white uppercase tracking-wider shadow-sm">Interaktive Live-Demo</span>
+        <h2 class="text-2xl font-black text-slate-900 mt-2">Jetzt selbst ausprobieren</h2>
+        <p class="text-xs font-medium text-slate-600 mt-1">Wählen Sie ein Gerät und testen Sie die interaktive Schritt-für-Schritt Hilfe:</p>
+      </div>
 
-      <div class="grid grid-cols-3 gap-2.5 mt-4">
-        <button onclick="openWizard('Heizung')" class="p-3.5 bg-slate-50 border-2 border-orange-500 rounded-2xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-2xl">🔥</span>
-          <span class="block text-xs font-bold mt-1 text-slate-800">Heizung</span>
+      <!-- Tabs für Geräteauswahl -->
+      <div class="grid grid-cols-3 gap-2 mt-4">
+        <button onclick="selectPreview('Heizung')" id="tab-Heizung" class="tab-btn p-3 bg-white border-2 border-blue-600 rounded-xl text-center shadow-md font-bold text-xs">
+          <span class="block text-2xl mb-1">🔥</span> Heizung
         </button>
-        <button onclick="openWizard('Toilette')" class="p-3.5 bg-slate-50 border-2 border-teal-600 rounded-2xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-2xl">🚽</span>
-          <span class="block text-xs font-bold mt-1 text-slate-800">Toilette</span>
+        <button onclick="selectPreview('Toilette')" id="tab-Toilette" class="tab-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm font-bold text-xs text-slate-600">
+          <span class="block text-2xl mb-1">🚽</span> Toilette
         </button>
-        <button onclick="openWizard('Markise')" class="p-3.5 bg-slate-50 border-2 border-yellow-500 rounded-2xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-2xl">☀️</span>
-          <span class="block text-xs font-bold mt-1 text-slate-800">Markise</span>
+        <button onclick="selectPreview('Markise')" id="tab-Markise" class="tab-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm font-bold text-xs text-slate-600">
+          <span class="block text-2xl mb-1">☀️</span> Markise
+        </button>
+      </div>
+
+      <!-- Vorschau-Karte -->
+      <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-md">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+          <div>
+            <span class="text-[10px] font-black uppercase tracking-wider text-blue-600">Vorschau</span>
+            <h3 id="prevTitle" class="font-black text-lg text-slate-900">Truma Combi 6</h3>
+          </div>
+          <span id="prevBadge" class="rounded-lg bg-blue-50 px-2.5 py-1 text-xs font-bold text-blue-700">5 Schritte</span>
+        </div>
+
+        <!-- Vorschaubild -->
+        <div class="aspect-[4/3] w-full rounded-xl bg-slate-100 overflow-hidden mt-3 border border-slate-200 relative">
+          <img id="prevImage" src="assets/heating/01-gasversorgung.jpg" class="h-full w-full object-cover" alt="Vorschau">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-3">
+            <p id="prevDesc" class="text-xs text-white font-medium">Raumheizung Schritt für Schritt einschalten.</p>
+          </div>
+        </div>
+
+        <!-- Großer CTA Button zum Starten des Fullscreen Assistenten -->
+        <button id="prevStartBtn" onclick="openWizard(activePreview)" class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-teal-500 py-3.5 text-base font-black text-white shadow-lg active:scale-[0.98]">
+          <span>▶</span> Anleitung jetzt starten
         </button>
       </div>
     </section>
@@ -153,10 +177,9 @@
     </div>
   </footer>
 
-  <!-- FULLSCREEN ASSISTENT (Versteckt bis zur Auswahl) -->
+  <!-- FULLSCREEN ASSISTENT MODAL -->
   <div id="wizardModal" class="fixed inset-0 z-50 hidden bg-white flex flex-col justify-between p-4 overflow-y-auto">
     <div>
-      <!-- Top Bar im Assistenten -->
       <div class="flex items-center justify-between pb-3 border-b border-slate-200">
         <div>
           <span id="wizCompName" class="font-black text-base text-slate-900 block">Gerät</span>
@@ -165,17 +188,14 @@
         <button onclick="closeWizard()" class="grid h-10 w-10 place-items-center rounded-xl bg-slate-100 text-slate-600 font-bold text-lg active:bg-slate-200">✕</button>
       </div>
 
-      <!-- Fortschrittsbalken -->
       <div class="h-1.5 w-full bg-slate-100 rounded-full mt-3 overflow-hidden">
         <div id="wizProgressBar" class="h-full bg-blue-600 transition-all duration-300" style="width: 20%;"></div>
       </div>
 
-      <!-- Bild (800x600 Format) -->
       <div class="aspect-[4/3] w-full rounded-2xl bg-slate-200 overflow-hidden mt-4 border border-slate-200 shadow-sm">
         <img id="wizImage" src="" class="h-full w-full object-cover" alt="Schritt Grafik">
       </div>
 
-      <!-- Schritt Text-Inhalt -->
       <div class="mt-4">
         <p id="wizStepNum" class="text-xs font-black uppercase tracking-wider text-teal-600">Schritt 1</p>
         <h3 id="wizStepTitle" class="font-black text-xl text-slate-900 mt-0.5">Titel</h3>
@@ -187,7 +207,6 @@
       </div>
     </div>
 
-    <!-- Große Touch Buttons unten -->
     <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-6 bg-white sticky bottom-0">
       <button id="wizBtnPrev" onclick="wizPrev()" class="py-4 rounded-xl border-2 border-slate-300 bg-white text-base font-bold text-slate-700 active:bg-slate-100">Zurück</button>
       <button id="wizBtnNext" onclick="wizNext()" class="py-4 rounded-xl bg-slate-900 text-white text-base font-bold active:bg-slate-800">Weiter</button>
@@ -198,6 +217,8 @@
     const db = {
       'Markise': {
         title: 'Thule Omnistor 5200',
+        description: 'Markise sicher ausfahren, abstützen und wieder einfahren.',
+        previewImg: 'assets/awning/01.jpg',
         steps: [
           { title: 'Markise entriegeln', text: 'Öffnen Sie die Verriegelung der Markise und geben Sie die Frontleiste frei.', image: 'assets/awning/01.jpg', tip: 'Niemals mit Gewalt öffnen.' },
           { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel vollständig in die dafür vorgesehene Aufnahme.', image: 'assets/awning/02.jpg', tip: 'Kurbel vollständig einstecken, bevor Sie drehen.' },
@@ -210,6 +231,8 @@
       },
       'Heizung': {
         title: 'Truma Combi 6',
+        description: 'Raumheizung Schritt für Schritt einschalten.',
+        previewImg: 'assets/heating/01-gasversorgung.jpg',
         steps: [
           { title: 'Gasversorgung sicher prüfen', text: 'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist.', image: 'assets/heating/01-gasversorgung.jpg', tip: 'Bei Gasgeruch sofort Gaszufuhr schließen.' },
           { title: '12-V-Bordnetz einschalten', text: 'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein.', image: 'assets/heating/02-bordnetz.jpg', tip: 'Steuerung benötigt Bordspannung.' },
@@ -220,25 +243,54 @@
       },
       'Toilette': {
         title: 'Dometic CT 4000',
+        description: 'WC-Kassette sauber entleeren und vorbereiten.',
+        previewImg: 'assets/awning/toilet/01-innenraum-schieber.png',
         steps: [
           { title: 'Vorbereitung im Innenraum', text: 'Stelle sicher, dass die Schieber-Klappe der Toilette im Bad vollständig geschlossen ist.', image: 'assets/awning/toilet/01-innenraum-schieber.png', tip: 'Niemals gewaltsam ziehen!' },
           { title: 'Außenklappe öffnen & entriegeln', text: 'Serviceklappe öffnen, grüne Lasche anheben und Kassette am Griff herausziehen.', image: 'assets/awning/toilet/02-kassette-entriegeln.png', tip: 'Auf ebene Führung achten.' },
           { title: 'Transport zur Station', text: 'Bringe die Kassette aufrecht zum Entsorgungsbereich für Chemie-WCs.', image: 'assets/awning/toilet/03-transport.png', tip: 'Nur an ausgewiesenen Stationen nutzen.' },
-          { title: 'Kassette entleeren', text: 'Ausgussrohr drehen, Deckel abnehmen und beim Kippen den grünen Entlüftungsknopf drücken.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Entlüftungsknopf verhindert Gluckern.' },
+          { title: 'Kassette entleeren', text: 'Ausgussrohr drehen, Deckel abnehmen und beim Kippen den grünen Entlüftunktopf drücken.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Entlüftungsknopf verhindert Gluckern.' },
           { title: 'Spülen & Säubern', text: 'Frischwasser nachfüllen, durchschütteln und erneut entleeren.', image: 'assets/awning/toilet/05-spuelen.png', tip: 'Ausgussrohr sauber spülen.' },
           { title: 'Sanitärzusatz & Einsetzen', text: 'Sanitärzusatz mit 2 Liter Wasser einfüllen und Kassette einschieben bis sie einrastet.', image: 'assets/awning/toilet/06-zusatz-einsetzen.png', tip: 'Dichtung regelmäßig pflegen.' }
         ]
       }
     };
 
-    let activeComp = 'Heizung';
+    let activePreview = 'Heizung';
     let activeStep = 0;
 
+    function selectPreview(comp) {
+      activePreview = comp;
+      const data = db[comp];
+
+      // Tab Styling anpassen
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.replace('border-blue-600', 'border-slate-200');
+        b.classList.replace('text-slate-900', 'text-slate-600');
+        b.classList.replace('shadow-md', 'shadow-sm');
+      });
+      const activeTab = document.getElementById('tab-' + comp);
+      activeTab.classList.replace('border-slate-200', 'border-blue-600');
+      activeTab.classList.replace('text-slate-600', 'text-slate-900');
+      activeTab.classList.replace('shadow-sm', 'shadow-md');
+
+      // Vorschau-Daten aktualisieren
+      document.getElementById('prevTitle').textContent = data.title;
+      document.getElementById('prevBadge').textContent = `${data.steps.length} Schritte`;
+      document.getElementById('prevDesc').textContent = data.description;
+
+      const img = document.getElementById('prevImage');
+      img.src = data.previewImg;
+      img.onerror = function() {
+        this.src = `https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(data.title)}`;
+      };
+    }
+
     function openWizard(comp) {
-      activeComp = comp;
       activeStep = 0;
+      activePreview = comp;
       document.getElementById('wizardModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; // Scrollen der Hauptseite verhindern
+      document.body.style.overflow = 'hidden';
       renderWiz();
     }
 
@@ -248,7 +300,7 @@
     }
 
     function renderWiz() {
-      const data = db[activeComp];
+      const data = db[activePreview];
       const st = data.steps[activeStep];
       const total = data.steps.length;
 
@@ -292,7 +344,7 @@
     }
 
     function wizNext() {
-      const data = db[activeComp];
+      const data = db[activePreview];
       if (activeStep < data.steps.length - 1) {
         activeStep++;
         renderWiz();
@@ -302,7 +354,7 @@
       }
     }
 
-    // Burger Menü & WhatsApp Formular Logik
+    // Menü & Formular Event-Listener
     document.addEventListener('DOMContentLoaded', function() {
       const btn = document.getElementById('mMenuBtn');
       const nav = document.getElementById('mNav');
@@ -342,6 +394,9 @@
           window.open(url, '_blank');
         };
       }
+
+      // Initial erste Vorschau laden
+      selectPreview('Heizung');
     });
   </script>
 </body>
