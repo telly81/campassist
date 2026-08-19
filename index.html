@@ -35,6 +35,7 @@
     <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM15 14h2v2h-2zM19 14h2v4h-2zM14 19h4v2h-4zM20 20h1v1h-1z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4M11 19h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path d="M7 3 4 5c0 8 7 15 15 15l2-3-5-3-2 2c-3-1-5-3-6-6l2-2-3-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   </svg>
@@ -152,7 +153,7 @@
               <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold">WM-007</span>
             </div>
 
-            <!-- Stabile Mobile-Grafik mit sauber verankerten Hotspots -->
+            <!-- Mobile-Grafik mit sauber verankerten Hotspots -->
             <div class="relative mt-5 rounded-2xl border border-slate-200 bg-gradient-to-b from-sky-50 to-emerald-50/30 p-4">
               <div class="relative mx-auto my-2 min-h-[180px] w-full max-w-[320px] rounded-2xl border-2 border-slate-300 bg-white shadow-sm p-3">
                 
@@ -164,7 +165,6 @@
                 <div class="absolute -bottom-3 right-6 h-7 w-7 rounded-full border-2 border-slate-600 bg-slate-300"></div>
 
                 <!-- Hotspots -->
-                <!-- 1. Markise (Dach) -->
                 <div class="absolute -top-5 left-1/2 -translate-x-1/2">
                   <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" data-guide="thule-omnistor" class="component hotspot flex items-center gap-1.5 rounded-full border-2 border-white bg-yellow-500 px-3 py-1.5 text-xs font-bold text-white shadow-md">
                     <svg class="h-4 w-4"><use href="#i-sun"></use></svg>
@@ -172,7 +172,6 @@
                   </button>
                 </div>
 
-                <!-- 2. Heizung & 3. Toilette (Innenraum) -->
                 <div class="flex h-full items-center justify-between pt-4 px-2">
                   <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" data-guide="truma-combi-6" class="component hotspot flex items-center gap-1.5 rounded-xl border-2 border-white bg-orange-500 px-2.5 py-1.5 text-xs font-bold text-white shadow-md ring-2 ring-blue-500">
                     <svg class="h-4 w-4"><use href="#i-flame"></use></svg>
@@ -220,42 +219,23 @@
       </div>
     </section>
 
-    <!-- Roadmap -->
+    <!-- Abgespeckte Roadmap (Nur noch 3 funktionale Hauptpunkte) -->
     <section id="roadmap" class="bg-white py-14 md:py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-5">
         <div class="mx-auto max-w-3xl text-center">
           <p class="text-xs font-black uppercase tracking-widest text-blue-600 sm:text-sm">Roadmap</p>
-          <h2 class="mt-3 text-3xl font-black md:text-5xl">CampAssist wächst Schritt für Schritt.</h2>
+          <h2 class="mt-3 text-3xl font-black md:text-5xl">Verfügbare Anleitungen</h2>
+          <p class="mt-2 text-slate-600">Fokus auf die drei wichtigsten Komponenten im Wohnmobil.</p>
         </div>
 
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="mt-10 mx-auto max-w-xl">
           <article class="rounded-3xl border border-green-200 bg-white p-6 shadow-sm">
-            <span class="rounded-full bg-green-50 px-3 py-1.5 text-xs font-black text-green-700">✅ Bereits verfügbar</span>
-            <h3 class="mt-4 text-xl font-black">3 Haupt-Anleitungen</h3>
-            <ul class="mt-4 space-y-2.5 text-sm text-slate-700">
-              <li>✅ Truma Combi 6 Heizung</li>
-              <li>✅ Dometic CT 4000 Toilette</li>
-              <li>✅ Thule Omnistor 5200 Markise</li>
-              <li>✅ QR-Code Live-Demo</li>
-            </ul>
-          </article>
-          <article class="rounded-3xl border border-amber-200 bg-white p-6 shadow-sm">
-            <span class="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-black text-amber-700">🚧 In Entwicklung</span>
-            <h3 class="mt-4 text-xl font-black">Nächste Workflows</h3>
-            <ul class="mt-4 space-y-2.5 text-sm text-slate-700">
-              <li>🚧 Frischwasser auffüllen</li>
-              <li>🚧 Grauwasser entleeren</li>
-              <li>🚧 Dometic Kühlschrank bedienen</li>
-              <li>🚧 Landstrom anschließen</li>
-            </ul>
-          </article>
-          <article class="rounded-3xl border border-blue-200 bg-white p-6 shadow-sm">
-            <span class="rounded-full bg-blue-50 px-3 py-1.5 text-xs font-black text-blue-700">🔮 Geplant</span>
-            <h3 class="mt-4 text-xl font-black">Premium-Funktionen</h3>
-            <ul class="mt-4 space-y-2.5 text-sm text-slate-700">
-              <li>🔮 Vermieterportal mit Fahrzeugverwaltung</li>
-              <li>🔮 Eigene Logos und Branding</li>
-              <li>🔮 Interaktive Checklisten</li>
+            <span class="rounded-full bg-green-50 px-3 py-1.5 text-xs font-black text-green-700">✅ Live-Demo Bereit</span>
+            <h3 class="mt-4 text-xl font-black">In dieser Version enthalten:</h3>
+            <ul class="mt-4 space-y-3 text-sm font-medium text-slate-700">
+              <li class="flex items-center gap-2">✅ <b>Truma Combi 6</b> (Heizung & Warmwasser)</li>
+              <li class="flex items-center gap-2">✅ <b>Dometic CT 4000</b> (Toilettenkassette entleeren)</li>
+              <li class="flex items-center gap-2">✅ <b>Thule Omnistor 5200</b> (Markise richtig ausfahren)</li>
             </ul>
           </article>
         </div>
@@ -330,7 +310,374 @@
     };
   </script>
 
-  <!-- Robuste Mobile Menü Steuerung -->
+  <!-- Mobile Menü Steuerung -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const iconOpen = document.getElementById('menuIconOpen');
+      const iconClose = document.getElementById('menuIconClose');
+      const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (!menuBtn || !mobileMenu) return;
+
+      function toggleMenu(e) {
+        if(e) e.preventDefault();
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+
+      menuBtn.addEventListener('click', toggleMenu);
+      navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    });
+  </script>
+
+  <!-- WhatsApp Kontakt Formular -->
+  <script>
+    (function(){
+      const form = document.getElementById('whatsappContactForm');
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('waName').value.trim();
+        const company = document.getElementById('waCompany').value.trim() || 'Nicht angegeben';
+        const message = document.getElementById('waMessage').value.trim();
+        const text = `🚐 Neue CampAssist Anfrage\n\n👤 Name: ${name}\n🏢 Firma: ${company}\n📝 Nachricht:\n${message}`;
+        window.open('https://wa.me/491637221381?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      });
+    })();
+  </script>
+
+  <!-- Guide Loader Script -->
+  <script src="assets/js/guide-loader.js"></script>
+</body>
+</html><!doctype html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CampAssist ist die digitale Fahrzeughilfe für Wohnmobil- und Caravanvermieter.">
+  <title>CampAssist | Digitale Fahrzeughilfe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#07111f', aqua: '#14b8a6' },
+          boxShadow: { glow: '0 24px 80px rgba(37,99,235,.24)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient { background: linear-gradient(100deg, #2563eb, #14b8a6); -webkit-background-clip: text; color: transparent; }
+    .hotspot { animation: pulse 1.7s infinite; }
+    .scan-line { animation: scan 1.8s ease-in-out infinite; }
+    .screen-in { animation: enter .35s ease-out; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 #14b8a6aa; } 100% { box-shadow: 0 0 0 18px #14b8a600; } }
+    @keyframes scan { 0%, 100% { transform: translateY(0); opacity: .3; } 50% { transform: translateY(145px); opacity: 1; } }
+    @keyframes enter { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-950 antialiased">
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-6-6-11 0 4-2 6-4 8-2 2-3 4-2 6 1 3 3 4 5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c-2 0-3-1-3-3 0-1 1-3 3-5 0 2 3 3 3 5 0 2-1 3-3 3Z" fill="currentColor" opacity=".2"/></symbol>
+    <symbol id="i-toilet" viewBox="0 0 24 24"><path d="M7 3h8v7H7zM8 10h10c0 5-2 8-6 8v3H8v-3c-2-1-3-4-3-8h3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 7h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM15 14h2v2h-2zM19 14h2v4h-2zM14 19h4v2h-4zM20 20h1v1h-1z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4M11 19h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path d="M7 3 4 5c0 8 7 15 15 15l2-3-5-3-2 2c-3-1-5-3-6-6l2-2-3-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
+    <div class="mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
+      <a href="#start" class="flex min-w-0 items-center">
+        <img src="assets/brand/campassist-header.png" alt="CampAssist Logo" class="h-9 w-auto max-w-[60vw] object-contain sm:h-12">
+      </a>
+      
+      <nav class="hidden items-center gap-6 text-sm font-bold text-slate-600 xl:flex">
+        <a href="#problem" class="hover:text-blue-600">Problem</a>
+        <a href="#funktion" class="hover:text-blue-600">Funktionsweise</a>
+        <a href="#wow-demo" class="hover:text-blue-600">Live-Demo</a>
+        <a href="#vorteile" class="hover:text-blue-600">Vorteile</a>
+        <a href="#roadmap" class="hover:text-blue-600">Roadmap</a>
+        <a href="#kontakt" class="hover:text-blue-600">Kontakt</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#kontakt" class="hidden rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-slate-800 sm:inline-flex">Pilot anfragen</a>
+        <button id="mobileMenuBtn" type="button" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 xl:hidden">
+          <svg id="menuIconOpen" class="pointer-events-none h-5 w-5"><use href="#i-menu"></use></svg>
+          <svg id="menuIconClose" class="pointer-events-none hidden h-5 w-5"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-5 py-6 shadow-2xl xl:hidden">
+      <nav class="flex flex-col gap-3 text-base font-bold text-slate-700">
+        <a href="#problem" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Problem</a>
+        <a href="#funktion" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Funktionsweise</a>
+        <a href="#wow-demo" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Live-Demo</a>
+        <a href="#vorteile" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Vorteile</a>
+        <a href="#roadmap" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Roadmap</a>
+        <a href="#kontakt" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Kontakt</a>
+      </nav>
+      <div class="mt-6 border-t border-slate-100 pt-5">
+        <a href="#kontakt" class="mobile-nav-link flex min-h-[48px] w-full items-center justify-center rounded-xl bg-brand py-3.5 text-center font-bold text-white shadow-sm active:bg-slate-800">Pilot anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section id="start" class="relative overflow-hidden bg-white pb-12 pt-8 md:pb-24 md:pt-20">
+      <div class="absolute -left-20 top-20 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl"></div>
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+        <div class="relative">
+          <div class="flex flex-wrap gap-2 sm:gap-3">
+            <span class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-bold text-blue-700 sm:px-4 sm:py-2 sm:text-sm">Digitale Fahrzeughilfe für Vermieter</span>
+            <span class="rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-xs font-bold text-amber-800 sm:px-4 sm:py-2 sm:text-sm">🚀 Early Access · CampAssist v1.0</span>
+          </div>
+          <h1 class="mt-5 text-3xl font-black leading-[1.08] tracking-[-.04em] sm:mt-7 sm:text-5xl lg:text-7xl">Jede Fahrzeugtechnik in <span class="gradient">30 Sekunden</span> erklärt.</h1>
+          <p class="mt-4 text-base leading-7 text-slate-600 sm:mt-7 sm:text-xl sm:leading-8">Mieter scannen einen QR-Code direkt am Gerät und erhalten sofort eine verständliche, fahrzeugspezifische Hilfe.</p>
+          <div class="mt-6 flex flex-col gap-3 sm:mt-9 sm:flex-row">
+            <a href="#wow-demo" class="flex min-h-[52px] items-center justify-center rounded-xl bg-blue-600 px-7 py-4 text-center font-bold text-white shadow-glow active:bg-blue-700">Live-Demo starten</a>
+            <a href="#kontakt" class="flex min-h-[52px] items-center justify-center rounded-xl border border-slate-200 bg-white px-7 py-4 text-center font-bold active:bg-slate-100">Pilotprogramm anfragen</a>
+          </div>
+        </div>
+        <div class="rounded-3xl bg-brand p-6 text-white shadow-2xl sm:p-8">
+          <p class="text-xs font-black uppercase tracking-widest text-teal-400 sm:text-sm">In 3 Schritten</p>
+          <div class="mt-5 grid gap-3 sm:mt-6 sm:gap-4">
+            <div class="flex items-center gap-4 rounded-2xl bg-white/5 p-4 sm:p-5">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10 text-teal-300"><svg class="h-6 w-6"><use href="#i-qr"></use></svg></span>
+              <div><b>QR-Code scannen</b><p class="text-xs text-slate-400 sm:text-sm">Direkt an der Fahrzeugkomponente.</p></div>
+            </div>
+            <div class="flex items-center gap-4 rounded-2xl bg-white/5 p-4 sm:p-5">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10 text-teal-300"><svg class="h-6 w-6"><use href="#i-phone"></use></svg></span>
+              <div><b>Aufgabe auswählen</b><p class="text-xs text-slate-400 sm:text-sm">Bedienen, prüfen oder melden.</p></div>
+            </div>
+            <div class="flex items-center gap-4 rounded-2xl bg-white/5 p-4 sm:p-5">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10 text-teal-300"><svg class="h-6 w-6"><use href="#i-check"></use></svg></span>
+              <div><b>Problem lösen</b><p class="text-xs text-slate-400 sm:text-sm">Kurze, konkrete Schritte.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="bg-brand py-14 text-white md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-5">
+        <div class="text-center">
+          <p class="text-xs font-black uppercase tracking-widest text-teal-400 sm:text-sm">Problem</p>
+          <h2 class="mt-3 text-3xl font-black md:text-5xl">Kommt Ihnen das bekannt vor?</h2>
+        </div>
+        <div class="mt-8 grid gap-3 sm:mt-12 sm:gap-5 md:grid-cols-3">
+          <blockquote class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-base font-bold md:p-7 md:text-xl"><span class="shrink-0 text-teal-300"><svg class="h-7 w-7 md:h-8 md:w-8"><use href="#i-flame"></use></svg></span>„Wie schalte ich die Heizung ein?“</blockquote>
+          <blockquote class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-base font-bold md:p-7 md:text-xl"><span class="shrink-0 text-teal-300"><svg class="h-7 w-7 md:h-8 md:w-8"><use href="#i-toilet"></use></svg></span>„Wie entleere ich die Toilette?“</blockquote>
+          <blockquote class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-base font-bold md:p-7 md:text-xl"><span class="shrink-0 text-teal-300"><svg class="h-7 w-7 md:h-8 md:w-8"><use href="#i-sun"></use></svg></span>„Wie fahre ich die Markise aus?“</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live Demo -->
+    <section id="wow-demo" class="bg-slate-100 py-10 md:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-5">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-600 mb-2">Interaktive Demo</span>
+          <h2 class="text-2xl font-black sm:text-3xl md:text-5xl">Wohnmobil auswählen & Hilfe testen</h2>
+          <p class="mt-2 text-sm text-slate-600 md:mt-4 md:text-base">Klicken Sie auf eine Komponente und danach auf "QR-Code scannen".</p>
+        </div>
+        
+        <div class="mt-6 grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
+          <!-- Camper UI Container -->
+          <div class="rounded-3xl border border-slate-200 bg-white p-4 shadow-lg sm:p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-[10px] font-black uppercase tracking-widest text-blue-600">Demo-Fahrzeug</p>
+                <h3 class="text-lg font-black sm:text-xl">Weinsberg CaraSuite 650 MF</h3>
+              </div>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold">WM-007</span>
+            </div>
+
+            <!-- Mobile-Grafik mit sauber verankerten Hotspots -->
+            <div class="relative mt-5 rounded-2xl border border-slate-200 bg-gradient-to-b from-sky-50 to-emerald-50/30 p-4">
+              <div class="relative mx-auto my-2 min-h-[180px] w-full max-w-[320px] rounded-2xl border-2 border-slate-300 bg-white shadow-sm p-3">
+                
+                <!-- Fahrerkabine Kontur -->
+                <div class="absolute left-0 top-0 bottom-0 w-12 rounded-l-xl bg-slate-100/80 border-r border-slate-200"></div>
+                
+                <!-- Räder -->
+                <div class="absolute -bottom-3 left-6 h-7 w-7 rounded-full border-2 border-slate-600 bg-slate-300"></div>
+                <div class="absolute -bottom-3 right-6 h-7 w-7 rounded-full border-2 border-slate-600 bg-slate-300"></div>
+
+                <!-- Hotspots -->
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2">
+                  <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" data-guide="thule-omnistor" class="component hotspot flex items-center gap-1.5 rounded-full border-2 border-white bg-yellow-500 px-3 py-1.5 text-xs font-bold text-white shadow-md">
+                    <svg class="h-4 w-4"><use href="#i-sun"></use></svg>
+                    <span>Markise</span>
+                  </button>
+                </div>
+
+                <div class="flex h-full items-center justify-between pt-4 px-2">
+                  <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" data-guide="truma-combi-6" class="component hotspot flex items-center gap-1.5 rounded-xl border-2 border-white bg-orange-500 px-2.5 py-1.5 text-xs font-bold text-white shadow-md ring-2 ring-blue-500">
+                    <svg class="h-4 w-4"><use href="#i-flame"></use></svg>
+                    <span>Heizung</span>
+                  </button>
+
+                  <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" data-guide="dometic-ct4000" class="component hotspot flex items-center gap-1.5 rounded-xl border-2 border-white bg-teal-600 px-2.5 py-1.5 text-xs font-bold text-white shadow-md">
+                    <svg class="h-4 w-4"><use href="#i-toilet"></use></svg>
+                    <span>Toilette</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
+              <div class="rounded-xl bg-slate-50 p-3"><span class="text-[11px] text-slate-500 block">Ausgewählt:</span><b id="selectedName">Heizung</b></div>
+              <div class="rounded-xl bg-slate-50 p-3"><span class="text-[11px] text-slate-500 block">Modell:</span><b id="selectedModel">Truma Combi 6</b></div>
+            </div>
+            
+            <button id="scanButton" class="mt-4 min-h-[48px] w-full rounded-xl bg-gradient-to-r from-blue-600 to-teal-500 p-3 font-bold text-white shadow-md active:opacity-90">QR-Code dieser Komponente scannen</button>
+          </div>
+
+          <!-- Smartphone Screen Frame -->
+          <div class="relative mx-auto w-full max-w-md">
+            <div class="relative rounded-[2.2rem] border-[8px] border-brand bg-brand p-1.5 shadow-xl">
+              <div class="mx-auto my-1.5 h-1 w-16 rounded-full bg-slate-600"></div>
+              <div id="phoneScreen" class="min-h-[480px] rounded-[1.6rem] bg-white p-4">
+                <div class="flex min-h-[440px] flex-col items-center justify-center text-center">
+                  <span class="grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600"><svg class="h-8 w-8"><use href="#i-phone"></use></svg></span>
+                  <h3 class="mt-5 text-lg font-black">Bereit für die Live-Demo?</h3>
+                  <p class="mt-2 text-xs text-slate-500">Wählen Sie links eine Komponente und starten Sie den Scan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Event Trigger -->
+        <div id="dashboard" class="mt-10 hidden rounded-3xl bg-brand p-6 text-white shadow-2xl">
+          <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+            <div><p class="text-xs font-black uppercase tracking-widest text-teal-400">CampAssist Dashboard</p><h3 class="mt-1 text-xl font-black sm:text-2xl">Ein Supportanruf wurde vermieden.</h3></div>
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-green-400/15 text-green-300"><svg class="h-7 w-7"><use href="#i-check"></use></svg></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abgespeckte Roadmap (Nur noch 3 funktionale Hauptpunkte) -->
+    <section id="roadmap" class="bg-white py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-5">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-xs font-black uppercase tracking-widest text-blue-600 sm:text-sm">Roadmap</p>
+          <h2 class="mt-3 text-3xl font-black md:text-5xl">Verfügbare Anleitungen</h2>
+          <p class="mt-2 text-slate-600">Fokus auf die drei wichtigsten Komponenten im Wohnmobil.</p>
+        </div>
+
+        <div class="mt-10 mx-auto max-w-xl">
+          <article class="rounded-3xl border border-green-200 bg-white p-6 shadow-sm">
+            <span class="rounded-full bg-green-50 px-3 py-1.5 text-xs font-black text-green-700">✅ Live-Demo Bereit</span>
+            <h3 class="mt-4 text-xl font-black">In dieser Version enthalten:</h3>
+            <ul class="mt-4 space-y-3 text-sm font-medium text-slate-700">
+              <li class="flex items-center gap-2">✅ <b>Truma Combi 6</b> (Heizung & Warmwasser)</li>
+              <li class="flex items-center gap-2">✅ <b>Dometic CT 4000</b> (Toilettenkassette entleeren)</li>
+              <li class="flex items-center gap-2">✅ <b>Thule Omnistor 5200</b> (Markise richtig ausfahren)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="bg-slate-900 py-14 text-white md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-5">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-xs font-black uppercase tracking-widest text-teal-400 sm:text-sm">Kontakt</p>
+          <h2 class="mt-3 text-3xl font-black md:text-5xl">Pilotkunde werden?</h2>
+          <p class="mt-3 text-base text-slate-300 md:mt-5 md:text-lg">Sie vermieten Wohnmobile oder Camper? Testen Sie CampAssist mit einem Fahrzeug. Schreiben Sie direkt per WhatsApp oder nutzen Sie das Formular.</p>
+        </div>
+        <div class="mt-10 grid gap-8 md:mt-14 lg:grid-cols-[.9fr_1.1fr]">
+          <aside class="rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8">
+            <h3 class="text-xl font-black md:text-2xl">Oliver Niesing</h3>
+            <p class="mt-2 text-sm text-slate-400 md:text-base">CampAssist · Niesing Labs</p>
+            <div class="mt-6 space-y-4 text-sm text-slate-200 md:mt-8 md:space-y-5 md:text-base">
+              <p><b>📍 Adresse</b><br>Overbergstraße 86<br>59302 Oelde</p>
+              <p><b>📱 Telefon / WhatsApp</b><br><a class="font-bold text-teal-300" href="tel:+491637221381">+49 163 7221381</a></p>
+              <p><b>📧 E-Mail</b><br><a class="font-bold text-teal-300" href="mailto:info@campassist.de">info@campassist.de</a></p>
+            </div>
+          </aside>
+          <form id="whatsappContactForm" class="rounded-[2rem] border border-white/10 bg-white p-6 text-slate-950 shadow-2xl md:p-8">
+            <div class="grid gap-4 md:grid-cols-2 md:gap-5">
+              <label class="block"><span class="text-xs font-bold text-slate-700 md:text-sm">Name *</span><input id="waName" required class="mt-2 min-h-[48px] w-full rounded-xl border border-slate-300 px-4 py-3 text-base focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Max Mustermann"></label>
+              <label class="block"><span class="text-xs font-bold text-slate-700 md:text-sm">Unternehmen</span><input id="waCompany" class="mt-2 min-h-[48px] w-full rounded-xl border border-slate-300 px-4 py-3 text-base focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Wohnmobilvermietung Müller"></label>
+            </div>
+            <label class="mt-4 block md:mt-5"><span class="text-xs font-bold text-slate-700 md:text-sm">Nachricht *</span><textarea id="waMessage" required rows="4" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-base focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Ich interessiere mich für CampAssist..."></textarea></label>
+            <button type="submit" class="mt-6 flex min-h-[52px] w-full items-center justify-center rounded-xl bg-gradient-to-r from-green-500 to-teal-500 px-6 py-4 text-base font-black text-white shadow-lg transition active:scale-[0.99]">💬 Anfrage per WhatsApp senden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t bg-white py-8 md:py-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-xs text-slate-500 md:flex-row md:px-5 md:text-sm">
+      <div class="flex items-center gap-2"><b class="text-brand">CampAssist</b><span>by Niesing Labs</span></div>
+      <div class="flex gap-5"><a href="impressum.html" class="p-1">Impressum</a><a href="datenschutz.html" class="p-1">Datenschutz</a></div>
+    </div>
+  </footer>
+
+  <!-- Interaktive Demo Logik -->
+  <script>
+    let current = { name: 'Heizung', model: 'Truma Combi 6', icon: 'flame', guide: 'truma-combi-6' };
+    const comps = document.querySelectorAll('.component'), nameEl = document.getElementById('selectedName'), modelEl = document.getElementById('selectedModel'), screen = document.getElementById('phoneScreen');
+    
+    comps.forEach(b => b.onclick = () => {
+      current = { name: b.dataset.name, model: b.dataset.model, icon: b.dataset.icon, guide: b.dataset.guide };
+      nameEl.textContent = current.name;
+      modelEl.textContent = current.model;
+      comps.forEach(x => x.classList.remove('ring-2', 'ring-blue-500'));
+      b.classList.add('ring-2', 'ring-blue-500');
+    });
+
+    function svgIcon(id, cls = 'h-6 w-6') { return `<svg class="${cls}"><use href="#i-${id}"></use></svg>`; }
+    function head() { return `<div class="text-center"><p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Muster Caravan GmbH</p><span class="mx-auto mt-4 grid h-14 w-14 place-items-center rounded-2xl bg-blue-50 text-blue-600">${svgIcon(current.icon, 'h-8 w-8')}</span><h3 class="mt-3 text-xl font-black">${current.model}</h3><p class="text-xs text-slate-500">${current.name} · WM-007</p></div>`; }
+
+    document.getElementById('scanButton').onclick = () => {
+      screen.innerHTML = `<div class="screen-in">${head()}<div class="relative mx-auto mt-6 h-40 w-40 rounded-2xl bg-slate-50 p-4"><div class="grid h-full grid-cols-7 gap-1">${Array.from({ length: 49 }, (_, i) => `<span class="rounded-sm ${i % 3 ? 'bg-brand' : 'bg-slate-200'}"></span>`).join('')}</div><div class="scan-line absolute left-4 right-4 top-4 h-1 bg-teal-400 shadow-[0_0_18px_#14b8a6]"></div></div><div id="recognition" class="mt-5 space-y-1 text-xs text-slate-400"></div></div>`;
+      const lines = ['QR-Code erkannt', 'Fahrzeug WM-007 erkannt', current.model + ' erkannt', 'Branding geladen', 'Hilfe geöffnet'];
+      lines.forEach((x, i) => setTimeout(() => {
+        document.getElementById('recognition').innerHTML += `<p class="font-bold text-teal-600">✓ ${x}</p>`;
+        if (i === 4) setTimeout(() => {
+          if (window.loadGuide) {
+            window.loadGuide(current.guide);
+          }
+        }, 300);
+      }, 300 * (i + 1)));
+    };
+  </script>
+
+  <!-- Mobile Menü Steuerung -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const menuBtn = document.getElementById('mobileMenuBtn');
