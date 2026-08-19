@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CampAssist Mobile</title>
+  
+  <!-- Umkehr-Weiche: Wenn Nutzer auf dem Tablet/Desktop ist, zurück zur Hauptseite -->
+  <script>
+    if (window.innerWidth >= 768) {
+      window.location.replace("index.html");
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-900 antialiased p-4">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between pb-4 border-b border-slate-200">
+    <img src="assets/brand/campassist-header.png" alt="CampAssist" class="h-8 w-auto">
+    <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-[10px] font-black text-blue-700">Mobile Express</span>
+  </header>
+
+  <!-- Problem & Erklärung in Kurzform -->
+  <section class="mt-4 rounded-2xl bg-slate-900 p-4 text-white">
+    <p class="text-[10px] font-bold text-teal-400 uppercase">Fahrzeughilfe</p>
+    <h1 class="text-lg font-black">Gerät wählen & Hilfe starten</h1>
+  </section>
+
+  <!-- Schnellauswahl der Komponenten -->
+  <main class="mt-4 space-y-4">
+    <div class="grid grid-cols-3 gap-2">
+      <button onclick="selectComp('Heizung')" id="m-Heizung" class="m-btn p-3 bg-white border-2 border-orange-500 rounded-xl text-center shadow-sm active:scale-95 transition">
+        <span class="block text-xl">🔥</span>
+        <span class="block text-xs font-bold mt-1">Heizung</span>
+      </button>
+      <button onclick="selectComp('Toilette')" id="m-Toilette" class="m-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
+        <span class="block text-xl">🚽</span>
+        <span class="block text-xs font-bold mt-1">Toilette</span>
+      </button>
+      <button onclick="selectComp('Markise')" id="m-Markise" class="m-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
+        <span class="block text-xl">☀️</span>
+        <span class="block text-xs font-bold mt-1">Markise</span>
+      </button>
+    </div>
+
+    <!-- Mobil Display -->
+    <div class="rounded-2xl border-2 border-slate-300 bg-white p-4 shadow-md min-h-[420px]" id="mobileCard">
+      <!-- Dynamischer Inhalt -->
+    </div>
+  </main>
+
+  <footer class="mt-8 text-center text-xs text-slate-400 pb-4">
+    <p>CampAssist Mobile · <a href="index.html" class="underline">Desktop-Ansicht erzwingen</a></p>
+  </footer>
+
+  <script>
+    const db = {
+      'Heizung': {
+        title: 'Truma Combi 6',
+        steps: [
+          { title: '1. Gasversorgung prüfen', text: 'Flaschenventil öffnen.', image: 'assets/heating/01-gasversorgung.jpg' },
+          { title: '2. 12V Strom einschalten', text: 'Hauptschalter am Panel drücken.', image: 'assets/heating/02-bordnetz.jpg' }
+        ]
+      },
+      'Toilette': {
+        title: 'Dometic CT 4000',
+        steps: [
+          { title: '1. Schieber schließen', text: 'Schieber im Bad ganz schließen.', image: 'assets/awning/toilet/01-innenraum-schieber.png' },
+          { title: '2. Kassette ziehen', text: 'Entriegeln und herausziehen.', image: 'assets/awning/toilet/02-kassette-entriegeln.png' }
+        ]
+      },
+      'Markise': {
+        title: 'Thule Omnistor 5200',
+        steps: [
+          { title: '1. Entriegeln', text: 'Verschlussklappen öffnen.', image: 'assets/awning/01.jpg' },
+          { title: '2. Kurbeln', text: 'Langsam auskurbeln.', image: 'assets/awning/02.jpg' }
+        ]
+      }
+    };
+
+    let active = 'Heizung';
+    let step = 0;
+
+    function selectComp(name) {
+      active = name;
+      step = 0;
+      document.querySelectorAll('.m-btn').forEach(b => b.classList.replace('border-orange-500', 'border-slate-200'));
+      document.getElementById('m-' + name).classList.replace('border-slate-200', 'border-orange-500');
+      render();
+    }
+
+    function render() {
+      const data = db[active];
+      const st = data.steps[step];
+      const card = document.getElementById('mobileCard');
+
+      card.innerHTML = `
+        <div class="flex flex-col justify-between h-full min-h-[380px]">
+          <div>
+            <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+              <span class="font-bold text-slate-700">${data.title}</span>
+              <span>Schritt ${step + 1} / ${data.steps.length}</span>
+            </div>
+            
+            <div class="aspect-[4/3] w-full rounded-lg bg-slate-100 overflow-hidden mb-3">
+              <img src="${st.image}" onerror="this.src='https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(st.title)}'" class="h-full w-full object-cover">
+            </div>
+
+            <h3 class="font-bold text-sm text-slate-900">${st.title}</h3>
+            <p class="text-xs text-slate-600 mt-1">${st.text}</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 mt-4 pt-2 border-t border-slate-100">
+            <button onclick="prev()" class="py-2.5 rounded-lg border border-slate-200 text-xs font-bold ${step===0?'opacity-40':''}">Zurück</button>
+            <button onclick="next()" class="py-2.5 rounded-lg bg-slate-900 text-white text-xs font-bold">Weiter</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function prev() { if(step > 0) { step--; render(); } }
+    function next() {
+      const data = db[active];
+      if(step < data.steps.length - 1) { step++; render(); }
+      else {
+        document.getElementById('mobileCard').innerHTML = `
+          <div class="text-center py-10">
+            <span class="text-3xl">✅</span>
+            <h3 class="font-bold mt-2">Fertig!</h3>
+            <button onclick="selectComp('${active}')" class="mt-4 px-4 py-2 bg-slate-900 text-white text-xs rounded-lg">Neustart</button>
+          </div>
+        `;
+      }
+    }
+
+    // Initialen Start ausführen
+    render();
+  </script>
+</body>
+</html>
