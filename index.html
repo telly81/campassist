@@ -18,14 +18,16 @@
   </script>
   <style>
     .gradient { background: linear-gradient(100deg, #2563eb, #14b8a6); -webkit-background-clip: text; color: transparent; }
+    .scan-line { animation: scan 1.8s ease-in-out infinite; }
     .screen-in { animation: enter .35s ease-out; }
+    @keyframes scan { 0%, 100% { transform: translateY(0); opacity: .3; } 50% { transform: translateY(130px); opacity: 1; } }
     @keyframes enter { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-950 antialiased">
   <svg style="display:none" aria-hidden="true">
-    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-6-6-11 0 4-2 6-4 8-2 2-3 4-2 6 1 3 3 4 5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c-2 0-3-1-3-3 0-1 1-3 3-5 0 2 3 3 3 5 0 2-1 3-3 3Z" fill="currentColor" opacity=".2"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-6-6-11 0 4-2 6-4 8-2 2-3 4-2 6 1 3 3 4 5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c-2 0-3-1-3-3 0-1 1-3 3-5 0 2-1 3-3 3Z" fill="currentColor" opacity=".2"/></symbol>
     <symbol id="i-toilet" viewBox="0 0 24 24"><path d="M7 3h8v7H7zM8 10h10c0 5-2 8-6 8v3H8v-3c-2-1-3-4-3-8h3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 7h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM15 14h2v2h-2zM19 14h2v4h-2zM14 19h4v2h-4zM20 20h1v1h-1z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
@@ -38,10 +40,9 @@
 
   <header class="fixed inset-x-0 top-0 z-[100] border-b border-slate-200 bg-white">
     <div class="mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
-      <a href="#start" class="flex min-w-0 items-center" aria-label="CampAssist Startseite">
+      <a href="#start" class="flex min-w-0 items-center">
         <img src="assets/brand/campassist-header.png" alt="CampAssist Logo" class="h-9 w-auto max-w-[65vw] object-contain sm:h-14 lg:h-16">
       </a>
-
       <nav class="hidden items-center gap-6 text-sm font-bold text-slate-600 xl:flex">
         <a href="#problem" class="hover:text-blue-600">Problem</a>
         <a href="#funktion" class="hover:text-blue-600">Funktionsweise</a>
@@ -52,17 +53,14 @@
         <a href="#faq" class="hover:text-blue-600">FAQ</a>
         <a href="#kontakt" class="hover:text-blue-600">Kontakt</a>
       </nav>
-
       <div class="flex items-center gap-3">
         <a href="#kontakt" class="hidden rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-slate-800 sm:inline-flex">Pilot anfragen</a>
-        
-        <button id="mobileMenuBtn" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 active:bg-slate-200 xl:hidden" aria-label="Menü öffnen" aria-expanded="false">
-          <svg id="menuIconOpen" class="pointer-events-none h-6 w-6"><use href="#i-menu"></use></svg>
-          <svg id="menuIconClose" class="pointer-events-none hidden h-6 w-6"><use href="#i-close"></use></svg>
+        <button id="mobileMenuBtn" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 xl:hidden">
+          <svg id="menuIconOpen" class="h-6 w-6"><use href="#i-menu"></use></svg>
+          <svg id="menuIconClose" class="hidden h-6 w-6"><use href="#i-close"></use></svg>
         </button>
       </div>
     </div>
-
     <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-5 py-6 shadow-2xl xl:hidden">
       <nav class="flex flex-col gap-3 text-base font-bold text-slate-700">
         <a href="#wow-demo" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Live-Demo</a>
@@ -72,28 +70,105 @@
         <a href="#faq" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">FAQ</a>
         <a href="#kontakt" class="mobile-nav-link flex min-h-[44px] items-center hover:text-blue-600">Kontakt</a>
       </nav>
-      <div class="mt-6 border-t border-slate-100 pt-5">
-        <a href="#kontakt" class="mobile-nav-link flex min-h-[48px] w-full items-center justify-center rounded-xl bg-brand py-3.5 text-center font-bold text-white shadow-sm active:bg-slate-800">Pilot anfragen</a>
-      </div>
     </div>
   </header>
 
   <main class="pt-16 lg:pt-20">
-    <!-- Hero Section -->
-    <section id="start" class="relative overflow-hidden bg-white pb-10 pt-8 md:pb-20 md:pt-16">
+    <section id="start" class="relative overflow-hidden bg-white pb-10 pt-8 md:pb-16 md:pt-14">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center md:text-left">
-        <div class="inline-flex flex-wrap justify-center md:justify-start gap-2 mb-4">
-          <span class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">Digitale Fahrzeughilfe für Vermieter</span>
-        </div>
-        <h1 class="text-3xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          Jede Fahrzeugtechnik in <span class="gradient">30 Sekunden</span> erklärt.
-        </h1>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-lg">
-          Mieter scannen den QR-Code am Gerät und erhalten sofort verständliche Hilfe.
-        </p>
+        <span class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">Digitale Fahrzeughilfe für Vermieter</span>
+        <h1 class="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">Jede Fahrzeugtechnik in <span class="gradient">30 Sekunden</span> erklärt.</h1>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-lg">Mieter scannen den QR-Code am Gerät und erhalten sofort verständliche Hilfe.</p>
         <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-start">
           <a href="#wow-demo" class="flex min-h-[48px] items-center justify-center rounded-xl bg-blue-600 px-6 py-3 font-bold text-white shadow-md active:bg-blue-700">Live-Demo starten</a>
           <a href="#kontakt" class="flex min-h-[48px] items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 font-bold active:bg-slate-100">Pilot anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE DEMO -->
+    <section id="wow-demo" class="bg-slate-100 py-10 md:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-5">
+        <div class="mx-auto max-w-3xl text-center mb-8">
+          <span class="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-600 mb-2">Interaktive Demo</span>
+          <h2 class="text-2xl font-black md:text-4xl">Komponente wählen & QR-Scan simulieren</h2>
+        </div>
+        
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-start">
+          
+          <!-- Fahrzeug-Auswahlkarte -->
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl sm:p-8">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div>
+                <p class="text-xs font-black uppercase tracking-widest text-blue-600">Demo-Fahrzeug</p>
+                <h3 class="text-xl font-black sm:text-2xl">Weinsberg CaraSuite 650 MF</h3>
+              </div>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">WM-007</span>
+            </div>
+
+            <!-- Aufgewertete Wohnmobil Grafikanzeige -->
+            <div class="relative mt-6 overflow-hidden rounded-3xl bg-gradient-to-b from-sky-100 via-sky-50 to-emerald-50/40 border border-slate-200 p-6 min-h-[280px] sm:min-h-[340px] flex items-center justify-center">
+              
+              <!-- Fahrzeug-Silhouette -->
+              <div class="relative w-full max-w-[460px] h-40 sm:h-52 rounded-[2.5rem_4.5rem_1rem_1rem] border-4 border-slate-300 bg-white shadow-md flex items-center justify-between px-6">
+                <div class="h-16 w-24 rounded-xl border-2 border-slate-300 bg-sky-100/80 shadow-inner"></div>
+                <div class="h-16 w-20 rounded-xl border-2 border-slate-300 bg-sky-100/80 shadow-inner"></div>
+                <div class="absolute -bottom-6 left-12 h-12 w-12 sm:h-14 sm:w-14 rounded-full border-[8px] sm:border-[10px] border-slate-800 bg-slate-300 shadow"></div>
+                <div class="absolute -bottom-6 right-12 h-12 w-12 sm:h-14 sm:w-14 rounded-full border-[8px] sm:border-[10px] border-slate-800 bg-slate-300 shadow"></div>
+              </div>
+
+              <!-- PC Positionierte Buttons -->
+              <div class="hidden md:block">
+                <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component absolute left-1/2 top-[12%] -translate-x-1/2 flex items-center gap-2 rounded-full border-2 border-white bg-yellow-500 px-4 py-2 text-xs font-bold text-white shadow-lg transition hover:scale-105 active:scale-95">
+                  <svg class="h-4 w-4"><use href="#i-sun"></use></svg><span>Markise</span>
+                </button>
+                <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component absolute left-[12%] top-[48%] flex items-center gap-2 rounded-xl border-2 border-white bg-orange-500 px-4 py-2 text-xs font-bold text-white shadow-lg transition hover:scale-105 active:scale-95">
+                  <svg class="h-4 w-4"><use href="#i-flame"></use></svg><span>Heizung</span>
+                </button>
+                <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component absolute right-[12%] top-[48%] flex items-center gap-2 rounded-xl border-2 border-white bg-teal-600 px-4 py-2 text-xs font-bold text-white shadow-lg transition hover:scale-105 active:scale-95">
+                  <svg class="h-4 w-4"><use href="#i-toilet"></use></svg><span>Toilette</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Mobile Liste -->
+            <div class="mt-4 grid gap-2.5 md:hidden">
+              <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component flex items-center justify-between rounded-xl border border-yellow-500/30 bg-yellow-50/60 p-3.5 font-bold text-amber-900 active:bg-yellow-100">
+                <span class="flex items-center gap-3"><span class="grid h-8 w-8 place-items-center rounded-lg bg-yellow-500 text-white"><svg class="h-4 w-4"><use href="#i-sun"></use></svg></span><span>Markise</span></span>
+                <span class="text-xs text-yellow-700">Thule Omnistor ›</span>
+              </button>
+              <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component flex items-center justify-between rounded-xl border border-orange-500/30 bg-orange-50/60 p-3.5 font-bold text-orange-900 active:bg-orange-100">
+                <span class="flex items-center gap-3"><span class="grid h-8 w-8 place-items-center rounded-lg bg-orange-500 text-white"><svg class="h-4 w-4"><use href="#i-flame"></use></svg></span><span>Heizung</span></span>
+                <span class="text-xs text-orange-700">Truma Combi 6 ›</span>
+              </button>
+              <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component flex items-center justify-between rounded-xl border border-teal-600/30 bg-teal-50/60 p-3.5 font-bold text-teal-900 active:bg-teal-100">
+                <span class="flex items-center gap-3"><span class="grid h-8 w-8 place-items-center rounded-lg bg-teal-600 text-white"><svg class="h-4 w-4"><use href="#i-toilet"></use></svg></span><span>Toilette</span></span>
+                <span class="text-xs text-teal-700">Dometic CT 4000 ›</span>
+              </button>
+            </div>
+
+            <div class="mt-5 grid grid-cols-2 gap-3 rounded-2xl bg-slate-50 p-4 text-xs sm:text-sm">
+              <div><span class="text-slate-400 block text-[11px] font-medium">Ausgewählt:</span><b id="selectedName" class="text-base font-black">Heizung</b></div>
+              <div class="text-right"><span class="text-slate-400 block text-[11px] font-medium">Gerätemodell:</span><b id="selectedModel" class="text-base font-black">Truma Combi 6</b></div>
+            </div>
+
+            <button id="scanButton" class="mt-5 min-h-[52px] w-full rounded-xl bg-gradient-to-r from-blue-600 to-teal-500 p-3.5 text-base font-black text-white shadow-lg active:opacity-90 transition">QR-Code dieser Komponente scannen</button>
+          </div>
+          
+          <!-- Smartphone Display Simulation -->
+          <div class="relative mx-auto w-full max-w-md">
+            <div class="relative rounded-[2.8rem] border-[10px] border-brand bg-brand p-2.5 shadow-2xl">
+              <div class="mx-auto my-2 h-1.5 w-20 rounded-full bg-slate-600"></div>
+              <div id="phoneScreen" class="min-h-[580px] rounded-[2rem] bg-white p-5 flex flex-col justify-between">
+                <div class="my-auto flex flex-col items-center justify-center text-center">
+                  <span class="grid h-20 w-20 place-items-center rounded-3xl bg-blue-50 text-blue-600"><svg class="h-10 w-10"><use href="#i-phone"></use></svg></span>
+                  <h3 class="mt-6 text-xl font-black">Bereit für die Live-Demo?</h3>
+                  <p class="mt-2 text-sm text-slate-500">Wählen Sie links eine Komponente aus und klicken Sie auf Scan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -146,140 +221,59 @@
       </div>
     </section>
 
-    <!-- Live Demo -->
-    <section id="wow-demo" class="bg-slate-100 py-10 md:py-20">
-      <div class="mx-auto max-w-7xl px-4 sm:px-5">
-        <div class="mx-auto max-w-3xl text-center mb-6 md:mb-10">
-          <span class="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-600 mb-2">Interaktive Demo</span>
-          <h2 class="text-2xl font-black md:text-4xl">Komponente wählen & QR-Scan simulieren</h2>
-        </div>
-        
-        <div class="grid gap-6 lg:grid-cols-[1fr_1fr] items-start">
-          <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-lg sm:p-6">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-              <div>
-                <p class="text-[10px] font-black uppercase text-blue-600">Demo-Fahrzeug</p>
-                <h3 class="text-lg font-black">Weinsberg CaraSuite 650 MF</h3>
-              </div>
-              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold">WM-007</span>
-            </div>
-
-            <!-- Fahrzeug Grafik -->
-            <div class="relative mt-4 overflow-hidden rounded-2xl bg-gradient-to-b from-sky-100 to-slate-50 border border-slate-200 p-4">
-              <div class="relative mx-auto h-32 sm:h-44 w-[90%] rounded-[2rem_3.5rem_1rem_1rem] border-4 border-slate-300 bg-white shadow-sm">
-                <div class="absolute left-4 top-4 h-10 w-16 rounded border-2 border-slate-300 bg-sky-50"></div>
-                <div class="absolute right-4 top-4 h-10 w-14 rounded border-2 border-slate-300 bg-sky-50"></div>
-                <div class="absolute -bottom-5 left-8 h-10 w-10 rounded-full border-[6px] border-slate-700 bg-slate-300"></div>
-                <div class="absolute -bottom-5 right-8 h-10 w-10 rounded-full border-[6px] border-slate-700 bg-slate-300"></div>
-              </div>
-
-              <div class="hidden md:block">
-                <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component absolute left-1/2 top-[8%] -translate-x-1/2 flex items-center gap-1.5 rounded-full border-2 border-white bg-yellow-500 px-3 py-1.5 text-xs font-bold text-white shadow">
-                  <svg class="h-4 w-4"><use href="#i-sun"></use></svg><span>Markise</span>
-                </button>
-                <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component absolute left-[15%] top-[45%] flex items-center gap-1.5 rounded-xl border-2 border-white bg-orange-500 px-3 py-1.5 text-xs font-bold text-white shadow">
-                  <svg class="h-4 w-4"><use href="#i-flame"></use></svg><span>Heizung</span>
-                </button>
-                <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component absolute right-[15%] top-[45%] flex items-center gap-1.5 rounded-xl border-2 border-white bg-teal-600 px-3 py-1.5 text-xs font-bold text-white shadow">
-                  <svg class="h-4 w-4"><use href="#i-toilet"></use></svg><span>Toilette</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Mobile Auswahl-Liste -->
-            <div class="mt-4 grid gap-2 md:hidden">
-              <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component flex items-center justify-between rounded-xl border border-yellow-500/30 bg-yellow-50/50 p-3 font-bold text-amber-900 active:bg-yellow-100">
-                <span class="flex items-center gap-2.5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-yellow-500 text-white"><svg class="h-4 w-4"><use href="#i-sun"></use></svg></span><span>Markise</span></span>
-                <span class="text-xs text-yellow-700">Thule Omnistor ›</span>
-              </button>
-              <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component flex items-center justify-between rounded-xl border border-orange-500/30 bg-orange-50/50 p-3 font-bold text-orange-900 active:bg-orange-100">
-                <span class="flex items-center gap-2.5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-orange-500 text-white"><svg class="h-4 w-4"><use href="#i-flame"></use></svg></span><span>Heizung</span></span>
-                <span class="text-xs text-orange-700">Truma Combi 6 ›</span>
-              </button>
-              <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component flex items-center justify-between rounded-xl border border-teal-600/30 bg-teal-50/50 p-3 font-bold text-teal-900 active:bg-teal-100">
-                <span class="flex items-center gap-2.5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-teal-600 text-white"><svg class="h-4 w-4"><use href="#i-toilet"></use></svg></span><span>Toilette</span></span>
-                <span class="text-xs text-teal-700">Dometic CT 4000 ›</span>
-              </button>
-            </div>
-
-            <div class="mt-4 flex items-center justify-between rounded-xl bg-slate-50 p-3 text-xs sm:text-sm">
-              <div><span class="text-slate-400 block text-[10px]">Gewählt:</span><b id="selectedName">Heizung</b></div>
-              <div class="text-right"><span class="text-slate-400 block text-[10px]">Modell:</span><b id="selectedModel">Truma Combi 6</b></div>
-            </div>
-
-            <button id="scanButton" class="mt-4 min-h-[48px] w-full rounded-xl bg-gradient-to-r from-blue-600 to-teal-500 p-3 font-black text-white active:opacity-90">QR-Code scannen</button>
-          </div>
-          
-          <!-- Smartphone Simulator -->
-          <div class="relative mx-auto w-full max-w-sm">
-            <div class="relative rounded-[2.2rem] border-[8px] border-brand bg-brand p-2 shadow-xl">
-              <div class="mx-auto my-1.5 h-1.5 w-16 rounded-full bg-slate-600"></div>
-              <div id="phoneScreen" class="min-h-[480px] rounded-[1.6rem] bg-white p-4">
-                <div class="flex min-h-[440px] flex-col items-center justify-center text-center">
-                  <span class="grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-blue-600"><svg class="h-8 w-8"><use href="#i-phone"></use></svg></span>
-                  <h3 class="mt-4 text-lg font-black">Bereit für die Live-Demo?</h3>
-                  <p class="mt-2 text-xs text-slate-500">Wählen Sie links/oben eine Komponente und klicken Sie auf Scan.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Vorteile -->
-    <section id="vorteile" class="bg-white py-10 md:py-20">
+    <section id="vorteile" class="bg-slate-50 py-10 md:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-5">
         <div class="text-center">
           <p class="text-xs font-black uppercase tracking-widest text-blue-600">Vorteile</p>
           <h2 class="mt-2 text-2xl font-black md:text-4xl">Weniger erklären. Besser unterstützen.</h2>
         </div>
         <div class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-6">
-          <article class="rounded-xl border border-slate-200 p-3.5 md:p-6">
-            <span class="text-blue-600"><svg class="h-5 w-5 md:h-7 md:w-7"><use href="#i-call"></use></svg></span>
-            <h3 class="mt-2 text-xs font-black md:text-lg">✅ Weniger Rückfragen</h3>
+          <article class="rounded-xl border border-slate-200 bg-white p-4 md:p-6">
+            <span class="text-blue-600"><svg class="h-6 w-6"><use href="#i-call"></use></svg></span>
+            <h3 class="mt-2 text-sm font-black md:text-lg">✅ Weniger Rückfragen</h3>
           </article>
-          <article class="rounded-xl border border-slate-200 p-3.5 md:p-6">
-            <span class="text-blue-600"><svg class="h-5 w-5 md:h-7 md:w-7"><use href="#i-check"></use></svg></span>
-            <h3 class="mt-2 text-xs font-black md:text-lg">✅ Schnellere Übergaben</h3>
+          <article class="rounded-xl border border-slate-200 bg-white p-4 md:p-6">
+            <span class="text-blue-600"><svg class="h-6 w-6"><use href="#i-check"></use></svg></span>
+            <h3 class="mt-2 text-sm font-black md:text-lg">✅ Schnellere Übergaben</h3>
           </article>
-          <article class="rounded-xl border border-slate-200 p-3.5 md:p-6">
-            <span class="text-blue-600"><svg class="h-5 w-5 md:h-7 md:w-7"><use href="#i-phone"></use></svg></span>
-            <h3 class="mt-2 text-xs font-black md:text-lg">✅ Ohne App-Installation</h3>
+          <article class="rounded-xl border border-slate-200 bg-white p-4 md:p-6">
+            <span class="text-blue-600"><svg class="h-6 w-6"><use href="#i-phone"></use></svg></span>
+            <h3 class="mt-2 text-sm font-black md:text-lg">✅ Ohne App-Installation</h3>
           </article>
-          <article class="rounded-xl border border-slate-200 p-3.5 md:p-6">
-            <span class="text-blue-600"><svg class="h-5 w-5 md:h-7 md:w-7"><use href="#i-qr"></use></svg></span>
-            <h3 class="mt-2 text-xs font-black md:text-lg">✅ Eigene QR-Codes</h3>
+          <article class="rounded-xl border border-slate-200 bg-white p-4 md:p-6">
+            <span class="text-blue-600"><svg class="h-6 w-6"><use href="#i-qr"></use></svg></span>
+            <h3 class="mt-2 text-sm font-black md:text-lg">✅ Eigene QR-Codes</h3>
           </article>
-          <article class="rounded-xl border border-slate-200 p-3.5 md:p-6">
-            <span class="text-blue-600"><svg class="h-5 w-5 md:h-7 md:w-7"><use href="#i-sun"></use></svg></span>
-            <h3 class="mt-2 text-xs font-black md:text-lg">✅ Eigenes Branding</h3>
+          <article class="rounded-xl border border-slate-200 bg-white p-4 md:p-6">
+            <span class="text-blue-600"><svg class="h-6 w-6"><use href="#i-sun"></use></svg></span>
+            <h3 class="mt-2 text-sm font-black md:text-lg">✅ Eigenes Branding</h3>
           </article>
-          <article class="rounded-xl border border-slate-200 p-3.5 md:p-6">
-            <span class="text-blue-600"><svg class="h-5 w-5 md:h-7 md:w-7"><use href="#i-toilet"></use></svg></span>
-            <h3 class="mt-2 text-xs font-black md:text-lg">✅ Zentrale Pflege</h3>
+          <article class="rounded-xl border border-slate-200 bg-white p-4 md:p-6">
+            <span class="text-blue-600"><svg class="h-6 w-6"><use href="#i-toilet"></use></svg></span>
+            <h3 class="mt-2 text-sm font-black md:text-lg">✅ Zentrale Pflege</h3>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Roadmap -->
-    <section id="roadmap" class="bg-slate-50 py-10 md:py-20">
+    <section id="roadmap" class="bg-white py-10 md:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-5">
         <div class="text-center">
           <p class="text-xs font-black uppercase tracking-widest text-blue-600">Roadmap</p>
           <h2 class="mt-2 text-2xl font-black md:text-4xl">CampAssist wächst Schritt für Schritt.</h2>
         </div>
         <div class="mt-6 grid gap-4 md:grid-cols-3">
-          <article class="rounded-2xl border border-green-200 bg-white p-5"><span class="rounded-full bg-green-50 px-3 py-1 text-xs font-black text-green-700">Verfügbar</span><h3 class="mt-3 text-lg font-black">Basis-Assistenten</h3><ul class="mt-3 space-y-1.5 text-xs text-slate-700"><li>✅ Toilettenhilfe (Dometic)</li><li>✅ Heizung (Truma Combi)</li><li>✅ Markise (Thule Omnistor)</li></ul></article>
-          <article class="rounded-2xl border border-amber-200 bg-white p-5"><span class="rounded-full bg-amber-50 px-3 py-1 text-xs font-black text-amber-700">In Arbeit</span><h3 class="mt-3 text-lg font-black">Workflows</h3><ul class="mt-3 space-y-1.5 text-xs text-slate-700"><li>🚧 Grauwasser entleeren</li><li>🚧 Kühlschrank bedienen</li><li>🚧 Landstrom & Wasser</li></ul></article>
-          <article class="rounded-2xl border border-blue-200 bg-white p-5"><span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">Geplant</span><h3 class="mt-3 text-lg font-black">Premium</h3><ul class="mt-3 space-y-1.5 text-xs text-slate-700"><li>🔮 Vermieterportal</li><li>🔮 Eines Branding</li><li>🔮 Multi-Sprachen</li></ul></article>
+          <article class="rounded-2xl border border-green-200 bg-slate-50 p-5"><span class="rounded-full bg-green-100 px-3 py-1 text-xs font-black text-green-700">Verfügbar</span><h3 class="mt-3 text-lg font-black">Basis-Assistenten</h3><ul class="mt-3 space-y-1.5 text-xs text-slate-700"><li>✅ Toilettenhilfe (Dometic)</li><li>✅ Heizung (Truma Combi)</li><li>✅ Markise (Thule Omnistor)</li></ul></article>
+          <article class="rounded-2xl border border-amber-200 bg-slate-50 p-5"><span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-700">In Arbeit</span><h3 class="mt-3 text-lg font-black">Workflows</h3><ul class="mt-3 space-y-1.5 text-xs text-slate-700"><li>🚧 Grauwasser entleeren</li><li>🚧 Kühlschrank bedienen</li><li>🚧 Landstrom & Wasser</li></ul></article>
+          <article class="rounded-2xl border border-blue-200 bg-slate-50 p-5"><span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-black text-blue-700">Geplant</span><h3 class="mt-3 text-lg font-black">Premium</h3><ul class="mt-3 space-y-1.5 text-xs text-slate-700"><li>🔮 Vermieterportal</li><li>🔮 Eines Branding</li><li>🔮 Multi-Sprachen</li></ul></article>
         </div>
       </div>
     </section>
 
     <!-- Checklisten -->
-    <section id="checklisten" class="bg-white py-10 md:py-20">
+    <section id="checklisten" class="bg-slate-50 py-10 md:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-5">
         <div class="text-center">
           <p class="text-xs font-black uppercase tracking-widest text-teal-600">Checklisten</p>
@@ -287,26 +281,25 @@
           <p class="mt-2 text-xs md:text-base text-slate-600">Übergabe, Abfahrt und Rückgabe digital dokumentieren.</p>
         </div>
         <div class="mt-6 grid gap-4 md:grid-cols-3">
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5"><h3 class="font-black text-base">🚐 Vor der Abfahrt</h3><ul class="mt-3 space-y-2 text-xs text-slate-700"><li>☐ Dachhauben geschlossen</li><li>☐ Fenster verriegelt</li><li>☐ Markise eingefahren</li></ul></article>
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5"><h3 class="font-black text-base">🏕️ Stellplatz verlassen</h3><ul class="mt-3 space-y-2 text-xs text-slate-700"><li>☐ Stromkabel getrennt</li><li>☐ Keile eingesammelt</li><li>☐ Klappen verschlossen</li></ul></article>
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5"><h3 class="font-black text-base">🔄 Fahrzeugrückgabe</h3><ul class="mt-3 space-y-2 text-xs text-slate-700"><li>☐ Toilette entleert</li><li>☐ Innenraum gereinigt</li><li>☐ Müll entsorgt</li></ul></article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-5"><h3 class="font-black text-base">🚐 Vor der Abfahrt</h3><ul class="mt-3 space-y-2 text-xs text-slate-700"><li>☐ Dachhauben geschlossen</li><li>☐ Fenster verriegelt</li><li>☐ Markise eingefahren</li></ul></article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-5"><h3 class="font-black text-base">🏕️ Stellplatz verlassen</h3><ul class="mt-3 space-y-2 text-xs text-slate-700"><li>☐ Stromkabel getrennt</li><li>☐ Keile eingesammelt</li><li>☐ Klappen verschlossen</li></ul></article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-5"><h3 class="font-black text-base">🔄 Fahrzeugrückgabe</h3><ul class="mt-3 space-y-2 text-xs text-slate-700"><li>☐ Toilette entleert</li><li>☐ Innenraum gereinigt</li><li>☐ Müll entsorgt</li></ul></article>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="bg-slate-50 py-10 md:py-20">
+    <section id="faq" class="bg-white py-10 md:py-20">
       <div class="mx-auto max-w-3xl px-4 sm:px-5">
         <h2 class="text-center text-xl font-black md:text-3xl">Häufige Fragen</h2>
         <div class="mt-6 space-y-3">
-          <details class="rounded-xl border bg-white p-4"><summary class="cursor-pointer font-bold text-sm md:text-base">Müssen Mieter eine App installieren?</summary><p class="mt-2 text-xs md:text-sm text-slate-600">Nein. CampAssist öffnet sich direkt im Browser.</p></details>
-          <details class="rounded-xl border bg-white p-4"><summary class="cursor-pointer font-bold text-sm md:text-base">Bekommt jedes Fahrzeug eigene QR-Codes?</summary><p class="mt-2 text-xs md:text-sm text-slate-600">Ja. Jeder Code gehört zu einer konkreten Fahrzeugkomponente.</p></details>
+          <details class="rounded-xl border bg-slate-50 p-4"><summary class="cursor-pointer font-bold text-sm md:text-base">Müssen Mieter eine App installieren?</summary><p class="mt-2 text-xs md:text-sm text-slate-600">Nein. CampAssist öffnet sich direkt im Browser.</p></details>
+          <details class="rounded-xl border bg-slate-50 p-4"><summary class="cursor-pointer font-bold text-sm md:text-base">Bekommt jedes Fahrzeug eigene QR-Codes?</summary><p class="mt-2 text-xs md:text-sm text-slate-600">Ja. Jeder Code gehört zu einer konkreten Fahrzeugkomponente.</p></details>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Kontakt Footer -->
   <section id="kontakt" class="bg-slate-900 py-10 text-white md:py-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-5">
       <div class="text-center">
@@ -342,8 +335,34 @@
     <p><b>CampAssist</b> by Niesing Labs · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
   </footer>
 
+  <!-- Interaktives Skript mit echten Schritt-für-Schritt Anleitungen -->
   <script>
     let current = { name: 'Heizung', model: 'Truma Combi 6', icon: 'flame' };
+    let activeStep = 0;
+
+    const guides = {
+      'Heizung': [
+        { title: 'Gasversorgung prüfen', text: 'Prüfen Sie, ob das Gasventil der Flasche geöffnet ist und kein Gasgeruch vorliegt.', tip: 'Bei Gasgeruch Zufuhr sofort schließen!' },
+        { title: '12V-Bordnetz einschalten', text: 'Aktivieren Sie die 12V-Hauptstromversorgung am Bedienpanel über der Tür.', tip: 'Ohne 12V startet das Gebläse nicht.' },
+        { title: 'Bedienteil aktivieren', text: 'Drücken Sie den Drehknopf am Heizungs-Panel kurz, um das Display aufzuwecken.', tip: 'CP-Plus Panel leuchtet auf.' },
+        { title: 'Raumtemperatur wählen', text: 'Drehen Sie auf die gewünschte Temperatur (z. B. 21°C) und drücken Sie zum Bestätigen.', tip: 'Das Flame-Symbol beginnt zu blinken.' },
+        { title: 'Warmluft prüfen', text: 'Warten Sie 3–5 Minuten. An den Ausströmern muss spürbar warme Luft austreten.', tip: 'Ausströmer nicht mit Kissen verdecken.' }
+      ],
+      'Markise': [
+        { title: 'Verriegelung lösen', text: 'Öffnen Sie die Sicherungsklappen links und rechts an der Frontleiste.', tip: 'Niemals mit Gewalt ziehen.' },
+        { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel in die Öse und drehen Sie sie um 90 Grad fest.', tip: 'Kurbel fest fixieren.' },
+        { title: '1 Meter ausfahren', text: 'Kurbeln Sie die Markise ca. 1 Meter aus, bis Sie an die Stützfüße gelangen.', tip: 'Nicht direkt ganz ausfahren!' },
+        { title: 'Stützfüße sichern', text: 'Klappen Sie beide Stützfüße aus der Leiste und verankern Sie sie am Boden.', tip: 'Schützt vor Hebelwirkung auf das Dach.' },
+        { title: 'Endposition auskurbeln', text: 'Kurbeln Sie die Markise auf die volle Länge und stellen Sie eine Seite leicht schräg (Regenablauf).', tip: 'Bei Wind sofort einfahren!' }
+      ],
+      'Toilette': [
+        { title: 'Füllstand kontrollieren', text: 'Prüfen Sie die LED-Anzeige der Toilettenkassette am Sockel.', tip: 'Rot bedeutet: Kassette voll!' },
+        { title: 'Schieber öffnen', text: 'Betätigen Sie den grauen Hebel unter der Toilettenschüssel, um den Ablauf freizugeben.', tip: 'Vor Benutzung stets öffnen.' },
+        { title: 'Spülung drücken', text: 'Drücken Sie die blaue Spültaste für ca. 2–3 Sekunden.', tip: 'Pumpe läuft über Bordwasser.' },
+        { title: 'Schieber schließen', text: 'Schließen Sie den Hebel vollständig, um Geruchsbildung zu vermeiden.', tip: 'Dichtung bleibt so sauber.' }
+      ]
+    };
+
     const comps = document.querySelectorAll('.component');
     const nameEl = document.getElementById('selectedName');
     const modelEl = document.getElementById('selectedModel');
@@ -354,8 +373,8 @@
         current = { name: b.dataset.name, model: b.dataset.model, icon: b.dataset.icon };
         if(nameEl) nameEl.textContent = current.name;
         if(modelEl) modelEl.textContent = current.model;
-        comps.forEach(x => x.classList.remove('ring-2', 'ring-blue-500'));
-        b.classList.add('ring-2', 'ring-blue-500');
+        comps.forEach(x => x.classList.remove('ring-4', 'ring-blue-400'));
+        b.classList.add('ring-4', 'ring-blue-400');
       };
     });
 
@@ -364,32 +383,82 @@
     }
 
     function head() {
-      return `<div class="text-center"><p class="text-[9px] font-black uppercase text-slate-400">Muster Caravan GmbH</p><span class="mx-auto mt-3 grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-blue-600">${svgIcon(current.icon, 'h-6 w-6')}</span><h3 class="mt-2 text-lg font-black">${current.model}</h3><p class="text-xs text-slate-500">${current.name} · WM-007</p></div>`;
+      return `<div class="text-center pb-3 border-b border-slate-100"><p class="text-[9px] font-black uppercase text-slate-400">Muster Caravan GmbH</p><span class="mx-auto mt-2 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600">${svgIcon(current.icon, 'h-5 w-5')}</span><h3 class="mt-1 text-base font-black">${current.model}</h3><p class="text-xs text-slate-500">${current.name} · WM-007</p></div>`;
     }
 
     document.getElementById('scanButton').onclick = () => {
-      screen.innerHTML = `<div class="screen-in">${head()}<div class="relative mx-auto mt-4 h-36 w-36 rounded-2xl bg-slate-50 p-4"><div class="grid h-full grid-cols-7 gap-1">${Array.from({ length: 49 }, (_, i) => `<span class="rounded-sm ${i % 3 ? 'bg-brand' : 'bg-slate-200'}"></span>`).join('')}</div></div><div id="recognition" class="mt-4 space-y-1 text-xs text-slate-400"></div></div>`;
+      screen.innerHTML = `<div class="screen-in my-auto">${head()}<div class="relative mx-auto mt-6 h-36 w-36 rounded-2xl bg-slate-50 p-4 border border-slate-100 shadow-inner"><div class="grid h-full grid-cols-7 gap-1">${Array.from({ length: 49 }, (_, i) => `<span class="rounded-sm ${i % 3 ? 'bg-brand' : 'bg-slate-200'}"></span>`).join('')}</div><div class="scan-line absolute left-4 right-4 top-4 h-1 bg-teal-400 shadow-[0_0_12px_#14b8a6]"></div></div><div id="recognition" class="mt-6 space-y-1.5 text-xs text-slate-400 text-center"></div></div>`;
       
       const lines = ['QR-Code erkannt', 'Fahrzeug WM-007', current.model, 'Hilfe lädt...'];
       lines.forEach((x, i) => setTimeout(() => {
         const rec = document.getElementById('recognition');
         if(rec) rec.innerHTML += `<p class="font-bold text-teal-600">✓ ${x}</p>`;
-        if (i === 3) setTimeout(loadDemoSteps, 300);
-      }, 300 * (i + 1)));
+        if (i === 3) setTimeout(() => { activeStep = 0; renderStep(); }, 400);
+      }, 350 * (i + 1)));
     };
 
-    function loadDemoSteps() {
-      if (current.name === 'Heizung') {
-        screen.innerHTML = `<div class="screen-in">${head()}<div class="mt-4 rounded-lg bg-orange-50 p-3 text-xs"><b>Truma Combi 6:</b><br>1. Gasflasche öffnen.<br>2. 12V-Bordnetz an.<br>3. Drehknopf drücken & 21°C wählen.</div><button onclick="home()" class="mt-4 w-full rounded-lg bg-brand p-2 text-xs font-bold text-white">Fertig</button></div>`;
-      } else if (current.name === 'Markise') {
-        screen.innerHTML = `<div class="screen-in">${head()}<div class="mt-4 rounded-lg bg-yellow-50 p-3 text-xs"><b>Thule Omnistor:</b><br>1. Kurbel einsetzen.<br>2. 1 Meter ausfahren.<br>3. Stützfüße aufstellen.</div><button onclick="home()" class="mt-4 w-full rounded-lg bg-brand p-2 text-xs font-bold text-white">Fertig</button></div>`;
+    function renderStep() {
+      const list = guides[current.name];
+      const st = list[activeStep];
+      const pct = ((activeStep + 1) / list.length) * 100;
+
+      screen.innerHTML = `
+        <div class="screen-in flex flex-col h-full justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-2">
+              <span class="font-bold text-blue-600">WM-007 Hilfe</span>
+              <span class="font-black text-slate-400">${activeStep + 1} / ${list.length}</span>
+            </div>
+            <div class="h-1.5 w-full rounded-full bg-slate-100 overflow-hidden mb-4">
+              <div class="h-full bg-gradient-to-r from-blue-600 to-teal-400 transition-all duration-300" style="width:${pct}%"></div>
+            </div>
+            
+            <p class="text-[10px] font-black uppercase tracking-widest text-teal-600">Schritt ${activeStep + 1}</p>
+            <h4 class="text-lg font-black text-slate-900 mt-1">${st.title}</h4>
+            <p class="mt-2 text-xs leading-relaxed text-slate-600">${st.text}</p>
+            
+            <div class="mt-4 rounded-xl border-l-4 border-amber-400 bg-amber-50 p-3 text-xs text-amber-950">
+              <b>Wichtig:</b> ${st.tip}
+            </div>
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
+            <button onclick="prevStep()" class="rounded-xl border border-slate-200 py-2.5 text-xs font-bold ${activeStep === 0 ? 'opacity-30 pointer-events-none' : 'active:bg-slate-100'}">Zurück</button>
+            <button onclick="nextStep()" class="rounded-xl bg-brand py-2.5 text-xs font-bold text-white active:bg-slate-800">${activeStep === list.length - 1 ? 'Abschließen' : 'Weiter'}</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function prevStep() {
+      if (activeStep > 0) { activeStep--; renderStep(); }
+    }
+
+    function nextStep() {
+      const list = guides[current.name];
+      if (activeStep < list.length - 1) {
+        activeStep++;
+        renderStep();
       } else {
-        screen.innerHTML = `<div class="screen-in">${head()}<div class="mt-4 rounded-lg bg-teal-50 p-3 text-xs"><b>Dometic CT 4000:</b><br>1. Schieber öffnen.<br>2. Spülung drücken.<br>3. Schieber schließen.</div><button onclick="home()" class="mt-4 w-full rounded-lg bg-brand p-2 text-xs font-bold text-white">Fertig</button></div>`;
+        screen.innerHTML = `
+          <div class="screen-in my-auto flex flex-col items-center justify-center text-center">
+            <span class="grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600 mb-4">${svgIcon('check', 'h-8 w-8')}</span>
+            <h3 class="text-xl font-black">Anleitung abgeschlossen!</h3>
+            <p class="mt-2 text-xs text-slate-500 max-w-[220px]">Die Komponente sollte nun wie gewünscht funktionieren.</p>
+            <button onclick="resetDemo()" class="mt-6 rounded-xl bg-brand px-5 py-2.5 text-xs font-bold text-white">Neue Auswahl</button>
+          </div>
+        `;
       }
     }
 
-    function home() {
-      screen.innerHTML = `<div class="flex min-h-[400px] flex-col items-center justify-center text-center"><span class="grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600">${svgIcon('check', 'h-8 w-8')}</span><h3 class="mt-4 text-xl font-black">Problem gelöst!</h3><p class="mt-2 text-xs text-slate-500">Kein Supportanruf nötig.</p></div>`;
+    function resetDemo() {
+      screen.innerHTML = `
+        <div class="my-auto flex flex-col items-center justify-center text-center">
+          <span class="grid h-20 w-20 place-items-center rounded-3xl bg-blue-50 text-blue-600"><svg class="h-10 w-10"><use href="#i-phone"></use></svg></span>
+          <h3 class="mt-6 text-xl font-black">Bereit für die Live-Demo?</h3>
+          <p class="mt-2 text-sm text-slate-500">Wählen Sie links eine Komponente aus und klicken Sie auf Scan.</p>
+        </div>
+      `;
     }
   </script>
 
