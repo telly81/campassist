@@ -30,10 +30,7 @@
 <body class="bg-slate-50 text-slate-950 antialiased">
   <svg style="display:none" aria-hidden="true">
     <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-6-6-11 0 4-2 6-4 8-2 2-3 4-2 6 1 3 3 4 5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c-2 0-3-1-3-3 0-1 1-3 3-5 0 2 3 3 3 5 0 2-1 3-3 3Z" fill="currentColor" opacity=".2"/></symbol>
-    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4 7l16 10M4 17 20 7M8 4l4 3 4-3M8 20l4-3 4 3M3 11l4 1-1 4M21 13l-4-1 1-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-toilet" viewBox="0 0 24 24"><path d="M7 3h8v7H7zM8 10h10c0 5-2 8-6 8v3H8v-3c-2-1-3-4-3-8h3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 7h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
-    <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 17c1 1 3 1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM15 14h2v2h-2zM19 14h2v4h-2zM14 19h4v2h-4zM20 20h1v1h-1z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4M11 19h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -99,7 +96,7 @@
           <h2 class="text-3xl font-black md:text-5xl">Wohnmobil auswählen. QR-Code scannen. Hilfe erleben.</h2>
         </div>
         
-        <div class="grid gap-8 lg:grid-cols-[1.15fr_.85fr] items-start">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_.9fr] items-start">
           
           <!-- Fahrzeug-Auswahlkarte -->
           <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl sm:p-8">
@@ -162,7 +159,7 @@
           <div class="relative mx-auto w-full max-w-md">
             <div class="relative rounded-[2.8rem] border-[10px] border-brand bg-brand p-2.5 shadow-2xl">
               <div class="mx-auto my-2 h-1.5 w-20 rounded-full bg-slate-600"></div>
-              <div id="phoneScreen" class="min-h-[580px] rounded-[2rem] bg-white p-5 flex flex-col justify-between overflow-y-auto max-h-[620px]">
+              <div id="phoneScreen" class="min-h-[620px] rounded-[2rem] bg-white p-4 flex flex-col justify-between overflow-y-auto max-h-[660px]">
                 <div class="my-auto flex flex-col items-center justify-center text-center">
                   <span class="grid h-20 w-20 place-items-center rounded-3xl bg-blue-50 text-blue-600"><svg class="h-10 w-10"><use href="#i-phone"></use></svg></span>
                   <h3 class="mt-6 text-xl font-black">Bereit für die Live-Demo?</h3>
@@ -219,7 +216,7 @@
           </article>
           <article class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center">
             <span class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-blue-600"><svg class="h-6 w-6"><use href="#i-phone"></use></svg></span>
-            <h3 class="mt-3 font-black text-sm md:text-base">Hilfe opened</h3>
+            <h3 class="mt-3 font-black text-sm md:text-base">Hilfe geöffnet</h3>
             <p class="mt-1 text-xs text-slate-600">Direkt im Browser.</p>
           </article>
           <article class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center">
@@ -345,9 +342,8 @@
     <p><b>CampAssist</b> by Niesing Labs · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
   </footer>
 
-  <!-- Detaillierte JSON-basierte Hilfesystem-Logik -->
+  <!-- Detaillierte JSON-basierte Hilfesystem-Logik mit 800x600 Bildformat & Zusatzdaten -->
   <script>
-    // Exakte Daten aus deinen 3 JSON-Dateien
     const db = {
       'Markise': {
         title: 'Thule Omnistor 5200',
@@ -355,6 +351,10 @@
         icon: 'sun',
         description: 'Markise sicher ausfahren, abstützen und wieder einfahren.',
         actions: [{ label: 'Markise ausfahren', count: '7 bebilderte Schritte' }],
+        troubleshooting: [
+          { q: 'Markise lässt sich schwer kurbeln', a: 'Prüfen Sie, ob die Verriegelungsklappen an den Enden vollständig freigegeben sind.' },
+          { q: 'Stützfüße klemmen in der Leiste', a: 'Drücken Sie die kleine Haltefeder im Profil leicht nach innen.' }
+        ],
         steps: [
           { title: 'Markise entriegeln', text: 'Öffnen Sie die Verriegelung der Markise und geben Sie die Frontleiste frei.', image: 'assets/awning/01.jpg', tip: 'Niemals mit Gewalt öffnen.' },
           { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel vollständig in die dafür vorgesehene Aufnahme.', image: 'assets/awning/02.jpg', tip: 'Kurbel vollständig einstecken, bevor Sie drehen.' },
@@ -366,7 +366,8 @@
         ],
         successTitle: 'Markise einsatzbereit.',
         successText: 'Die Thule Omnistor wurde ausgefahren und abgestützt.',
-        warnings: ['Bei Wind oder starken Böen sofort einfahren.', 'Markise niemals unbeaufsichtigt ausgefahren lassen.']
+        warnings: ['Bei Wind oder starken Böen sofort einfahren.', 'Markise niemals unbeaufsichtigt ausgefahren lassen.', 'Nicht bei Starkregen oder Schnee nutzen.'],
+        disclaimer: 'Gilt für viele Thule Omnistor Modelle (4900, 5200, 6300). Herstelleranleitung hat Vorrang.'
       },
       'Heizung': {
         title: 'Truma Combi 6',
@@ -374,34 +375,44 @@
         icon: 'flame',
         description: 'Raumheizung Schritt für Schritt einschalten.',
         actions: [{ label: 'Raumheizung einschalten', count: '5 bebilderte Schritte' }],
+        troubleshooting: [
+          { q: 'Display zeigt Fehlercode W501H', a: 'Gaszufuhr unterbrochen. Gasflasche prüfen und am Bedienteil quittieren.' },
+          { q: 'Heizung bläst nur kalte Luft', a: 'Prüfen, ob der Boiler befüllt ist oder die eingestellte Temperatur bereits erreicht wurde.' }
+        ],
         steps: [
-          { title: 'Gasversorgung sicher prüfen', text: 'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist. Verwenden Sie die Anlage nur, wenn kein Gasgeruch wahrnehmbar ist.', image: 'assets/heating/01-gasversorgung.jpg', tip: 'Bei Gasgeruch: Personen aus dem Fahrzeug bringen, Gaszufuhr schließen, keine elektrischen Schalter betätigen und fachkundige Hilfe rufen.' },
-          { title: '12-V-Bordnetz einschalten', text: 'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein. Steuerung und Gebläse der Heizung benötigen Bordspannung.', image: 'assets/heating/02-bordnetz.jpg', tip: 'Bei schwacher Batterie kann die Heizung nicht starten oder während des Betriebs abschalten.' },
-          { title: 'Bedienteil aktivieren', text: 'Drücken Sie den Dreh-/Drückknopf am Heizungsbedienteil. Wählen Sie anschließend den Einstellbereich für die Raumtemperatur.', image: 'assets/heating/03-bedienteil.jpg', tip: 'Menüführung und Symbole können je nach eingebautem Bedienteil und Softwarestand abweichen.' },
-          { title: 'Raumtemperatur wählen', text: 'Drehen Sie den Knopf auf die gewünschte Raumtemperatur und drücken Sie den Knopf, um die Auswahl zu speichern.', image: 'assets/heating/04-temperatur.jpg', tip: 'Sollwerte immer bewusst bestätigen.' },
-          { title: 'Start und Warmluft prüfen', text: 'Warten Sie nach der Bestätigung einige Minuten. Prüfen Sie anschließend vorsichtig, ob an den Warmluftauslässen ein Luftstrom austritt.', image: 'assets/heating/05-warmluft.jpg', tip: 'Warmluftauslässe nicht verdecken.' }
+          { title: 'Gasversorgung sicher prüfen', text: 'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist. Verwenden Sie die Anlage nur, wenn kein Gasgeruch wahrnehmbar ist.', image: 'assets/heating/01-gasversorgung.jpg', tip: 'Bei Gasgeruch: Personen aus dem Fahrzeug bringen, Gaszufuhr schließen und Hilfe rufen.' },
+          { title: '12-V-Bordnetz einschalten', text: 'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein. Steuerung und Gebläse der Heizung benötigen Bordspannung.', image: 'assets/heating/02-bordnetz.jpg', tip: 'Bei schwacher Batterie kann die Heizung nicht starten.' },
+          { title: 'Bedienteil aktivieren', text: 'Drücken Sie den Dreh-/Drückknopf am Heizungsbedienteil. Wählen Sie anschließend den Einstellbereich für die Raumtemperatur.', image: 'assets/heating/03-bedienteil.jpg', tip: 'CP-Plus Bedienteil wird durch Drücken geweckt.' },
+          { title: 'Raumtemperatur wählen', text: 'Drehen Sie den Knopf auf die gewünschte Raumtemperatur und drücken Sie den Knopf, um die Auswahl zu speichern.', image: 'assets/heating/04-temperatur.jpg', tip: 'Sollwerte immer durch Drücken bestätigen.' },
+          { title: 'Start und Warmluft prüfen', text: 'Warten Sie nach der Bestätigung einige Minuten. Prüfen Sie anschließend vorsichtig, ob an den Warmluftauslässen ein Luftstrom austritt.', image: 'assets/heating/05-warmluft.jpg', tip: 'Warmluftauslässe niemals verdecken.' }
         ],
         successTitle: 'Raumheizung gestartet.',
         successText: 'Prüfen Sie nach einigen Minuten den Warmluftstrom.',
-        warnings: ['Bei Gasgeruch Anlage nicht verwenden.', 'Fahrzeug- und Herstelleranleitung haben Vorrang.']
+        warnings: ['Bei Gasgeruch Anlage sofort ausschalten!', 'Fahrzeug- und Herstelleranleitung haben Vorrang.'],
+        disclaimer: 'Truma Combi 6 Gas- oder Elektrobetrieb. Abweichungen bei anderen CP-Plus Bedienteilen möglich.'
       },
       'Toilette': {
         title: 'WC-Kassette entleeren',
         component: 'Toilette',
         icon: 'toilet',
-        description: 'Schritt-für-Schritt-Anleitung zur sauberen Entleerung und Vorbereitung der Dometic CT 4000 Toilettenkassette.',
+        description: 'Saubere Entleerung und Vorbereitung der Dometic CT 4000 Toilettenkassette.',
         actions: [{ label: 'WC-Kassette entleeren', count: '6 bebilderte Schritte' }],
+        troubleshooting: [
+          { q: 'Kassette lässt sich nicht herausziehen', a: 'Der Schieber im Innenraum ist noch geöffnet. Schieber im Bad ganz schließen!' },
+          { q: 'Spülung funktioniert nicht', a: '12V-Hauptschalter und Wasserpumpe am Hauptpanel aktivieren.' }
+        ],
         steps: [
-          { title: 'Vorbereitung im Innenraum', text: 'Stelle sicher, dass die Schieber-Klappe der Toilette im Bad vollständig geschlossen ist. Prüfe die Füllstandsanzeige an der Bedieneinheit.', image: 'assets/awning/toilet/01-innenraum-schieber.png', tip: 'Niemals versuchen, die Kassette herauszuziehen, wenn die Schieber-Klappe geöffnet ist!' },
+          { title: 'Vorbereitung im Innenraum', text: 'Stelle sicher, dass die Schieber-Klappe der Toilette im Bad vollständig geschlossen ist. Prüfe die Füllstandsanzeige an der Bedieneinheit.', image: 'assets/awning/toilet/01-innenraum-schieber.png', tip: 'Niemals versuchen, die Kassette herauszuziehen, wenn der Schieber offen ist!' },
           { title: 'Außenklappe öffnen & Kassette entriegeln', text: 'Öffne die äußere Serviceklappe mit dem Schlüssel. Ziehe die grüne Entriegelungslasche an der Unterseite der Kassette hoch und ziehe die Kassette am Tragegriff vorsichtig heraus.', image: 'assets/awning/toilet/02-kassette-entriegeln.png', tip: 'Sollte die Kassette blockieren, nicht mit Gewalt ziehen.' },
-          { title: 'Transport zur Entsorgungsstation', text: 'Bringe die Kassette aufrecht zum ausgewiesenen Entsorgungsbereich für Chemie-WCs.', image: 'assets/awning/toilet/03-transport.png', tip: 'Ausschließlich an dafür vorgesehenen Entsorgungsstationen entleeren.' },
-          { title: 'Kassette entleeren', text: 'Drehe das Ausgussrohr nach außen und schraube den Verschlussdeckel ab. Neige die Kassette über den Entsorgungsschacht und halte den grünen Entlüftungsknopf mit dem Daumen gedrückt.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Der Entlüftungsknopf sorgt für einen gleichmäßigen Ablauf ohne Gluckern.' },
+          { title: 'Transport zur Entsorgungsstation', text: 'Bringe die Kassette aufrecht zum ausgewiesenen Entsorgungsbereich für Chemie-WCs.', image: 'assets/awning/toilet/03-transport.png', tip: 'Ausschließlich an zugelassenen Entsorgungsstationen entleeren.' },
+          { title: 'Kassette entleeren', text: 'Drehe das Ausgussrohr nach außen und schraube den Verschlussdeckel ab. Neige die Kassette über den Entsorgungsschacht und halte den grünen Entlüftungsknopf mit dem Daumen gedrückt.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Der Entlüftungsknopf verhindert Gluckern und Spritzen.' },
           { title: 'Spülen & Säubern', text: 'Fülle über das Ausgussrohr etwas Frischwasser nach, schraube den Deckel auf, schüttele die Kassette leicht durch und entleere sie erneut.', image: 'assets/awning/toilet/05-spuelen.png', tip: 'Reinige das Ausgussrohr gründlich von außen.' },
-          { title: 'Sanitärzusatz & Einsetzen', text: 'Gib den vom Hersteller empfohlenen Sanitärzusatz zusammen mit ca. 2 Litern Wasser in die Kassette. Schiebe die Kassette zurück, bis sie hörbar einrastet.', image: 'assets/awning/toilet/06-zusatz-einsetzen.png', tip: 'Pflege die Dichtung regelmäßig mit Silikonspray.' }
+          { title: 'Sanitärzusatz & Einsetzen', text: 'Gib den empfohlenen Sanitärzusatz zusammen mit ca. 2 Litern Wasser in die Kassette. Schiebe die Kassette zurück, bis sie hörbar einrastet.', image: 'assets/awning/toilet/06-zusatz-einsetzen.png', tip: 'Pflege die Dichtung regelmäßig mit Silikonspray.' }
         ],
         successTitle: 'WC-Kassette wieder einsatzbereit.',
         successText: 'Die Dometic CT 4000 Kassette wurde erfolgreich entleert, gespült und eingesetzt.',
-        warnings: ['Ausschließlich an zugelassenen Chemie-WC-Entsorgungsstationen entleeren.']
+        warnings: ['Ausschließlich an zugelassenen Chemie-WC-Entsorgungsstationen entleeren.', 'Keine aggressiven Scheuermittel nutzen.'],
+        disclaimer: 'Spezifisch für Dometic CT 4000 Reihe.'
       }
     };
 
@@ -447,23 +458,45 @@
     function showActionMenu() {
       const data = db[activeComp];
       screen.innerHTML = `
-        <div class="screen-in flex flex-col h-full justify-between">
+        <div class="screen-in flex flex-col h-full justify-between space-y-4">
           <div>
             ${head()}
-            <p class="mt-4 text-xs text-slate-600">${data.description}</p>
-            <div class="mt-4 space-y-2">
+            <p class="mt-3 text-xs text-slate-600">${data.description}</p>
+            
+            <!-- Anleitungen -->
+            <p class="text-[10px] font-black uppercase text-slate-400 mt-4 mb-1.5">Schritt-für-Schritt Anleitung</p>
+            <div class="space-y-2">
               ${data.actions.map(act => `
-                <button onclick="startGuide()" class="w-full text-left p-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 flex items-center justify-between">
+                <button onclick="startGuide()" class="w-full text-left p-3 rounded-xl bg-blue-50/70 border border-blue-200 hover:bg-blue-100 flex items-center justify-between">
                   <div>
-                    <b class="block text-xs text-slate-900">${act.label}</b>
-                    <span class="text-[10px] text-slate-500">${act.count}</span>
+                    <b class="block text-xs text-blue-950">${act.label}</b>
+                    <span class="text-[10px] text-blue-700">${act.count}</span>
                   </div>
                   <span class="text-blue-600 font-bold text-sm">›</span>
                 </button>
               `).join('')}
             </div>
+
+            <!-- Weitere Informationen & Diagnose -->
+            ${data.troubleshooting ? `
+              <p class="text-[10px] font-black uppercase text-slate-400 mt-4 mb-1.5">Häufige Fragen & Diagnose</p>
+              <div class="space-y-1.5">
+                ${data.troubleshooting.map(item => `
+                  <details class="text-xs bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                    <summary class="font-bold text-slate-800 cursor-pointer">${item.q}</summary>
+                    <p class="mt-1 text-[11px] text-slate-600 leading-normal">${item.a}</p>
+                  </details>
+                `).join('')}
+              </div>
+            ` : ''}
+
+            <!-- Sicherheit & Disclaimer -->
+            ${data.disclaimer ? `
+              <p class="text-[10px] text-slate-400 mt-4 italic">${data.disclaimer}</p>
+            ` : ''}
           </div>
-          <p class="text-[10px] text-slate-400 text-center mt-4">CampAssist v1.0 · Niesing Labs</p>
+
+          <a href="#kontakt" class="block text-center p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700">💬 Vermieter kontaktieren</a>
         </div>
       `;
     }
@@ -489,16 +522,16 @@
               <div class="h-full bg-gradient-to-r from-blue-600 to-teal-400 transition-all duration-300" style="width:${pct}%"></div>
             </div>
 
-            <!-- Bild aus JSON mit Fallback -->
-            <div class="h-32 w-full rounded-xl bg-slate-100 overflow-hidden border border-slate-200 mb-3 relative">
-              <img src="${st.image}" onerror="this.src='https://placehold.co/400x250/e2e8f0/475569?text=${encodeURIComponent(st.title)}'" class="h-full w-full object-cover" alt="Schritt Grafik">
+            <!-- Bildbereich für 800x600 px Verhältnis (4:3) -->
+            <div class="aspect-[4/3] w-full rounded-xl bg-slate-100 overflow-hidden border border-slate-200 mb-3 relative">
+              <img src="${st.image}" onerror="this.src='https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(st.title)}'" class="h-full w-full object-cover" alt="Illustration 800x600">
             </div>
             
             <p class="text-[10px] font-black uppercase tracking-widest text-teal-600">Schritt ${currentStep + 1}</p>
             <h4 class="text-sm font-black text-slate-900 mt-0.5">${st.title}</h4>
             <p class="mt-1 text-xs leading-relaxed text-slate-600">${st.text}</p>
             
-            ${st.tip ? `<div class="mt-2 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-2 text-[11px] text-amber-950"><b>Tipp:</b> ${st.tip}</div>` : ''}
+            ${st.tip ? `<div class="mt-2 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-2 text-[11px] text-amber-950"><b>Wichtig:</b> ${st.tip}</div>` : ''}
           </div>
 
           <div class="mt-4 pt-2 border-t border-slate-100 grid grid-cols-2 gap-2">
@@ -526,8 +559,8 @@
             <p class="mt-1 text-xs text-slate-500 max-w-[220px]">${data.successText}</p>
             
             ${data.warnings ? `
-              <div class="mt-3 text-left bg-red-50 border-l-2 border-red-400 p-2 text-[10px] text-red-900 rounded">
-                <b>Sicherheit:</b>
+              <div class="mt-3 text-left bg-red-50 border-l-2 border-red-400 p-2.5 text-[10px] text-red-900 rounded">
+                <b>Sicherheitshinweise:</b>
                 <ul class="list-disc ml-3 mt-1 space-y-0.5">
                   ${data.warnings.map(w => `<li>${w}</li>`).join('')}
                 </ul>
