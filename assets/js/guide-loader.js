@@ -174,3 +174,31 @@
     };
   }
 })();
+// ==========================================
+// BILDER-PRELOADER (Für lückenloses Laden auf dem Handy)
+// ==========================================
+(function() {
+  function preloadImages(guideKey) {
+    if (!window.guides || !window.guides[guideKey]) return;
+    const guide = window.guides[guideKey];
+    
+    // Geht alle Schritte durch und lädt die Bilder im Hintergrund in den Cache
+    if (guide.steps && Array.isArray(guide.steps)) {
+      guide.steps.forEach(step => {
+        if (step.image) {
+          const img = new Image();
+          img.src = step.image;
+        }
+      });
+    }
+  }
+
+  // Hookt sich in den Aufruf von loadGuide ein
+  const originalLoadGuide = window.loadGuide;
+  window.loadGuide = function(guideKey) {
+    if (typeof originalLoadGuide === 'function') {
+      originalLoadGuide(guideKey);
+    }
+    preloadImages(guideKey);
+  };
+})();
