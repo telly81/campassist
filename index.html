@@ -18,17 +18,22 @@
   </script>
   <style>
     .gradient { background: linear-gradient(100deg, #2563eb, #14b8a6); -webkit-background-clip: text; color: transparent; }
+    .hotspot { animation: pulse 1.7s infinite; }
     .scan-line { animation: scan 1.8s ease-in-out infinite; }
     .screen-in { animation: enter .35s ease-out; }
-    @keyframes scan { 0%, 100% { transform: translateY(0); opacity: .3; } 50% { transform: translateY(130px); opacity: 1; } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 #14b8a6aa; } 100% { box-shadow: 0 0 0 18px #14b8a600; } }
+    @keyframes scan { 0%, 100% { transform: translateY(0); opacity: .3; } 50% { transform: translateY(145px); opacity: 1; } }
     @keyframes enter { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-950 antialiased">
   <svg style="display:none" aria-hidden="true">
-    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-6-6-11 0 4-2 6-4 8-2 2-3 4-2 6 1 3 3 4 5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c-2 0-3-1-3-3 0-1 1-3 3-5 0 2-1 3-3 3Z" fill="currentColor" opacity=".2"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-6-6-11 0 4-2 6-4 8-2 2-3 4-2 6 1 3 3 4 5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c-2 0-3-1-3-3 0-1 1-3 3-5 0 2 3 3 3 5 0 2-1 3-3 3Z" fill="currentColor" opacity=".2"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4 7l16 10M4 17 20 7M8 4l4 3 4-3M8 20l4-3 4 3M3 11l4 1-1 4M21 13l-4-1 1-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-toilet" viewBox="0 0 24 24"><path d="M7 3h8v7H7zM8 10h10c0 5-2 8-6 8v3H8v-3c-2-1-3-4-3-8h3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 7h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 17c1 1 3 1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM15 14h2v2h-2zM19 14h2v4h-2zM14 19h4v2h-4zM20 20h1v1h-1z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4M11 19h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -38,7 +43,7 @@
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   </svg>
 
-  <header class="fixed inset-x-0 top-0 z-[100] border-b border-slate-200 bg-white">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
     <div class="mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
       <a href="#start" class="flex min-w-0 items-center">
         <img src="assets/brand/campassist-header.png" alt="CampAssist Logo" class="h-9 w-auto max-w-[65vw] object-contain sm:h-14 lg:h-16">
@@ -73,8 +78,8 @@
     </div>
   </header>
 
-  <main class="pt-16 lg:pt-20">
-    <section id="start" class="relative overflow-hidden bg-white pb-10 pt-8 md:pb-16 md:pt-14">
+  <main class="pt-20 lg:pt-24">
+    <section id="start" class="relative overflow-hidden bg-white pb-12 pt-8 md:pb-20 md:pt-14">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center md:text-left">
         <span class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">Digitale Fahrzeughilfe für Vermieter</span>
         <h1 class="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">Jede Fahrzeugtechnik in <span class="gradient">30 Sekunden</span> erklärt.</h1>
@@ -87,14 +92,14 @@
     </section>
 
     <!-- LIVE DEMO -->
-    <section id="wow-demo" class="bg-slate-100 py-10 md:py-20">
+    <section id="wow-demo" class="bg-slate-100 py-12 md:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-5">
         <div class="mx-auto max-w-3xl text-center mb-8">
           <span class="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-600 mb-2">Interaktive Demo</span>
-          <h2 class="text-2xl font-black md:text-4xl">Komponente wählen & QR-Scan simulieren</h2>
+          <h2 class="text-3xl font-black md:text-5xl">Wohnmobil auswählen. QR-Code scannen. Hilfe erleben.</h2>
         </div>
         
-        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-start">
+        <div class="grid gap-8 lg:grid-cols-[1.15fr_.85fr] items-start">
           
           <!-- Fahrzeug-Auswahlkarte -->
           <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl sm:p-8">
@@ -106,48 +111,46 @@
               <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">WM-007</span>
             </div>
 
-            <!-- Aufgewertete Wohnmobil Grafikanzeige -->
-            <div class="relative mt-6 overflow-hidden rounded-3xl bg-gradient-to-b from-sky-100 via-sky-50 to-emerald-50/40 border border-slate-200 p-6 min-h-[280px] sm:min-h-[340px] flex items-center justify-center">
-              
-              <!-- Fahrzeug-Silhouette -->
-              <div class="relative w-full max-w-[460px] h-40 sm:h-52 rounded-[2.5rem_4.5rem_1rem_1rem] border-4 border-slate-300 bg-white shadow-md flex items-center justify-between px-6">
-                <div class="h-16 w-24 rounded-xl border-2 border-slate-300 bg-sky-100/80 shadow-inner"></div>
-                <div class="h-16 w-20 rounded-xl border-2 border-slate-300 bg-sky-100/80 shadow-inner"></div>
-                <div class="absolute -bottom-6 left-12 h-12 w-12 sm:h-14 sm:w-14 rounded-full border-[8px] sm:border-[10px] border-slate-800 bg-slate-300 shadow"></div>
-                <div class="absolute -bottom-6 right-12 h-12 w-12 sm:h-14 sm:w-14 rounded-full border-[8px] sm:border-[10px] border-slate-800 bg-slate-300 shadow"></div>
-              </div>
+            <!-- Mobiler Modus (< 768px) -->
+            <div class="block md:hidden relative mt-6 rounded-3xl border border-slate-200 bg-gradient-to-b from-sky-50 to-emerald-50/40 p-4">
+              <div class="relative mx-auto my-2 min-h-[190px] w-full max-w-[320px] rounded-2xl border-2 border-slate-300 bg-white shadow-md p-3">
+                <div class="absolute left-0 top-0 bottom-0 w-12 rounded-l-xl bg-slate-100/90 border-r border-slate-200"></div>
+                <div class="absolute -bottom-3 left-6 h-7 w-7 rounded-full border-2 border-slate-600 bg-slate-300"></div>
+                <div class="absolute -bottom-3 right-6 h-7 w-7 rounded-full border-2 border-slate-600 bg-slate-300"></div>
 
-              <!-- PC Positionierte Buttons -->
-              <div class="hidden md:block">
-                <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component absolute left-1/2 top-[12%] -translate-x-1/2 flex items-center gap-2 rounded-full border-2 border-white bg-yellow-500 px-4 py-2 text-xs font-bold text-white shadow-lg transition hover:scale-105 active:scale-95">
-                  <svg class="h-4 w-4"><use href="#i-sun"></use></svg><span>Markise</span>
-                </button>
-                <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component absolute left-[12%] top-[48%] flex items-center gap-2 rounded-xl border-2 border-white bg-orange-500 px-4 py-2 text-xs font-bold text-white shadow-lg transition hover:scale-105 active:scale-95">
-                  <svg class="h-4 w-4"><use href="#i-flame"></use></svg><span>Heizung</span>
-                </button>
-                <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component absolute right-[12%] top-[48%] flex items-center gap-2 rounded-xl border-2 border-white bg-teal-600 px-4 py-2 text-xs font-bold text-white shadow-lg transition hover:scale-105 active:scale-95">
-                  <svg class="h-4 w-4"><use href="#i-toilet"></use></svg><span>Toilette</span>
-                </button>
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2">
+                  <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component hotspot flex items-center gap-1.5 rounded-full border-2 border-white bg-yellow-500 px-3 py-1 text-xs font-bold text-white shadow-md">
+                    <svg class="h-4 w-4"><use href="#i-sun"></use></svg><span>Markise</span>
+                  </button>
+                </div>
+
+                <div class="flex h-full items-center justify-between pt-5 px-2">
+                  <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component hotspot flex items-center gap-1.5 rounded-xl border-2 border-white bg-orange-500 px-2.5 py-1.5 text-xs font-bold text-white shadow-md">
+                    <svg class="h-4 w-4"><use href="#i-flame"></use></svg><span>Heizung</span>
+                  </button>
+                  <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component hotspot flex items-center gap-1.5 rounded-xl border-2 border-white bg-teal-600 px-2.5 py-1.5 text-xs font-bold text-white shadow-md">
+                    <svg class="h-4 w-4"><use href="#i-toilet"></use></svg><span>Toilette</span>
+                  </button>
+                </div>
               </div>
             </div>
 
-            <!-- Mobile Liste -->
-            <div class="mt-4 grid gap-2.5 md:hidden">
-              <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component flex items-center justify-between rounded-xl border border-yellow-500/30 bg-yellow-50/60 p-3.5 font-bold text-amber-900 active:bg-yellow-100">
-                <span class="flex items-center gap-3"><span class="grid h-8 w-8 place-items-center rounded-lg bg-yellow-500 text-white"><svg class="h-4 w-4"><use href="#i-sun"></use></svg></span><span>Markise</span></span>
-                <span class="text-xs text-yellow-700">Thule Omnistor ›</span>
-              </button>
-              <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component flex items-center justify-between rounded-xl border border-orange-500/30 bg-orange-50/60 p-3.5 font-bold text-orange-900 active:bg-orange-100">
-                <span class="flex items-center gap-3"><span class="grid h-8 w-8 place-items-center rounded-lg bg-orange-500 text-white"><svg class="h-4 w-4"><use href="#i-flame"></use></svg></span><span>Heizung</span></span>
-                <span class="text-xs text-orange-700">Truma Combi 6 ›</span>
-              </button>
-              <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component flex items-center justify-between rounded-xl border border-teal-600/30 bg-teal-50/60 p-3.5 font-bold text-teal-900 active:bg-teal-100">
-                <span class="flex items-center gap-3"><span class="grid h-8 w-8 place-items-center rounded-lg bg-teal-600 text-white"><svg class="h-4 w-4"><use href="#i-toilet"></use></svg></span><span>Toilette</span></span>
-                <span class="text-xs text-teal-700">Dometic CT 4000 ›</span>
-              </button>
+            <!-- Schönes Desktop Wohnmobil (>= 768px) -->
+            <div class="hidden md:block relative mt-7 min-h-[390px] overflow-hidden rounded-3xl bg-gradient-to-b from-sky-100 to-white">
+              <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-emerald-100 to-transparent"></div>
+              <div class="absolute bottom-16 left-1/2 h-52 w-[82%] -translate-x-1/2 rounded-[3rem_5rem_1rem_1rem] border-4 border-slate-300 bg-white shadow-xl">
+                <div class="absolute left-10 top-8 h-24 w-32 rounded-xl border-4 border-slate-300 bg-sky-100"></div>
+                <div class="absolute right-10 top-8 h-20 w-24 rounded-xl border-4 border-slate-300 bg-sky-100"></div>
+                <div class="absolute left-[47%] top-5 h-40 w-24 rounded-t-xl border-4 border-slate-300 bg-slate-100"></div>
+                <div class="absolute -bottom-9 left-16 h-20 w-20 rounded-full border-[14px] border-slate-700 bg-slate-300"></div>
+                <div class="absolute -bottom-9 right-20 h-20 w-20 rounded-full border-[14px] border-slate-700 bg-slate-300"></div>
+              </div>
+              <button data-name="Heizung" data-model="Truma Combi 6" data-icon="flame" class="component hotspot absolute left-[23%] top-[43%] grid h-12 w-12 place-items-center rounded-2xl border-4 border-white bg-orange-500 text-white shadow-xl sm:h-14 sm:w-14" title="Heizung: Truma Combi 6"><svg class="h-6 w-6 sm:h-7 sm:w-7"><use href="#i-flame"></use></svg></button>
+              <button data-name="Toilette" data-model="Dometic CT 4000" data-icon="toilet" class="component hotspot absolute right-[20%] top-[47%] grid h-12 w-12 place-items-center rounded-2xl border-4 border-white bg-teal-600 text-white shadow-xl sm:h-14 sm:w-14" title="Toilette: Dometic CT 4000"><svg class="h-6 w-6 sm:h-7 sm:w-7"><use href="#i-toilet"></use></svg></button>
+              <button data-name="Markise" data-model="Thule Omnistor 5200" data-icon="sun" class="component hotspot absolute left-[58%] top-[18%] grid h-12 w-12 place-items-center rounded-2xl border-4 border-white bg-yellow-500 text-white shadow-xl sm:h-14 sm:w-14" title="Markise: Thule Omnistor 5200"><svg class="h-6 w-6 sm:h-7 sm:w-7"><use href="#i-sun"></use></svg></button>
             </div>
 
-            <div class="mt-5 grid grid-cols-2 gap-3 rounded-2xl bg-slate-50 p-4 text-xs sm:text-sm">
+            <div class="mt-6 grid grid-cols-2 gap-3 rounded-2xl bg-slate-50 p-4 text-xs sm:text-sm">
               <div><span class="text-slate-400 block text-[11px] font-medium">Ausgewählt:</span><b id="selectedName" class="text-base font-black">Heizung</b></div>
               <div class="text-right"><span class="text-slate-400 block text-[11px] font-medium">Gerätemodell:</span><b id="selectedModel" class="text-base font-black">Truma Combi 6</b></div>
             </div>
@@ -159,7 +162,7 @@
           <div class="relative mx-auto w-full max-w-md">
             <div class="relative rounded-[2.8rem] border-[10px] border-brand bg-brand p-2.5 shadow-2xl">
               <div class="mx-auto my-2 h-1.5 w-20 rounded-full bg-slate-600"></div>
-              <div id="phoneScreen" class="min-h-[580px] rounded-[2rem] bg-white p-5 flex flex-col justify-between">
+              <div id="phoneScreen" class="min-h-[580px] rounded-[2rem] bg-white p-5 flex flex-col justify-between overflow-y-auto max-h-[620px]">
                 <div class="my-auto flex flex-col items-center justify-center text-center">
                   <span class="grid h-20 w-20 place-items-center rounded-3xl bg-blue-50 text-blue-600"><svg class="h-10 w-10"><use href="#i-phone"></use></svg></span>
                   <h3 class="mt-6 text-xl font-black">Bereit für die Live-Demo?</h3>
@@ -169,6 +172,13 @@
             </div>
           </div>
 
+        </div>
+
+        <div id="dashboard" class="mt-12 hidden rounded-[2rem] bg-brand p-6 text-white shadow-2xl sm:p-8">
+          <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
+            <div><p class="text-xs font-black uppercase tracking-widest text-teal-400">CampAssist Dashboard</p><h3 class="mt-2 text-2xl font-black sm:text-3xl">Ein Supportanruf wurde vermieden.</h3></div>
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-green-400/15 text-green-300 sm:h-16 sm:w-16"><svg class="h-8 w-8 sm:h-9 sm:w-9"><use href="#i-check"></use></svg></span>
+          </div>
         </div>
       </div>
     </section>
@@ -209,7 +219,7 @@
           </article>
           <article class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center">
             <span class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-blue-600"><svg class="h-6 w-6"><use href="#i-phone"></use></svg></span>
-            <h3 class="mt-3 font-black text-sm md:text-base">Hilfe geöffnet</h3>
+            <h3 class="mt-3 font-black text-sm md:text-base">Hilfe opened</h3>
             <p class="mt-1 text-xs text-slate-600">Direkt im Browser.</p>
           </article>
           <article class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center">
@@ -335,33 +345,68 @@
     <p><b>CampAssist</b> by Niesing Labs · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
   </footer>
 
-  <!-- Interaktives Skript mit echten Schritt-für-Schritt Anleitungen -->
+  <!-- Detaillierte JSON-basierte Hilfesystem-Logik -->
   <script>
-    let current = { name: 'Heizung', model: 'Truma Combi 6', icon: 'flame' };
-    let activeStep = 0;
-
-    const guides = {
-      'Heizung': [
-        { title: 'Gasversorgung prüfen', text: 'Prüfen Sie, ob das Gasventil der Flasche geöffnet ist und kein Gasgeruch vorliegt.', tip: 'Bei Gasgeruch Zufuhr sofort schließen!' },
-        { title: '12V-Bordnetz einschalten', text: 'Aktivieren Sie die 12V-Hauptstromversorgung am Bedienpanel über der Tür.', tip: 'Ohne 12V startet das Gebläse nicht.' },
-        { title: 'Bedienteil aktivieren', text: 'Drücken Sie den Drehknopf am Heizungs-Panel kurz, um das Display aufzuwecken.', tip: 'CP-Plus Panel leuchtet auf.' },
-        { title: 'Raumtemperatur wählen', text: 'Drehen Sie auf die gewünschte Temperatur (z. B. 21°C) und drücken Sie zum Bestätigen.', tip: 'Das Flame-Symbol beginnt zu blinken.' },
-        { title: 'Warmluft prüfen', text: 'Warten Sie 3–5 Minuten. An den Ausströmern muss spürbar warme Luft austreten.', tip: 'Ausströmer nicht mit Kissen verdecken.' }
-      ],
-      'Markise': [
-        { title: 'Verriegelung lösen', text: 'Öffnen Sie die Sicherungsklappen links und rechts an der Frontleiste.', tip: 'Niemals mit Gewalt ziehen.' },
-        { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel in die Öse und drehen Sie sie um 90 Grad fest.', tip: 'Kurbel fest fixieren.' },
-        { title: '1 Meter ausfahren', text: 'Kurbeln Sie die Markise ca. 1 Meter aus, bis Sie an die Stützfüße gelangen.', tip: 'Nicht direkt ganz ausfahren!' },
-        { title: 'Stützfüße sichern', text: 'Klappen Sie beide Stützfüße aus der Leiste und verankern Sie sie am Boden.', tip: 'Schützt vor Hebelwirkung auf das Dach.' },
-        { title: 'Endposition auskurbeln', text: 'Kurbeln Sie die Markise auf die volle Länge und stellen Sie eine Seite leicht schräg (Regenablauf).', tip: 'Bei Wind sofort einfahren!' }
-      ],
-      'Toilette': [
-        { title: 'Füllstand kontrollieren', text: 'Prüfen Sie die LED-Anzeige der Toilettenkassette am Sockel.', tip: 'Rot bedeutet: Kassette voll!' },
-        { title: 'Schieber öffnen', text: 'Betätigen Sie den grauen Hebel unter der Toilettenschüssel, um den Ablauf freizugeben.', tip: 'Vor Benutzung stets öffnen.' },
-        { title: 'Spülung drücken', text: 'Drücken Sie die blaue Spültaste für ca. 2–3 Sekunden.', tip: 'Pumpe läuft über Bordwasser.' },
-        { title: 'Schieber schließen', text: 'Schließen Sie den Hebel vollständig, um Geruchsbildung zu vermeiden.', tip: 'Dichtung bleibt so sauber.' }
-      ]
+    // Exakte Daten aus deinen 3 JSON-Dateien
+    const db = {
+      'Markise': {
+        title: 'Thule Omnistor 5200',
+        component: 'Markise',
+        icon: 'sun',
+        description: 'Markise sicher ausfahren, abstützen und wieder einfahren.',
+        actions: [{ label: 'Markise ausfahren', count: '7 bebilderte Schritte' }],
+        steps: [
+          { title: 'Markise entriegeln', text: 'Öffnen Sie die Verriegelung der Markise und geben Sie die Frontleiste frei.', image: 'assets/awning/01.jpg', tip: 'Niemals mit Gewalt öffnen.' },
+          { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel vollständig in die dafür vorgesehene Aufnahme.', image: 'assets/awning/02.jpg', tip: 'Kurbel vollständig einstecken, bevor Sie drehen.' },
+          { title: 'Markise langsam ausfahren', text: 'Kurbeln Sie die Markise langsam etwa einen Meter aus.', image: 'assets/awning/03.jpg', tip: 'Nicht ruckartig kurbeln.' },
+          { title: 'Linken Stützfuß ausklappen', text: 'Entriegeln Sie den linken Stützfuß und klappen Sie ihn nach unten.', image: 'assets/awning/04.jpg', tip: 'Fuß sicher und fest aufstellen.' },
+          { title: 'Rechten Stützfuß ausklappen', text: 'Entriegeln Sie den rechten Stützfuß und klappen Sie ihn nach unten.', image: 'assets/awning/05.jpg', tip: 'Beide Stützen gleichmäßig ausrichten.' },
+          { title: 'Höhe einstellen', text: 'Stellen Sie die gewünschte Höhe ein und verriegeln Sie die Stützfüße.', image: 'assets/awning/06.jpg', tip: 'Bei Regen eine Seite etwas tiefer stellen, damit Wasser ablaufen kann.' },
+          { title: 'Markise vollständig ausfahren', text: 'Kurbeln Sie die Markise bis zur gewünschten Länge aus und prüfen Sie den sicheren Stand.', image: 'assets/awning/07.jpg', tip: 'Bei Wind oder starken Böen sofort einfahren.' }
+        ],
+        successTitle: 'Markise einsatzbereit.',
+        successText: 'Die Thule Omnistor wurde ausgefahren und abgestützt.',
+        warnings: ['Bei Wind oder starken Böen sofort einfahren.', 'Markise niemals unbeaufsichtigt ausgefahren lassen.']
+      },
+      'Heizung': {
+        title: 'Truma Combi 6',
+        component: 'Heizung',
+        icon: 'flame',
+        description: 'Raumheizung Schritt für Schritt einschalten.',
+        actions: [{ label: 'Raumheizung einschalten', count: '5 bebilderte Schritte' }],
+        steps: [
+          { title: 'Gasversorgung sicher prüfen', text: 'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist. Verwenden Sie die Anlage nur, wenn kein Gasgeruch wahrnehmbar ist.', image: 'assets/heating/01-gasversorgung.jpg', tip: 'Bei Gasgeruch: Personen aus dem Fahrzeug bringen, Gaszufuhr schließen, keine elektrischen Schalter betätigen und fachkundige Hilfe rufen.' },
+          { title: '12-V-Bordnetz einschalten', text: 'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein. Steuerung und Gebläse der Heizung benötigen Bordspannung.', image: 'assets/heating/02-bordnetz.jpg', tip: 'Bei schwacher Batterie kann die Heizung nicht starten oder während des Betriebs abschalten.' },
+          { title: 'Bedienteil aktivieren', text: 'Drücken Sie den Dreh-/Drückknopf am Heizungsbedienteil. Wählen Sie anschließend den Einstellbereich für die Raumtemperatur.', image: 'assets/heating/03-bedienteil.jpg', tip: 'Menüführung und Symbole können je nach eingebautem Bedienteil und Softwarestand abweichen.' },
+          { title: 'Raumtemperatur wählen', text: 'Drehen Sie den Knopf auf die gewünschte Raumtemperatur und drücken Sie den Knopf, um die Auswahl zu speichern.', image: 'assets/heating/04-temperatur.jpg', tip: 'Sollwerte immer bewusst bestätigen.' },
+          { title: 'Start und Warmluft prüfen', text: 'Warten Sie nach der Bestätigung einige Minuten. Prüfen Sie anschließend vorsichtig, ob an den Warmluftauslässen ein Luftstrom austritt.', image: 'assets/heating/05-warmluft.jpg', tip: 'Warmluftauslässe nicht verdecken.' }
+        ],
+        successTitle: 'Raumheizung gestartet.',
+        successText: 'Prüfen Sie nach einigen Minuten den Warmluftstrom.',
+        warnings: ['Bei Gasgeruch Anlage nicht verwenden.', 'Fahrzeug- und Herstelleranleitung haben Vorrang.']
+      },
+      'Toilette': {
+        title: 'WC-Kassette entleeren',
+        component: 'Toilette',
+        icon: 'toilet',
+        description: 'Schritt-für-Schritt-Anleitung zur sauberen Entleerung und Vorbereitung der Dometic CT 4000 Toilettenkassette.',
+        actions: [{ label: 'WC-Kassette entleeren', count: '6 bebilderte Schritte' }],
+        steps: [
+          { title: 'Vorbereitung im Innenraum', text: 'Stelle sicher, dass die Schieber-Klappe der Toilette im Bad vollständig geschlossen ist. Prüfe die Füllstandsanzeige an der Bedieneinheit.', image: 'assets/awning/toilet/01-innenraum-schieber.png', tip: 'Niemals versuchen, die Kassette herauszuziehen, wenn die Schieber-Klappe geöffnet ist!' },
+          { title: 'Außenklappe öffnen & Kassette entriegeln', text: 'Öffne die äußere Serviceklappe mit dem Schlüssel. Ziehe die grüne Entriegelungslasche an der Unterseite der Kassette hoch und ziehe die Kassette am Tragegriff vorsichtig heraus.', image: 'assets/awning/toilet/02-kassette-entriegeln.png', tip: 'Sollte die Kassette blockieren, nicht mit Gewalt ziehen.' },
+          { title: 'Transport zur Entsorgungsstation', text: 'Bringe die Kassette aufrecht zum ausgewiesenen Entsorgungsbereich für Chemie-WCs.', image: 'assets/awning/toilet/03-transport.png', tip: 'Ausschließlich an dafür vorgesehenen Entsorgungsstationen entleeren.' },
+          { title: 'Kassette entleeren', text: 'Drehe das Ausgussrohr nach außen und schraube den Verschlussdeckel ab. Neige die Kassette über den Entsorgungsschacht und halte den grünen Entlüftungsknopf mit dem Daumen gedrückt.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Der Entlüftungsknopf sorgt für einen gleichmäßigen Ablauf ohne Gluckern.' },
+          { title: 'Spülen & Säubern', text: 'Fülle über das Ausgussrohr etwas Frischwasser nach, schraube den Deckel auf, schüttele die Kassette leicht durch und entleere sie erneut.', image: 'assets/awning/toilet/05-spuelen.png', tip: 'Reinige das Ausgussrohr gründlich von außen.' },
+          { title: 'Sanitärzusatz & Einsetzen', text: 'Gib den vom Hersteller empfohlenen Sanitärzusatz zusammen mit ca. 2 Litern Wasser in die Kassette. Schiebe die Kassette zurück, bis sie hörbar einrastet.', image: 'assets/awning/toilet/06-zusatz-einsetzen.png', tip: 'Pflege die Dichtung regelmäßig mit Silikonspray.' }
+        ],
+        successTitle: 'WC-Kassette wieder einsatzbereit.',
+        successText: 'Die Dometic CT 4000 Kassette wurde erfolgreich entleert, gespült und eingesetzt.',
+        warnings: ['Ausschließlich an zugelassenen Chemie-WC-Entsorgungsstationen entleeren.']
+      }
     };
+
+    let activeComp = 'Heizung';
+    let currentStep = 0;
 
     const comps = document.querySelectorAll('.component');
     const nameEl = document.getElementById('selectedName');
@@ -370,9 +415,9 @@
 
     comps.forEach(b => {
       b.onclick = () => {
-        current = { name: b.dataset.name, model: b.dataset.model, icon: b.dataset.icon };
-        if(nameEl) nameEl.textContent = current.name;
-        if(modelEl) modelEl.textContent = current.model;
+        activeComp = b.dataset.name;
+        if(nameEl) nameEl.textContent = activeComp;
+        if(modelEl) modelEl.textContent = db[activeComp]?.title || b.dataset.model;
         comps.forEach(x => x.classList.remove('ring-4', 'ring-blue-400'));
         b.classList.add('ring-4', 'ring-blue-400');
       };
@@ -383,85 +428,122 @@
     }
 
     function head() {
-      return `<div class="text-center pb-3 border-b border-slate-100"><p class="text-[9px] font-black uppercase text-slate-400">Muster Caravan GmbH</p><span class="mx-auto mt-2 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600">${svgIcon(current.icon, 'h-5 w-5')}</span><h3 class="mt-1 text-base font-black">${current.model}</h3><p class="text-xs text-slate-500">${current.name} · WM-007</p></div>`;
+      const data = db[activeComp];
+      return `<div class="text-center pb-3 border-b border-slate-100"><p class="text-[9px] font-black uppercase tracking-widest text-slate-400">Muster Caravan GmbH</p><span class="mx-auto mt-2 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600">${svgIcon(data.icon, 'h-5 w-5')}</span><h3 class="mt-1 text-base font-black">${data.title}</h3><p class="text-xs text-slate-500">${data.component} · WM-007</p></div>`;
     }
 
     document.getElementById('scanButton').onclick = () => {
       screen.innerHTML = `<div class="screen-in my-auto">${head()}<div class="relative mx-auto mt-6 h-36 w-36 rounded-2xl bg-slate-50 p-4 border border-slate-100 shadow-inner"><div class="grid h-full grid-cols-7 gap-1">${Array.from({ length: 49 }, (_, i) => `<span class="rounded-sm ${i % 3 ? 'bg-brand' : 'bg-slate-200'}"></span>`).join('')}</div><div class="scan-line absolute left-4 right-4 top-4 h-1 bg-teal-400 shadow-[0_0_12px_#14b8a6]"></div></div><div id="recognition" class="mt-6 space-y-1.5 text-xs text-slate-400 text-center"></div></div>`;
       
-      const lines = ['QR-Code erkannt', 'Fahrzeug WM-007', current.model, 'Hilfe lädt...'];
+      const data = db[activeComp];
+      const lines = ['QR-Code erkannt', 'Fahrzeug WM-007', data.title, 'Hilfe geladen'];
       lines.forEach((x, i) => setTimeout(() => {
         const rec = document.getElementById('recognition');
         if(rec) rec.innerHTML += `<p class="font-bold text-teal-600">✓ ${x}</p>`;
-        if (i === 3) setTimeout(() => { activeStep = 0; renderStep(); }, 400);
+        if (i === 3) setTimeout(showActionMenu, 350);
       }, 350 * (i + 1)));
     };
 
-    function renderStep() {
-      const list = guides[current.name];
-      const st = list[activeStep];
-      const pct = ((activeStep + 1) / list.length) * 100;
-
+    function showActionMenu() {
+      const data = db[activeComp];
       screen.innerHTML = `
         <div class="screen-in flex flex-col h-full justify-between">
           <div>
-            <div class="flex items-center justify-between text-xs mb-2">
-              <span class="font-bold text-blue-600">WM-007 Hilfe</span>
-              <span class="font-black text-slate-400">${activeStep + 1} / ${list.length}</span>
-            </div>
-            <div class="h-1.5 w-full rounded-full bg-slate-100 overflow-hidden mb-4">
-              <div class="h-full bg-gradient-to-r from-blue-600 to-teal-400 transition-all duration-300" style="width:${pct}%"></div>
-            </div>
-            
-            <p class="text-[10px] font-black uppercase tracking-widest text-teal-600">Schritt ${activeStep + 1}</p>
-            <h4 class="text-lg font-black text-slate-900 mt-1">${st.title}</h4>
-            <p class="mt-2 text-xs leading-relaxed text-slate-600">${st.text}</p>
-            
-            <div class="mt-4 rounded-xl border-l-4 border-amber-400 bg-amber-50 p-3 text-xs text-amber-950">
-              <b>Wichtig:</b> ${st.tip}
+            ${head()}
+            <p class="mt-4 text-xs text-slate-600">${data.description}</p>
+            <div class="mt-4 space-y-2">
+              ${data.actions.map(act => `
+                <button onclick="startGuide()" class="w-full text-left p-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 flex items-center justify-between">
+                  <div>
+                    <b class="block text-xs text-slate-900">${act.label}</b>
+                    <span class="text-[10px] text-slate-500">${act.count}</span>
+                  </div>
+                  <span class="text-blue-600 font-bold text-sm">›</span>
+                </button>
+              `).join('')}
             </div>
           </div>
+          <p class="text-[10px] text-slate-400 text-center mt-4">CampAssist v1.0 · Niesing Labs</p>
+        </div>
+      `;
+    }
 
-          <div class="mt-6 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
-            <button onclick="prevStep()" class="rounded-xl border border-slate-200 py-2.5 text-xs font-bold ${activeStep === 0 ? 'opacity-30 pointer-events-none' : 'active:bg-slate-100'}">Zurück</button>
-            <button onclick="nextStep()" class="rounded-xl bg-brand py-2.5 text-xs font-bold text-white active:bg-slate-800">${activeStep === list.length - 1 ? 'Abschließen' : 'Weiter'}</button>
+    function startGuide() {
+      currentStep = 0;
+      renderStep();
+    }
+
+    function renderStep() {
+      const data = db[activeComp];
+      const st = data.steps[currentStep];
+      const pct = ((currentStep + 1) / data.steps.length) * 100;
+
+      screen.innerHTML = `
+        <div class="screen-in flex flex-col justify-between h-full">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-2">
+              <button onclick="showActionMenu()" class="font-bold text-blue-600">← Übersicht</button>
+              <span class="font-black text-slate-400">${currentStep + 1} / ${data.steps.length}</span>
+            </div>
+            <div class="h-1.5 w-full rounded-full bg-slate-100 overflow-hidden mb-3">
+              <div class="h-full bg-gradient-to-r from-blue-600 to-teal-400 transition-all duration-300" style="width:${pct}%"></div>
+            </div>
+
+            <!-- Bild aus JSON mit Fallback -->
+            <div class="h-32 w-full rounded-xl bg-slate-100 overflow-hidden border border-slate-200 mb-3 relative">
+              <img src="${st.image}" onerror="this.src='https://placehold.co/400x250/e2e8f0/475569?text=${encodeURIComponent(st.title)}'" class="h-full w-full object-cover" alt="Schritt Grafik">
+            </div>
+            
+            <p class="text-[10px] font-black uppercase tracking-widest text-teal-600">Schritt ${currentStep + 1}</p>
+            <h4 class="text-sm font-black text-slate-900 mt-0.5">${st.title}</h4>
+            <p class="mt-1 text-xs leading-relaxed text-slate-600">${st.text}</p>
+            
+            ${st.tip ? `<div class="mt-2 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-2 text-[11px] text-amber-950"><b>Tipp:</b> ${st.tip}</div>` : ''}
+          </div>
+
+          <div class="mt-4 pt-2 border-t border-slate-100 grid grid-cols-2 gap-2">
+            <button onclick="prevStep()" class="rounded-xl border border-slate-200 py-2 text-xs font-bold ${currentStep === 0 ? 'opacity-30 pointer-events-none' : 'active:bg-slate-100'}">Zurück</button>
+            <button onclick="nextStep()" class="rounded-xl bg-brand py-2 text-xs font-bold text-white active:bg-slate-800">${currentStep === data.steps.length - 1 ? 'Abschließen' : 'Weiter'}</button>
           </div>
         </div>
       `;
     }
 
     function prevStep() {
-      if (activeStep > 0) { activeStep--; renderStep(); }
+      if (currentStep > 0) { currentStep--; renderStep(); }
     }
 
     function nextStep() {
-      const list = guides[current.name];
-      if (activeStep < list.length - 1) {
-        activeStep++;
+      const data = db[activeComp];
+      if (currentStep < data.steps.length - 1) {
+        currentStep++;
         renderStep();
       } else {
         screen.innerHTML = `
           <div class="screen-in my-auto flex flex-col items-center justify-center text-center">
-            <span class="grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600 mb-4">${svgIcon('check', 'h-8 w-8')}</span>
-            <h3 class="text-xl font-black">Anleitung abgeschlossen!</h3>
-            <p class="mt-2 text-xs text-slate-500 max-w-[220px]">Die Komponente sollte nun wie gewünscht funktionieren.</p>
-            <button onclick="resetDemo()" class="mt-6 rounded-xl bg-brand px-5 py-2.5 text-xs font-bold text-white">Neue Auswahl</button>
+            <span class="grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600 mb-3">${svgIcon('check', 'h-8 w-8')}</span>
+            <h3 class="text-lg font-black">${data.successTitle}</h3>
+            <p class="mt-1 text-xs text-slate-500 max-w-[220px]">${data.successText}</p>
+            
+            ${data.warnings ? `
+              <div class="mt-3 text-left bg-red-50 border-l-2 border-red-400 p-2 text-[10px] text-red-900 rounded">
+                <b>Sicherheit:</b>
+                <ul class="list-disc ml-3 mt-1 space-y-0.5">
+                  ${data.warnings.map(w => `<li>${w}</li>`).join('')}
+                </ul>
+              </div>
+            ` : ''}
+
+            <button onclick="showActionMenu()" class="mt-4 rounded-xl bg-brand px-5 py-2 text-xs font-bold text-white">Zurück zur Übersicht</button>
           </div>
         `;
+        const dash = document.getElementById('dashboard');
+        if(dash) dash.classList.remove('hidden');
       }
-    }
-
-    function resetDemo() {
-      screen.innerHTML = `
-        <div class="my-auto flex flex-col items-center justify-center text-center">
-          <span class="grid h-20 w-20 place-items-center rounded-3xl bg-blue-50 text-blue-600"><svg class="h-10 w-10"><use href="#i-phone"></use></svg></span>
-          <h3 class="mt-6 text-xl font-black">Bereit für die Live-Demo?</h3>
-          <p class="mt-2 text-sm text-slate-500">Wählen Sie links eine Komponente aus und klicken Sie auf Scan.</p>
-        </div>
-      `;
     }
   </script>
 
+  <!-- Mobile Menü Steuerung -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const menuBtn = document.getElementById('mobileMenuBtn');
