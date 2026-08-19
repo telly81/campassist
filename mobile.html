@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CampAssist Mobile</title>
   
-  <!-- Umkehr-Weiche: Wenn Nutzer auf dem Tablet/Desktop ist, zurück zur Hauptseite -->
   <script>
     if (window.innerWidth >= 768) {
       window.location.replace("index.html");
@@ -25,8 +24,8 @@
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased font-sans">
 
-  <!-- Header mit Burger-Menü -->
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-md">
     <div class="flex items-center justify-between px-4 py-3.5">
       <img src="assets/brand/campassist-header.png" alt="CampAssist" class="h-9 w-auto">
       <button id="mMenuBtn" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700">
@@ -35,7 +34,6 @@
       </button>
     </div>
 
-    <!-- Ausklappbare Navigation -->
     <nav id="mNav" class="hidden border-t border-slate-200 bg-white px-6 py-5 shadow-xl">
       <div class="flex flex-col gap-4 text-base font-bold text-slate-800">
         <a href="#m-start" class="m-nav-link py-1 hover:text-blue-600">Start</a>
@@ -49,7 +47,7 @@
 
   <main id="m-start" class="space-y-6 p-4">
 
-    <!-- 1. Einleitung (Hero) -->
+    <!-- 1. Einleitung -->
     <section class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
       <span class="inline-block rounded-full bg-blue-50 px-3.5 py-1 text-xs font-bold text-blue-700">Digitale Fahrzeughilfe</span>
       <h1 class="mt-3 text-2xl font-black leading-tight text-slate-900">Jede Fahrzeugtechnik in <span class="text-blue-600">30 Sekunden</span> erklärt.</h1>
@@ -69,32 +67,25 @@
       </div>
     </section>
 
-    <!-- 3. Live-Test (Vollständige Hilfefunktion) -->
-    <section id="m-demo" class="scroll-mt-16 rounded-2xl border border-slate-200 bg-white p-4 shadow-md">
-      <div class="text-center mb-4">
-        <span class="text-xs font-black uppercase tracking-widest text-blue-600">Interaktive Demo</span>
-        <h2 class="text-xl font-black text-slate-900">Komponente wählen & testen</h2>
-      </div>
+    <!-- 3. Live-Test Startbereich -->
+    <section id="m-demo" class="scroll-mt-16 rounded-2xl border border-slate-200 bg-white p-5 shadow-md text-center">
+      <span class="text-xs font-black uppercase tracking-widest text-blue-600">Interaktive Demo</span>
+      <h2 class="text-xl font-black text-slate-900 mt-1">Anleitung wählen</h2>
+      <p class="text-xs text-slate-500 mt-1">Tippen Sie auf ein Gerät, um den Schritt-für-Schritt Fokusmodus zu starten:</p>
 
-      <!-- Schnellauswahl der Komponenten -->
-      <div class="grid grid-cols-3 gap-2">
-        <button onclick="selectComp('Heizung')" id="m-Heizung" class="m-btn p-3 bg-white border-2 border-orange-500 rounded-xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-xl">🔥</span>
-          <span class="block text-xs font-bold mt-1">Heizung</span>
+      <div class="grid grid-cols-3 gap-2.5 mt-4">
+        <button onclick="openWizard('Heizung')" class="p-3.5 bg-slate-50 border-2 border-orange-500 rounded-2xl text-center shadow-sm active:scale-95 transition">
+          <span class="block text-2xl">🔥</span>
+          <span class="block text-xs font-bold mt-1 text-slate-800">Heizung</span>
         </button>
-        <button onclick="selectComp('Toilette')" id="m-Toilette" class="m-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-xl">🚽</span>
-          <span class="block text-xs font-bold mt-1">Toilette</span>
+        <button onclick="openWizard('Toilette')" class="p-3.5 bg-slate-50 border-2 border-teal-600 rounded-2xl text-center shadow-sm active:scale-95 transition">
+          <span class="block text-2xl">🚽</span>
+          <span class="block text-xs font-bold mt-1 text-slate-800">Toilette</span>
         </button>
-        <button onclick="selectComp('Markise')" id="m-Markise" class="m-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-xl">☀️</span>
-          <span class="block text-xs font-bold mt-1">Markise</span>
+        <button onclick="openWizard('Markise')" class="p-3.5 bg-slate-50 border-2 border-yellow-500 rounded-2xl text-center shadow-sm active:scale-95 transition">
+          <span class="block text-2xl">☀️</span>
+          <span class="block text-xs font-bold mt-1 text-slate-800">Markise</span>
         </button>
-      </div>
-
-      <!-- Interaktiver Hilfe-Display Container -->
-      <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4" id="mobileCard">
-        <!-- Dynamischer Inhalt über JavaScript -->
       </div>
     </section>
 
@@ -110,14 +101,13 @@
       </ul>
     </section>
 
-    <!-- 5. Kontaktseite mit WhatsApp-Formular -->
+    <!-- 5. Kontaktseite -->
     <section id="m-kontakt" class="scroll-mt-16 rounded-2xl bg-slate-900 p-5 text-white shadow-md">
       <p class="text-xs font-black uppercase tracking-widest text-teal-400">Kontakt</p>
       <h2 class="mt-1 text-xl font-black">Pilotkunde werden?</h2>
       <p class="mt-1 text-sm text-slate-300">Testen Sie CampAssist kostenlos mit Ihrem eigenen Fahrzeug.</p>
 
-      <!-- Direktkontakt Infos -->
-      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4 text-sm space-y-2">
+      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4 text-sm space-y-2.5">
         <p class="font-bold text-base text-white">Oliver Niesing</p>
         <p class="text-slate-300">CampAssist · Niesing Labs</p>
         <p class="text-slate-300">📍 Overbergstraße 86, 59302 Oelde</p>
@@ -125,7 +115,6 @@
         <p>📧 <a href="mailto:info@campassist.de" class="text-teal-300 font-bold">info@campassist.de</a></p>
       </div>
 
-      <!-- WhatsApp Kontaktformular -->
       <form id="waFormMobile" class="mt-4 rounded-xl bg-white p-4 text-slate-900 shadow-lg">
         <h3 class="font-black text-base border-b border-slate-100 pb-2">💬 Anfrage per WhatsApp</h3>
         <div class="mt-3 space-y-3">
@@ -154,7 +143,6 @@
 
   </main>
 
-  <!-- Footer mit Rechtstexten -->
   <footer class="mt-8 border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
     <p class="font-bold text-slate-700 text-sm">CampAssist Mobile</p>
     <p class="mt-1 text-xs">by Niesing Labs</p>
@@ -165,12 +153,51 @@
     </div>
   </footer>
 
-  <!-- Interaktive Hilfe-Logik mit großer Erklärschrift & WhatsApp-Formular -->
+  <!-- FULLSCREEN ASSISTENT (Versteckt bis zur Auswahl) -->
+  <div id="wizardModal" class="fixed inset-0 z-50 hidden bg-white flex flex-col justify-between p-4 overflow-y-auto">
+    <div>
+      <!-- Top Bar im Assistenten -->
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+        <div>
+          <span id="wizCompName" class="font-black text-base text-slate-900 block">Gerät</span>
+          <span id="wizStepCount" class="text-xs font-bold text-blue-600">Schritt 1 von 5</span>
+        </div>
+        <button onclick="closeWizard()" class="grid h-10 w-10 place-items-center rounded-xl bg-slate-100 text-slate-600 font-bold text-lg active:bg-slate-200">✕</button>
+      </div>
+
+      <!-- Fortschrittsbalken -->
+      <div class="h-1.5 w-full bg-slate-100 rounded-full mt-3 overflow-hidden">
+        <div id="wizProgressBar" class="h-full bg-blue-600 transition-all duration-300" style="width: 20%;"></div>
+      </div>
+
+      <!-- Bild (800x600 Format) -->
+      <div class="aspect-[4/3] w-full rounded-2xl bg-slate-200 overflow-hidden mt-4 border border-slate-200 shadow-sm">
+        <img id="wizImage" src="" class="h-full w-full object-cover" alt="Schritt Grafik">
+      </div>
+
+      <!-- Schritt Text-Inhalt -->
+      <div class="mt-4">
+        <p id="wizStepNum" class="text-xs font-black uppercase tracking-wider text-teal-600">Schritt 1</p>
+        <h3 id="wizStepTitle" class="font-black text-xl text-slate-900 mt-0.5">Titel</h3>
+        <p id="wizStepText" class="text-base text-slate-800 font-medium mt-2 leading-relaxed">Erklärungstext...</p>
+        
+        <div id="wizTipContainer" class="hidden mt-4 text-sm bg-amber-50 border-l-4 border-amber-400 p-3.5 text-amber-950 font-medium rounded-r-xl">
+          <b>Wichtig:</b> <span id="wizTipText"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Große Touch Buttons unten -->
+    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-6 bg-white sticky bottom-0">
+      <button id="wizBtnPrev" onclick="wizPrev()" class="py-4 rounded-xl border-2 border-slate-300 bg-white text-base font-bold text-slate-700 active:bg-slate-100">Zurück</button>
+      <button id="wizBtnNext" onclick="wizNext()" class="py-4 rounded-xl bg-slate-900 text-white text-base font-bold active:bg-slate-800">Weiter</button>
+    </div>
+  </div>
+
   <script>
     const db = {
       'Markise': {
         title: 'Thule Omnistor 5200',
-        description: 'Markise sicher ausfahren, abstützen und wieder einfahren.',
         steps: [
           { title: 'Markise entriegeln', text: 'Öffnen Sie die Verriegelung der Markise und geben Sie die Frontleiste frei.', image: 'assets/awning/01.jpg', tip: 'Niemals mit Gewalt öffnen.' },
           { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel vollständig in die dafür vorgesehene Aufnahme.', image: 'assets/awning/02.jpg', tip: 'Kurbel vollständig einstecken, bevor Sie drehen.' },
@@ -179,24 +206,20 @@
           { title: 'Rechten Stützfuß ausklappen', text: 'Entriegeln Sie den rechten Stützfuß und klappen Sie ihn nach unten.', image: 'assets/awning/05.jpg', tip: 'Beide Stützen gleichmäßig ausrichten.' },
           { title: 'Höhe einstellen', text: 'Stellen Sie die gewünschte Höhe ein und verriegeln Sie die Stützfüße.', image: 'assets/awning/06.jpg', tip: 'Bei Regen eine Seite etwas tiefer stellen, damit Wasser ablaufen kann.' },
           { title: 'Markise vollständig ausfahren', text: 'Kurbeln Sie die Markise bis zur gewünschten Länge aus und prüfen Sie den sicheren Stand.', image: 'assets/awning/07.jpg', tip: 'Bei Wind oder starken Böen sofort einfahren.' }
-        ],
-        warnings: ['Bei Wind oder starken Böen sofort einfahren.', 'Markise niemals unbeaufsichtigt ausgefahren lassen.']
+        ]
       },
       'Heizung': {
         title: 'Truma Combi 6',
-        description: 'Raumheizung Schritt für Schritt einschalten.',
         steps: [
           { title: 'Gasversorgung sicher prüfen', text: 'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist.', image: 'assets/heating/01-gasversorgung.jpg', tip: 'Bei Gasgeruch sofort Gaszufuhr schließen.' },
           { title: '12-V-Bordnetz einschalten', text: 'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein.', image: 'assets/heating/02-bordnetz.jpg', tip: 'Steuerung benötigt Bordspannung.' },
           { title: 'Bedienteil aktivieren', text: 'Drücken Sie den Dreh-/Drückknopf am Heizungsbedienteil.', image: 'assets/heating/03-bedienteil.jpg', tip: 'CP-Plus Bedienteil wird durch Drücken geweckt.' },
           { title: 'Raumtemperatur wählen', text: 'Drehen Sie den Knopf auf die gewünschte Raumtemperatur und drücken Sie ihn zum Speichern.', image: 'assets/heating/04-temperatur.jpg', tip: 'Sollwerte immer bestätigen.' },
           { title: 'Start und Warmluft prüfen', text: 'Warten Sie einige Minuten und prüfen Sie den Warmluftstrom an den Auslässen.', image: 'assets/heating/05-warmluft.jpg', tip: 'Warmluftauslässe nicht verdecken.' }
-        ],
-        warnings: ['Bei Gasgeruch Anlage sofort ausschalten!']
+        ]
       },
       'Toilette': {
         title: 'Dometic CT 4000',
-        description: 'WC-Kassette sauber entleeren und vorbereiten.',
         steps: [
           { title: 'Vorbereitung im Innenraum', text: 'Stelle sicher, dass die Schieber-Klappe der Toilette im Bad vollständig geschlossen ist.', image: 'assets/awning/toilet/01-innenraum-schieber.png', tip: 'Niemals gewaltsam ziehen!' },
           { title: 'Außenklappe öffnen & entriegeln', text: 'Serviceklappe öffnen, grüne Lasche anheben und Kassette am Griff herausziehen.', image: 'assets/awning/toilet/02-kassette-entriegeln.png', tip: 'Auf ebene Führung achten.' },
@@ -204,77 +227,82 @@
           { title: 'Kassette entleeren', text: 'Ausgussrohr drehen, Deckel abnehmen und beim Kippen den grünen Entlüftungsknopf drücken.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Entlüftungsknopf verhindert Gluckern.' },
           { title: 'Spülen & Säubern', text: 'Frischwasser nachfüllen, durchschütteln und erneut entleeren.', image: 'assets/awning/toilet/05-spuelen.png', tip: 'Ausgussrohr sauber spülen.' },
           { title: 'Sanitärzusatz & Einsetzen', text: 'Sanitärzusatz mit 2 Liter Wasser einfüllen und Kassette einschieben bis sie einrastet.', image: 'assets/awning/toilet/06-zusatz-einsetzen.png', tip: 'Dichtung regelmäßig pflegen.' }
-        ],
-        warnings: ['Nur an zugelassenen Chemie-WC Stationen entleeren.']
+        ]
       }
     };
 
-    let active = 'Heizung';
-    let step = 0;
+    let activeComp = 'Heizung';
+    let activeStep = 0;
 
-    function selectComp(name) {
-      active = name;
-      step = 0;
-      document.querySelectorAll('.m-btn').forEach(b => b.classList.replace('border-orange-500', 'border-slate-200'));
-      document.getElementById('m-' + name).classList.replace('border-slate-200', 'border-orange-500');
-      render();
+    function openWizard(comp) {
+      activeComp = comp;
+      activeStep = 0;
+      document.getElementById('wizardModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Scrollen der Hauptseite verhindern
+      renderWiz();
     }
 
-    function render() {
-      const data = db[active];
-      const st = data.steps[step];
-      const card = document.getElementById('mobileCard');
-
-      card.innerHTML = `
-        <div class="flex flex-col justify-between min-h-[420px]">
-          <div>
-            <div class="flex justify-between items-center mb-3 border-b border-slate-200 pb-2">
-              <span class="font-black text-base text-slate-900">${data.title}</span>
-              <span class="font-bold text-xs text-blue-700 bg-blue-100 px-2.5 py-1 rounded-md">Schritt ${step + 1} / ${data.steps.length}</span>
-            </div>
-            
-            <div class="aspect-[4/3] w-full rounded-xl bg-slate-200 overflow-hidden mb-3 border border-slate-200 shadow-inner">
-              <img src="${st.image}" onerror="this.src='https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(st.title)}'" class="h-full w-full object-cover">
-            </div>
-
-            <!-- Größere Überschrift & extragroße Erklärschrift -->
-            <p class="text-xs font-black uppercase tracking-wider text-teal-600">Schritt ${step + 1}</p>
-            <h3 class="font-black text-lg text-slate-900 mt-0.5">${st.title}</h3>
-            <p class="text-base text-slate-800 font-medium mt-1.5 leading-relaxed">${st.text}</p>
-            
-            ${st.tip ? `<p class="mt-3 text-sm bg-amber-50 border-l-4 border-amber-400 p-3 text-amber-950 font-medium rounded-r-lg"><b>Wichtig:</b> ${st.tip}</p>` : ''}
-          </div>
-
-          <div class="grid grid-cols-2 gap-3 mt-6 pt-3 border-t border-slate-200">
-            <button onclick="prev()" class="py-3 rounded-xl border border-slate-300 bg-white text-sm font-bold text-slate-700 active:bg-slate-100 ${step===0?'opacity-40 pointer-events-none':''}">Zurück</button>
-            <button onclick="next()" class="py-3 rounded-xl bg-slate-900 text-white text-sm font-bold active:bg-slate-800">${step === data.steps.length - 1 ? 'Abschließen' : 'Weiter'}</button>
-          </div>
-        </div>
-      `;
+    function closeWizard() {
+      document.getElementById('wizardModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
     }
 
-    function prev() { if(step > 0) { step--; render(); } }
-    function next() {
-      const data = db[active];
-      if(step < data.steps.length - 1) { step++; render(); }
-      else {
-        document.getElementById('mobileCard').innerHTML = `
-          <div class="text-center py-8">
-            <span class="text-5xl">✅</span>
-            <h3 class="font-black text-xl mt-3 text-slate-900">${data.title} bereit!</h3>
-            <p class="text-base text-slate-600 mt-1.5">Anleitung erfolgreich abgeschlossen.</p>
-            ${data.warnings ? `
-              <div class="mt-4 text-left bg-red-50 border-l-4 border-red-400 p-3 text-sm text-red-900 rounded-r-lg">
-                <b>Sicherheitshinweis:</b> ${data.warnings[0]}
-              </div>
-            ` : ''}
-            <button onclick="selectComp('${active}')" class="mt-6 w-full py-3.5 bg-slate-900 text-white text-sm font-bold rounded-xl shadow">Nochmal starten</button>
-          </div>
-        `;
+    function renderWiz() {
+      const data = db[activeComp];
+      const st = data.steps[activeStep];
+      const total = data.steps.length;
+
+      document.getElementById('wizCompName').textContent = data.title;
+      document.getElementById('wizStepCount').textContent = `Schritt ${activeStep + 1} von ${total}`;
+      document.getElementById('wizProgressBar').style.width = `${((activeStep + 1) / total) * 100}%`;
+
+      const imgEl = document.getElementById('wizImage');
+      imgEl.src = st.image;
+      imgEl.onerror = function() {
+        this.src = `https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(st.title)}`;
+      };
+
+      document.getElementById('wizStepNum').textContent = `Schritt ${activeStep + 1}`;
+      document.getElementById('wizStepTitle').textContent = st.title;
+      document.getElementById('wizStepText').textContent = st.text;
+
+      const tipCont = document.getElementById('wizTipContainer');
+      if (st.tip) {
+        document.getElementById('wizTipText').textContent = st.tip;
+        tipCont.classList.remove('hidden');
+      } else {
+        tipCont.classList.add('hidden');
+      }
+
+      const prevBtn = document.getElementById('wizBtnPrev');
+      if (activeStep === 0) {
+        prevBtn.classList.add('opacity-40', 'pointer-events-none');
+      } else {
+        prevBtn.classList.remove('opacity-40', 'pointer-events-none');
+      }
+
+      document.getElementById('wizBtnNext').textContent = (activeStep === total - 1) ? 'Abschließen' : 'Weiter';
+    }
+
+    function wizPrev() {
+      if (activeStep > 0) {
+        activeStep--;
+        renderWiz();
       }
     }
 
-    // Burger Menü & WhatsApp-Formular Logik
+    function wizNext() {
+      const data = db[activeComp];
+      if (activeStep < data.steps.length - 1) {
+        activeStep++;
+        renderWiz();
+      } else {
+        alert("Anleitung erfolgreich abgeschlossen!");
+        closeWizard();
+      }
+    }
+
+    // Burger Menü & WhatsApp Formular Logik
     document.addEventListener('DOMContentLoaded', function() {
       const btn = document.getElementById('mMenuBtn');
       const nav = document.getElementById('mNav');
@@ -301,7 +329,6 @@
         iconClose.classList.add('hidden');
       });
 
-      // WhatsApp Formular Handler
       const waForm = document.getElementById('waFormMobile');
       if (waForm) {
         waForm.onsubmit = function(e) {
@@ -315,8 +342,6 @@
           window.open(url, '_blank');
         };
       }
-
-      render();
     });
   </script>
 </body>
