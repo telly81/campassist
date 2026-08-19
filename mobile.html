@@ -27,22 +27,22 @@
 
   <!-- Header mit Burger-Menü -->
   <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
-    <div class="flex items-center justify-between px-4 py-3">
-      <img src="assets/brand/campassist-header.png" alt="CampAssist" class="h-8 w-auto">
-      <button id="mMenuBtn" type="button" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700">
-        <svg id="mMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg id="mMenuClose" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    <div class="flex items-center justify-between px-4 py-3.5">
+      <img src="assets/brand/campassist-header.png" alt="CampAssist" class="h-9 w-auto">
+      <button id="mMenuBtn" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700">
+        <svg id="mMenuOpen" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="mMenuClose" class="hidden h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
 
     <!-- Ausklappbare Navigation -->
-    <nav id="mNav" class="hidden border-t border-slate-200 bg-white px-5 py-4 shadow-xl">
-      <div class="flex flex-col gap-3 text-sm font-bold text-slate-700">
-        <a href="#m-start" class="m-nav-link py-2 hover:text-blue-600">Start</a>
-        <a href="#m-problem" class="m-nav-link py-2 hover:text-blue-600">Problem</a>
-        <a href="#m-demo" class="m-nav-link py-2 hover:text-blue-600">Live-Test</a>
-        <a href="#m-vorteile" class="m-nav-link py-2 hover:text-blue-600">Vorteile</a>
-        <a href="#m-kontakt" class="m-nav-link py-2 hover:text-blue-600">Kontakt</a>
+    <nav id="mNav" class="hidden border-t border-slate-200 bg-white px-6 py-5 shadow-xl">
+      <div class="flex flex-col gap-4 text-base font-bold text-slate-800">
+        <a href="#m-start" class="m-nav-link py-1 hover:text-blue-600">Start</a>
+        <a href="#m-problem" class="m-nav-link py-1 hover:text-blue-600">Problem</a>
+        <a href="#m-demo" class="m-nav-link py-1 hover:text-blue-600">Live-Test</a>
+        <a href="#m-vorteile" class="m-nav-link py-1 hover:text-blue-600">Vorteile</a>
+        <a href="#m-kontakt" class="m-nav-link py-1 hover:text-blue-600">Kontakt</a>
       </div>
     </nav>
   </header>
@@ -51,73 +51,73 @@
 
     <!-- 1. Einleitung (Hero) -->
     <section class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
-      <span class="inline-block rounded-full bg-blue-50 px-3 py-1 text-[11px] font-bold text-blue-700">Digitale Fahrzeughilfe</span>
+      <span class="inline-block rounded-full bg-blue-50 px-3.5 py-1 text-xs font-bold text-blue-700">Digitale Fahrzeughilfe</span>
       <h1 class="mt-3 text-2xl font-black leading-tight text-slate-900">Jede Fahrzeugtechnik in <span class="text-blue-600">30 Sekunden</span> erklärt.</h1>
-      <p class="mt-2 text-xs leading-relaxed text-slate-600">Mieter scannen den QR-Code am Gerät und erhalten sofort verständliche Hilfe direkt im Browser.</p>
-      <a href="#m-demo" class="mt-4 inline-block w-full rounded-xl bg-blue-600 py-3 text-xs font-bold text-white shadow active:bg-blue-700">Live-Test ausprobieren</a>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">Mieter scannen den QR-Code am Gerät und erhalten sofort verständliche Hilfe direkt im Browser.</p>
+      <a href="#m-demo" class="mt-4 inline-block w-full rounded-xl bg-blue-600 py-3.5 text-sm font-bold text-white shadow active:bg-blue-700">Live-Test ausprobieren</a>
     </section>
 
     <!-- 2. Das Problem -->
     <section id="m-problem" class="scroll-mt-16 rounded-2xl bg-brand p-5 text-white shadow-md">
-      <p class="text-[10px] font-black uppercase tracking-widest text-teal-400">Das Problem</p>
-      <h2 class="mt-1 text-lg font-black">Kommt Ihnen das bekannt vor?</h2>
-      <div class="mt-4 space-y-2 text-xs">
-        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3 font-semibold">🔥 „Wie schalte ich die Heizung ein?“</blockquote>
-        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3 font-semibold">🚽 „Wie entleere ich die Toilette?“</blockquote>
-        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3 font-semibold">☀️ „Wie fahre ich die Markise aus?“</blockquote>
-        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3 font-semibold">📞 „Warum antwortet der Vermieter nicht?“</blockquote>
+      <p class="text-xs font-black uppercase tracking-widest text-teal-400">Das Problem</p>
+      <h2 class="mt-1 text-xl font-black">Kommt Ihnen das bekannt vor?</h2>
+      <div class="mt-4 space-y-2.5 text-sm">
+        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3.5 font-semibold">🔥 „Wie schalte ich die Heizung ein?“</blockquote>
+        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3.5 font-semibold">🚽 „Wie entleere ich die Toilette?“</blockquote>
+        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3.5 font-semibold">☀️ „Wie fahre ich die Markise aus?“</blockquote>
+        <blockquote class="rounded-xl border border-white/10 bg-white/5 p-3.5 font-semibold">📞 „Warum antwortet der Vermieter nicht?“</blockquote>
       </div>
     </section>
 
     <!-- 3. Live-Test (Vollständige Hilfefunktion) -->
     <section id="m-demo" class="scroll-mt-16 rounded-2xl border border-slate-200 bg-white p-4 shadow-md">
-      <div class="text-center mb-3">
-        <span class="text-[10px] font-black uppercase tracking-widest text-blue-600">Interaktive Demo</span>
-        <h2 class="text-lg font-black text-slate-900">Komponente wählen & testen</h2>
+      <div class="text-center mb-4">
+        <span class="text-xs font-black uppercase tracking-widest text-blue-600">Interaktive Demo</span>
+        <h2 class="text-xl font-black text-slate-900">Komponente wählen & testen</h2>
       </div>
 
       <!-- Schnellauswahl der Komponenten -->
       <div class="grid grid-cols-3 gap-2">
-        <button onclick="selectComp('Heizung')" id="m-Heizung" class="m-btn p-2.5 bg-white border-2 border-orange-500 rounded-xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-lg">🔥</span>
-          <span class="block text-[11px] font-bold mt-0.5">Heizung</span>
+        <button onclick="selectComp('Heizung')" id="m-Heizung" class="m-btn p-3 bg-white border-2 border-orange-500 rounded-xl text-center shadow-sm active:scale-95 transition">
+          <span class="block text-xl">🔥</span>
+          <span class="block text-xs font-bold mt-1">Heizung</span>
         </button>
-        <button onclick="selectComp('Toilette')" id="m-Toilette" class="m-btn p-2.5 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-lg">🚽</span>
-          <span class="block text-[11px] font-bold mt-0.5">Toilette</span>
+        <button onclick="selectComp('Toilette')" id="m-Toilette" class="m-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
+          <span class="block text-xl">🚽</span>
+          <span class="block text-xs font-bold mt-1">Toilette</span>
         </button>
-        <button onclick="selectComp('Markise')" id="m-Markise" class="m-btn p-2.5 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
-          <span class="block text-lg">☀️</span>
-          <span class="block text-[11px] font-bold mt-0.5">Markise</span>
+        <button onclick="selectComp('Markise')" id="m-Markise" class="m-btn p-3 bg-white border-2 border-slate-200 rounded-xl text-center shadow-sm active:scale-95 transition">
+          <span class="block text-xl">☀️</span>
+          <span class="block text-xs font-bold mt-1">Markise</span>
         </button>
       </div>
 
       <!-- Interaktiver Hilfe-Display Container -->
-      <div class="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3" id="mobileCard">
+      <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4" id="mobileCard">
         <!-- Dynamischer Inhalt über JavaScript -->
       </div>
     </section>
 
     <!-- 4. Vorteile -->
     <section id="m-vorteile" class="scroll-mt-16 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <p class="text-[10px] font-black uppercase tracking-widest text-blue-600">Vorteile</p>
-      <h2 class="mt-1 text-lg font-black text-slate-900">Weniger erklären. Besser unterstützen.</h2>
-      <ul class="mt-3 space-y-2 text-xs font-bold text-slate-700">
-        <li class="flex items-center gap-2 rounded-lg bg-slate-50 p-2.5 border border-slate-100"><span>✅</span> Weniger Support-Anrufe</li>
-        <li class="flex items-center gap-2 rounded-lg bg-slate-50 p-2.5 border border-slate-100"><span>✅</span> Schnellere Fahrzeugübergaben</li>
-        <li class="flex items-center gap-2 rounded-lg bg-slate-50 p-2.5 border border-slate-100"><span>✅</span> Keinerlei App-Installation nötig</li>
-        <li class="flex items-center gap-2 rounded-lg bg-slate-50 p-2.5 border border-slate-100"><span>✅</span> Eigene QR-Codes für jedes Gerät</li>
+      <p class="text-xs font-black uppercase tracking-widest text-blue-600">Vorteile</p>
+      <h2 class="mt-1 text-xl font-black text-slate-900">Weniger erklären. Besser unterstützen.</h2>
+      <ul class="mt-4 space-y-2.5 text-sm font-bold text-slate-700">
+        <li class="flex items-center gap-2.5 rounded-xl bg-slate-50 p-3 border border-slate-100"><span>✅</span> Weniger Support-Anrufe</li>
+        <li class="flex items-center gap-2.5 rounded-xl bg-slate-50 p-3 border border-slate-100"><span>✅</span> Schnellere Fahrzeugübergaben</li>
+        <li class="flex items-center gap-2.5 rounded-xl bg-slate-50 p-3 border border-slate-100"><span>✅</span> Keinerlei App-Installation nötig</li>
+        <li class="flex items-center gap-2.5 rounded-xl bg-slate-50 p-3 border border-slate-100"><span>✅</span> Eigene QR-Codes für jedes Gerät</li>
       </ul>
     </section>
 
     <!-- 5. Kontaktseite -->
     <section id="m-kontakt" class="scroll-mt-16 rounded-2xl bg-slate-900 p-5 text-white shadow-md">
-      <p class="text-[10px] font-black uppercase tracking-widest text-teal-400">Kontakt</p>
-      <h2 class="mt-1 text-lg font-black">Pilotkunde werden?</h2>
-      <p class="mt-1 text-xs text-slate-300">Testen Sie CampAssist kostenlos mit Ihrem eigenen Fahrzeug.</p>
+      <p class="text-xs font-black uppercase tracking-widest text-teal-400">Kontakt</p>
+      <h2 class="mt-1 text-xl font-black">Pilotkunde werden?</h2>
+      <p class="mt-1 text-sm text-slate-300">Testen Sie CampAssist kostenlos mit Ihrem eigenen Fahrzeug.</p>
 
-      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-3.5 text-xs space-y-2">
-        <p class="font-bold text-white">Oliver Niesing</p>
+      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4 text-sm space-y-2.5">
+        <p class="font-bold text-base text-white">Oliver Niesing</p>
         <p class="text-slate-300">CampAssist · Niesing Labs</p>
         <p class="text-slate-300">📍 Overbergstraße 86, 59302 Oelde</p>
         <p>📱 <a href="tel:+491637221381" class="text-teal-300 font-bold">+49 163 7221381</a></p>
@@ -128,26 +128,22 @@
   </main>
 
   <!-- Footer mit Rechtstexten -->
-  <footer class="mt-6 border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
-    <p class="font-bold text-slate-700">CampAssist Mobile</p>
-    <p class="mt-1">by Niesing Labs</p>
-    <div class="mt-3 flex justify-center gap-4 text-slate-600 font-semibold">
+  <footer class="mt-8 border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+    <p class="font-bold text-slate-700 text-sm">CampAssist Mobile</p>
+    <p class="mt-1 text-xs">by Niesing Labs</p>
+    <div class="mt-4 flex justify-center gap-5 text-sm text-slate-600 font-bold">
       <a href="impressum.html" class="underline hover:text-blue-600">Impressum</a>
       <span>·</span>
       <a href="datenschutz.html" class="underline hover:text-blue-600">Datenschutz</a>
     </div>
   </footer>
 
-  <!-- Interaktive Hilfe-Logik mit allen Schritten -->
+  <!-- Interaktive Hilfe-Logik mit gut lesbaren Schriften -->
   <script>
     const db = {
       'Markise': {
         title: 'Thule Omnistor 5200',
         description: 'Markise sicher ausfahren, abstützen und wieder einfahren.',
-        troubleshooting: [
-          { q: 'Markise lässt sich schwer kurbeln', a: 'Prüfen Sie, ob die Verriegelungsklappen an den Enden vollständig freigegeben sind.' },
-          { q: 'Stützfüße klemmen in der Leiste', a: 'Drücken Sie die kleine Haltefeder im Profil leicht nach innen.' }
-        ],
         steps: [
           { title: 'Markise entriegeln', text: 'Öffnen Sie die Verriegelung der Markise und geben Sie die Frontleiste frei.', image: 'assets/awning/01.jpg', tip: 'Niemals mit Gewalt öffnen.' },
           { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel vollständig in die dafür vorgesehene Aufnahme.', image: 'assets/awning/02.jpg', tip: 'Kurbel vollständig einstecken, bevor Sie drehen.' },
@@ -162,10 +158,6 @@
       'Heizung': {
         title: 'Truma Combi 6',
         description: 'Raumheizung Schritt für Schritt einschalten.',
-        troubleshooting: [
-          { q: 'Display zeigt Fehlercode W501H', a: 'Gaszufuhr unterbrochen. Gasflasche prüfen und am Bedienteil quittieren.' },
-          { q: 'Heizung bläst nur kalte Luft', a: 'Prüfen, ob der Boiler befüllt ist oder die eingestellte Temperatur bereits erreicht wurde.' }
-        ],
         steps: [
           { title: 'Gasversorgung sicher prüfen', text: 'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist.', image: 'assets/heating/01-gasversorgung.jpg', tip: 'Bei Gasgeruch sofort Gaszufuhr schließen.' },
           { title: '12-V-Bordnetz einschalten', text: 'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein.', image: 'assets/heating/02-bordnetz.jpg', tip: 'Steuerung benötigt Bordspannung.' },
@@ -178,9 +170,6 @@
       'Toilette': {
         title: 'Dometic CT 4000',
         description: 'WC-Kassette sauber entleeren und vorbereiten.',
-        troubleshooting: [
-          { q: 'Kassette lässt sich nicht herausziehen', a: 'Der Schieber im Innenraum ist noch geöffnet. Schieber im Bad ganz schließen!' }
-        ],
         steps: [
           { title: 'Vorbereitung im Innenraum', text: 'Stelle sicher, dass die Schieber-Klappe der Toilette im Bad vollständig geschlossen ist.', image: 'assets/awning/toilet/01-innenraum-schieber.png', tip: 'Niemals gewaltsam ziehen!' },
           { title: 'Außenklappe öffnen & entriegeln', text: 'Serviceklappe öffnen, grüne Lasche anheben und Kassette am Griff herausziehen.', image: 'assets/awning/toilet/02-kassette-entriegeln.png', tip: 'Auf ebene Führung achten.' },
@@ -210,25 +199,26 @@
       const card = document.getElementById('mobileCard');
 
       card.innerHTML = `
-        <div class="flex flex-col justify-between min-h-[360px]">
+        <div class="flex flex-col justify-between min-h-[400px]">
           <div>
-            <div class="flex justify-between items-center text-[11px] text-slate-400 mb-2 border-b border-slate-200 pb-1.5">
-              <span class="font-black text-slate-800">${data.title}</span>
-              <span class="font-bold text-blue-600">Schritt ${step + 1} / ${data.steps.length}</span>
+            <div class="flex justify-between items-center mb-3 border-b border-slate-200 pb-2">
+              <span class="font-black text-sm text-slate-800">${data.title}</span>
+              <span class="font-bold text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">Schritt ${step + 1} / ${data.steps.length}</span>
             </div>
             
-            <div class="aspect-[4/3] w-full rounded-lg bg-slate-200 overflow-hidden mb-2.5">
+            <div class="aspect-[4/3] w-full rounded-xl bg-slate-200 overflow-hidden mb-3 border border-slate-200 shadow-inner">
               <img src="${st.image}" onerror="this.src='https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(st.title)}'" class="h-full w-full object-cover">
             </div>
 
-            <h3 class="font-bold text-xs text-slate-900">${st.title}</h3>
-            <p class="text-[11px] text-slate-600 mt-0.5 leading-snug">${st.text}</p>
-            ${st.tip ? `<p class="mt-2 text-[10px] bg-amber-50 border-l-2 border-amber-400 p-1.5 text-amber-900 font-medium"><b>Tipp:</b> ${st.tip}</p>` : ''}
+            <p class="text-xs font-black uppercase tracking-wider text-teal-600">Schritt ${step + 1}</p>
+            <h3 class="font-black text-base text-slate-900 mt-0.5">${st.title}</h3>
+            <p class="text-sm text-slate-600 mt-1 leading-relaxed">${st.text}</p>
+            ${st.tip ? `<p class="mt-3 text-xs bg-amber-50 border-l-4 border-amber-400 p-2.5 text-amber-950 font-medium rounded-r-lg"><b>Wichtig:</b> ${st.tip}</p>` : ''}
           </div>
 
-          <div class="grid grid-cols-2 gap-2 mt-3 pt-2 border-t border-slate-200">
-            <button onclick="prev()" class="py-2 rounded-lg border border-slate-300 bg-white text-xs font-bold text-slate-700 active:bg-slate-100 ${step===0?'opacity-40 pointer-events-none':''}">Zurück</button>
-            <button onclick="next()" class="py-2 rounded-lg bg-slate-900 text-white text-xs font-bold active:bg-slate-800">${step === data.steps.length - 1 ? 'Abschließen' : 'Weiter'}</button>
+          <div class="grid grid-cols-2 gap-3 mt-5 pt-3 border-t border-slate-200">
+            <button onclick="prev()" class="py-3 rounded-xl border border-slate-300 bg-white text-sm font-bold text-slate-700 active:bg-slate-100 ${step===0?'opacity-40 pointer-events-none':''}">Zurück</button>
+            <button onclick="next()" class="py-3 rounded-xl bg-slate-900 text-white text-sm font-bold active:bg-slate-800">${step === data.steps.length - 1 ? 'Abschließen' : 'Weiter'}</button>
           </div>
         </div>
       `;
@@ -240,16 +230,16 @@
       if(step < data.steps.length - 1) { step++; render(); }
       else {
         document.getElementById('mobileCard').innerHTML = `
-          <div class="text-center py-6">
-            <span class="text-3xl">✅</span>
-            <h3 class="font-black text-sm mt-2 text-slate-900">${data.title} bereit!</h3>
-            <p class="text-xs text-slate-500 mt-1">Anleitung erfolgreich abgeschlossen.</p>
+          <div class="text-center py-8">
+            <span class="text-4xl">✅</span>
+            <h3 class="font-black text-lg mt-3 text-slate-900">${data.title} bereit!</h3>
+            <p class="text-sm text-slate-600 mt-1">Anleitung erfolgreich abgeschlossen.</p>
             ${data.warnings ? `
-              <div class="mt-3 text-left bg-red-50 border-l-2 border-red-400 p-2 text-[10px] text-red-900">
+              <div class="mt-4 text-left bg-red-50 border-l-4 border-red-400 p-3 text-xs text-red-900 rounded-r-lg">
                 <b>Hinweis:</b> ${data.warnings[0]}
               </div>
             ` : ''}
-            <button onclick="selectComp('${active}')" class="mt-4 px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded-lg shadow">Nochmal starten</button>
+            <button onclick="selectComp('${active}')" class="mt-5 w-full py-3 bg-slate-900 text-white text-sm font-bold rounded-xl shadow">Nochmal starten</button>
           </div>
         `;
       }
