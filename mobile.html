@@ -67,7 +67,7 @@
       </div>
     </section>
 
-    <!-- 3. Hervorgehobener Live-Test Bereich mit Vorschau -->
+    <!-- 3. Hervorgehobener Live-Test Bereich mit eigener Bild-Vorschau -->
     <section id="m-demo" class="scroll-mt-16 rounded-3xl border-2 border-blue-500 bg-gradient-to-b from-blue-50 via-white to-slate-50 p-5 shadow-xl">
       <div class="text-center">
         <span class="inline-block rounded-full bg-blue-600 px-3 py-1 text-xs font-black text-white uppercase tracking-wider shadow-sm">Interaktive Live-Demo</span>
@@ -92,17 +92,17 @@
       <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-md">
         <div class="flex items-center justify-between border-b border-slate-100 pb-2">
           <div>
-            <span class="text-[10px] font-black uppercase tracking-wider text-blue-600">Vorschau</span>
+            <span class="text-[10px] font-black uppercase tracking-wider text-blue-600">Übersicht & Vorschau</span>
             <h3 id="prevTitle" class="font-black text-lg text-slate-900">Truma Combi 6</h3>
           </div>
           <span id="prevBadge" class="rounded-lg bg-blue-50 px-2.5 py-1 text-xs font-bold text-blue-700">5 Schritte</span>
         </div>
 
-        <!-- Vorschaubild -->
+        <!-- Vorschaubild (Eigenes Bild je Kategorie) -->
         <div class="aspect-[4/3] w-full rounded-xl bg-slate-100 overflow-hidden mt-3 border border-slate-200 relative">
-          <img id="prevImage" src="assets/heating/01-gasversorgung.jpg" class="h-full w-full object-cover" alt="Vorschau">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-3">
-            <p id="prevDesc" class="text-xs text-white font-medium">Raumheizung Schritt für Schritt einschalten.</p>
+          <img id="prevImage" src="assets/heating-preview.jpg" class="h-full w-full object-cover" alt="Kategorie Vorschau">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-3">
+            <p id="prevDesc" class="text-xs text-white font-medium leading-snug">Raumheizung Schritt für Schritt einschalten.</p>
           </div>
         </div>
 
@@ -218,7 +218,7 @@
       'Markise': {
         title: 'Thule Omnistor 5200',
         description: 'Markise sicher ausfahren, abstützen und wieder einfahren.',
-        previewImg: 'assets/awning/01.jpg',
+        previewImg: 'assets/awning-preview.jpg',
         steps: [
           { title: 'Markise entriegeln', text: 'Öffnen Sie die Verriegelung der Markise und geben Sie die Frontleiste frei.', image: 'assets/awning/01.jpg', tip: 'Niemals mit Gewalt öffnen.' },
           { title: 'Kurbel einsetzen', text: 'Stecken Sie die Kurbel vollständig in die dafür vorgesehene Aufnahme.', image: 'assets/awning/02.jpg', tip: 'Kurbel vollständig einstecken, bevor Sie drehen.' },
@@ -232,7 +232,7 @@
       'Heizung': {
         title: 'Truma Combi 6',
         description: 'Raumheizung Schritt für Schritt einschalten.',
-        previewImg: 'assets/heating/01-gasversorgung.jpg',
+        previewImg: 'assets/heating-preview.jpg',
         steps: [
           { title: 'Gasversorgung sicher prüfen', text: 'Prüfen Sie, ob die Gasversorgung für das Fahrzeug freigegeben und das Flaschenventil geöffnet ist.', image: 'assets/heating/01-gasversorgung.jpg', tip: 'Bei Gasgeruch sofort Gaszufuhr schließen.' },
           { title: '12-V-Bordnetz einschalten', text: 'Schalten Sie die 12-V-Stromversorgung am zentralen Fahrzeugpanel ein.', image: 'assets/heating/02-bordnetz.jpg', tip: 'Steuerung benötigt Bordspannung.' },
@@ -244,12 +244,12 @@
       'Toilette': {
         title: 'Dometic CT 4000',
         description: 'WC-Kassette sauber entleeren und vorbereiten.',
-        previewImg: 'assets/awning/toilet/01-innenraum-schieber.png',
+        previewImg: 'assets/toilet-preview.jpg',
         steps: [
           { title: 'Vorbereitung im Innenraum', text: 'Stelle sicher, dass die Schieber-Klappe der Toilette im Bad vollständig geschlossen ist.', image: 'assets/awning/toilet/01-innenraum-schieber.png', tip: 'Niemals gewaltsam ziehen!' },
           { title: 'Außenklappe öffnen & entriegeln', text: 'Serviceklappe öffnen, grüne Lasche anheben und Kassette am Griff herausziehen.', image: 'assets/awning/toilet/02-kassette-entriegeln.png', tip: 'Auf ebene Führung achten.' },
           { title: 'Transport zur Station', text: 'Bringe die Kassette aufrecht zum Entsorgungsbereich für Chemie-WCs.', image: 'assets/awning/toilet/03-transport.png', tip: 'Nur an ausgewiesenen Stationen nutzen.' },
-          { title: 'Kassette entleeren', text: 'Ausgussrohr drehen, Deckel abnehmen und beim Kippen den grünen Entlüftunktopf drücken.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Entlüftungsknopf verhindert Gluckern.' },
+          { title: 'Kassette entleeren', text: 'Ausgussrohr drehen, Deckel abnehmen und beim Kippen den grünen Entlüftungsknopf drücken.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Entlüftungsknopf verhindert Gluckern.' },
           { title: 'Spülen & Säubern', text: 'Frischwasser nachfüllen, durchschütteln und erneut entleeren.', image: 'assets/awning/toilet/05-spuelen.png', tip: 'Ausgussrohr sauber spülen.' },
           { title: 'Sanitärzusatz & Einsetzen', text: 'Sanitärzusatz mit 2 Liter Wasser einfüllen und Kassette einschieben bis sie einrastet.', image: 'assets/awning/toilet/06-zusatz-einsetzen.png', tip: 'Dichtung regelmäßig pflegen.' }
         ]
@@ -282,7 +282,7 @@
       const img = document.getElementById('prevImage');
       img.src = data.previewImg;
       img.onerror = function() {
-        this.src = `https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(data.title)}`;
+        this.src = `https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(data.title + ' Vorschau')}`;
       };
     }
 
