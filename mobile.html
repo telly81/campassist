@@ -67,7 +67,7 @@
       </div>
     </section>
 
-    <!-- 3. Hervorgehobener Live-Test Bereich mit eigener Bild-Vorschau -->
+    <!-- 3. Live-Test Bereich -->
     <section id="m-demo" class="scroll-mt-16 rounded-3xl border-2 border-blue-500 bg-gradient-to-b from-blue-50 via-white to-slate-50 p-5 shadow-xl">
       <div class="text-center">
         <span class="inline-block rounded-full bg-blue-600 px-3 py-1 text-xs font-black text-white uppercase tracking-wider shadow-sm">Interaktive Live-Demo</span>
@@ -75,7 +75,6 @@
         <p class="text-xs font-medium text-slate-600 mt-1">Wählen Sie ein Gerät und testen Sie die interaktive Schritt-für-Schritt Hilfe:</p>
       </div>
 
-      <!-- Tabs für Geräteauswahl -->
       <div class="grid grid-cols-3 gap-2 mt-4">
         <button onclick="selectPreview('Heizung')" id="tab-Heizung" class="tab-btn p-3 bg-white border-2 border-blue-600 rounded-xl text-center shadow-md font-bold text-xs">
           <span class="block text-2xl mb-1">🔥</span> Heizung
@@ -88,7 +87,6 @@
         </button>
       </div>
 
-      <!-- Vorschau-Karte -->
       <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-md">
         <div class="flex items-center justify-between border-b border-slate-100 pb-2">
           <div>
@@ -98,7 +96,6 @@
           <span id="prevBadge" class="rounded-lg bg-blue-50 px-2.5 py-1 text-xs font-bold text-blue-700">5 Schritte</span>
         </div>
 
-        <!-- Vorschaubild (Eigenes Bild je Kategorie) -->
         <div class="aspect-[4/3] w-full rounded-xl bg-slate-100 overflow-hidden mt-3 border border-slate-200 relative">
           <img id="prevImage" src="assets/heating-preview.jpg" class="h-full w-full object-cover" alt="Kategorie Vorschau">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-3">
@@ -106,7 +103,6 @@
           </div>
         </div>
 
-        <!-- Großer CTA Button zum Starten des Fullscreen Assistenten -->
         <button id="prevStartBtn" onclick="openWizard(activePreview)" class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-teal-500 py-3.5 text-base font-black text-white shadow-lg active:scale-[0.98]">
           <span>▶</span> Anleitung jetzt starten
         </button>
@@ -179,38 +175,7 @@
 
   <!-- FULLSCREEN ASSISTENT MODAL -->
   <div id="wizardModal" class="fixed inset-0 z-50 hidden bg-white flex flex-col justify-between p-4 overflow-y-auto">
-    <div>
-      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-        <div>
-          <span id="wizCompName" class="font-black text-base text-slate-900 block">Gerät</span>
-          <span id="wizStepCount" class="text-xs font-bold text-blue-600">Schritt 1 von 5</span>
-        </div>
-        <button onclick="closeWizard()" class="grid h-10 w-10 place-items-center rounded-xl bg-slate-100 text-slate-600 font-bold text-lg active:bg-slate-200">✕</button>
-      </div>
-
-      <div class="h-1.5 w-full bg-slate-100 rounded-full mt-3 overflow-hidden">
-        <div id="wizProgressBar" class="h-full bg-blue-600 transition-all duration-300" style="width: 20%;"></div>
-      </div>
-
-      <div class="aspect-[4/3] w-full rounded-2xl bg-slate-200 overflow-hidden mt-4 border border-slate-200 shadow-sm">
-        <img id="wizImage" src="" class="h-full w-full object-cover" alt="Schritt Grafik">
-      </div>
-
-      <div class="mt-4">
-        <p id="wizStepNum" class="text-xs font-black uppercase tracking-wider text-teal-600">Schritt 1</p>
-        <h3 id="wizStepTitle" class="font-black text-xl text-slate-900 mt-0.5">Titel</h3>
-        <p id="wizStepText" class="text-base text-slate-800 font-medium mt-2 leading-relaxed">Erklärungstext...</p>
-        
-        <div id="wizTipContainer" class="hidden mt-4 text-sm bg-amber-50 border-l-4 border-amber-400 p-3.5 text-amber-950 font-medium rounded-r-xl">
-          <b>Wichtig:</b> <span id="wizTipText"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-6 bg-white sticky bottom-0">
-      <button id="wizBtnPrev" onclick="wizPrev()" class="py-4 rounded-xl border-2 border-slate-300 bg-white text-base font-bold text-slate-700 active:bg-slate-100">Zurück</button>
-      <button id="wizBtnNext" onclick="wizNext()" class="py-4 rounded-xl bg-slate-900 text-white text-base font-bold active:bg-slate-800">Weiter</button>
-    </div>
+    <!-- Dynamischer Inhalt wird über JavaScript gesteuert -->
   </div>
 
   <script>
@@ -227,7 +192,8 @@
           { title: 'Rechten Stützfuß ausklappen', text: 'Entriegeln Sie den rechten Stützfuß und klappen Sie ihn nach unten.', image: 'assets/awning/05.jpg', tip: 'Beide Stützen gleichmäßig ausrichten.' },
           { title: 'Höhe einstellen', text: 'Stellen Sie die gewünschte Höhe ein und verriegeln Sie die Stützfüße.', image: 'assets/awning/06.jpg', tip: 'Bei Regen eine Seite etwas tiefer stellen, damit Wasser ablaufen kann.' },
           { title: 'Markise vollständig ausfahren', text: 'Kurbeln Sie die Markise bis zur gewünschten Länge aus und prüfen Sie den sicheren Stand.', image: 'assets/awning/07.jpg', tip: 'Bei Wind oder starken Böen sofort einfahren.' }
-        ]
+        ],
+        warnings: ['Bei Wind oder starken Böen sofort einfahren.', 'Markise niemals unbeaufsichtigt ausgefahren lassen.']
       },
       'Heizung': {
         title: 'Truma Combi 6',
@@ -239,7 +205,8 @@
           { title: 'Bedienteil aktivieren', text: 'Drücken Sie den Dreh-/Drückknopf am Heizungsbedienteil.', image: 'assets/heating/03-bedienteil.jpg', tip: 'CP-Plus Bedienteil wird durch Drücken geweckt.' },
           { title: 'Raumtemperatur wählen', text: 'Drehen Sie den Knopf auf die gewünschte Raumtemperatur und drücken Sie ihn zum Speichern.', image: 'assets/heating/04-temperatur.jpg', tip: 'Sollwerte immer bestätigen.' },
           { title: 'Start und Warmluft prüfen', text: 'Warten Sie einige Minuten und prüfen Sie den Warmluftstrom an den Auslässen.', image: 'assets/heating/05-warmluft.jpg', tip: 'Warmluftauslässe nicht verdecken.' }
-        ]
+        ],
+        warnings: ['Bei Gasgeruch Anlage sofort ausschalten!']
       },
       'Toilette': {
         title: 'Dometic CT 4000',
@@ -252,7 +219,8 @@
           { title: 'Kassette entleeren', text: 'Ausgussrohr drehen, Deckel abnehmen und beim Kippen den grünen Entlüftungsknopf drücken.', image: 'assets/awning/toilet/04-entleeren-knopf.png', tip: 'Entlüftungsknopf verhindert Gluckern.' },
           { title: 'Spülen & Säubern', text: 'Frischwasser nachfüllen, durchschütteln und erneut entleeren.', image: 'assets/awning/toilet/05-spuelen.png', tip: 'Ausgussrohr sauber spülen.' },
           { title: 'Sanitärzusatz & Einsetzen', text: 'Sanitärzusatz mit 2 Liter Wasser einfüllen und Kassette einschieben bis sie einrastet.', image: 'assets/awning/toilet/06-zusatz-einsetzen.png', tip: 'Dichtung regelmäßig pflegen.' }
-        ]
+        ],
+        warnings: ['Nur an zugelassenen Chemie-WC Stationen entleeren.']
       }
     };
 
@@ -263,7 +231,6 @@
       activePreview = comp;
       const data = db[comp];
 
-      // Tab Styling anpassen
       document.querySelectorAll('.tab-btn').forEach(b => {
         b.classList.replace('border-blue-600', 'border-slate-200');
         b.classList.replace('text-slate-900', 'text-slate-600');
@@ -274,7 +241,6 @@
       activeTab.classList.replace('text-slate-600', 'text-slate-900');
       activeTab.classList.replace('shadow-sm', 'shadow-md');
 
-      // Vorschau-Daten aktualisieren
       document.getElementById('prevTitle').textContent = data.title;
       document.getElementById('prevBadge').textContent = `${data.steps.length} Schritte`;
       document.getElementById('prevDesc').textContent = data.description;
@@ -303,37 +269,67 @@
       const data = db[activePreview];
       const st = data.steps[activeStep];
       const total = data.steps.length;
+      const modal = document.getElementById('wizardModal');
 
-      document.getElementById('wizCompName').textContent = data.title;
-      document.getElementById('wizStepCount').textContent = `Schritt ${activeStep + 1} von ${total}`;
-      document.getElementById('wizProgressBar').style.width = `${((activeStep + 1) / total) * 100}%`;
+      modal.innerHTML = `
+        <div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+            <div>
+              <span class="font-black text-base text-slate-900 block">${data.title}</span>
+              <span class="text-xs font-bold text-blue-600">Schritt ${activeStep + 1} von ${total}</span>
+            </div>
+            <button onclick="closeWizard()" class="grid h-10 w-10 place-items-center rounded-xl bg-slate-100 text-slate-600 font-bold text-lg active:bg-slate-200">✕</button>
+          </div>
 
-      const imgEl = document.getElementById('wizImage');
-      imgEl.src = st.image;
-      imgEl.onerror = function() {
-        this.src = `https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(st.title)}`;
-      };
+          <div class="h-1.5 w-full bg-slate-100 rounded-full mt-3 overflow-hidden">
+            <div class="h-full bg-blue-600 transition-all duration-300" style="width: ${((activeStep + 1) / total) * 100}%;"></div>
+          </div>
 
-      document.getElementById('wizStepNum').textContent = `Schritt ${activeStep + 1}`;
-      document.getElementById('wizStepTitle').textContent = st.title;
-      document.getElementById('wizStepText').textContent = st.text;
+          <div class="aspect-[4/3] w-full rounded-2xl bg-slate-200 overflow-hidden mt-4 border border-slate-200 shadow-sm">
+            <img src="${st.image}" onerror="this.src='https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(st.title)}'" class="h-full w-full object-cover" alt="Schritt Grafik">
+          </div>
 
-      const tipCont = document.getElementById('wizTipContainer');
-      if (st.tip) {
-        document.getElementById('wizTipText').textContent = st.tip;
-        tipCont.classList.remove('hidden');
-      } else {
-        tipCont.classList.add('hidden');
-      }
+          <div class="mt-4">
+            <p class="text-xs font-black uppercase tracking-wider text-teal-600">Schritt ${activeStep + 1}</p>
+            <h3 class="font-black text-xl text-slate-900 mt-0.5">${st.title}</h3>
+            <p class="text-base text-slate-800 font-medium mt-2 leading-relaxed">${st.text}</p>
+            
+            ${st.tip ? `
+              <div class="mt-4 text-sm bg-amber-50 border-l-4 border-amber-400 p-3.5 text-amber-950 font-medium rounded-r-xl">
+                <b>Wichtig:</b> ${st.tip}
+              </div>
+            ` : ''}
+          </div>
+        </div>
 
-      const prevBtn = document.getElementById('wizBtnPrev');
-      if (activeStep === 0) {
-        prevBtn.classList.add('opacity-40', 'pointer-events-none');
-      } else {
-        prevBtn.classList.remove('opacity-40', 'pointer-events-none');
-      }
+        <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-6 bg-white sticky bottom-0">
+          <button onclick="wizPrev()" class="py-4 rounded-xl border-2 border-slate-300 bg-white text-base font-bold text-slate-700 active:bg-slate-100 ${activeStep === 0 ? 'opacity-40 pointer-events-none' : ''}">Zurück</button>
+          <button onclick="wizNext()" class="py-4 rounded-xl bg-slate-900 text-white text-base font-bold active:bg-slate-800">${activeStep === total - 1 ? 'Abschließen' : 'Weiter'}</button>
+        </div>
+      `;
+    }
 
-      document.getElementById('wizBtnNext').textContent = (activeStep === total - 1) ? 'Abschließen' : 'Weiter';
+    function renderSuccess() {
+      const data = db[activePreview];
+      const modal = document.getElementById('wizardModal');
+
+      modal.innerHTML = `
+        <div class="my-auto text-center py-8">
+          <span class="text-6xl">✅</span>
+          <h3 class="font-black text-2xl mt-4 text-slate-900">${data.title} bereit!</h3>
+          <p class="text-base text-slate-600 mt-2">Die Anleitung wurde erfolgreich abgeschlossen.</p>
+          
+          ${data.warnings ? `
+            <div class="mt-6 text-left bg-red-50 border-l-4 border-red-400 p-3.5 text-sm text-red-900 rounded-r-xl">
+              <b>Sicherheitshinweis:</b> ${data.warnings[0]}
+            </div>
+          ` : ''}
+
+          <button onclick="closeWizard()" class="mt-8 w-full py-4 bg-slate-900 text-white text-base font-bold rounded-xl shadow active:bg-slate-800">
+            Fertig & Schließen
+          </button>
+        </div>
+      `;
     }
 
     function wizPrev() {
@@ -349,12 +345,10 @@
         activeStep++;
         renderWiz();
       } else {
-        alert("Anleitung erfolgreich abgeschlossen!");
-        closeWizard();
+        renderSuccess();
       }
     }
 
-    // Menü & Formular Event-Listener
     document.addEventListener('DOMContentLoaded', function() {
       const btn = document.getElementById('mMenuBtn');
       const nav = document.getElementById('mNav');
@@ -395,7 +389,6 @@
         };
       }
 
-      // Initial erste Vorschau laden
       selectPreview('Heizung');
     });
   </script>
